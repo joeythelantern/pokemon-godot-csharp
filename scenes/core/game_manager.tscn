@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://cedxn4kawkw32"]
+[gd_scene load_steps=2 format=3 uid="uid://cedxn4kawkw32"]
+
+[ext_resource type="PackedScene" uid="uid://bhequssh43v25" path="res://scenes/levels/small_town.tscn" id="1_1xsb8"]
 
 [node name="GameManager" type="Node"]
 
 [node name="Control" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +24,10 @@ grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
+handle_input_locally = false
 size = Vector2i(1152, 648)
 size_2d_override = Vector2i(1152, 648)
 size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Level" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("1_1xsb8")]

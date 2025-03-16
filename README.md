@@ -10,8 +10,8 @@ As a kid, **Pokémon Red** was the first game I ever owned on a Game Boy, and it
 ## 📺 Video Series
 Follow along with the series! Each video will cover a different aspect of the game:
 
-1. [Part 1 - Project Setup](https://youtu.be/your-link-here) 🛠️
-2. *More coming soon...*
+1. [Part 1 - Project Setup](https://youtu.be/QylyjVsmW3E) 🛠️
+2. [Part 2 - Create a Level with TileMapLayer](https://youtu.be/UOqqq8CiHr0) 🛠️
 
 ---
 
