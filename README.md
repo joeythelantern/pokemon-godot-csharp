@@ -12,6 +12,7 @@ Follow along with the series! Each video will cover a different aspect of the ga
 
 1. [Part 1 - Project Setup](https://youtu.be/QylyjVsmW3E) 🛠️
 2. [Part 2 - Create a Level with TileMapLayer](https://youtu.be/UOqqq8CiHr0) 🛠️
+2. [Part 3 - Creating the Player](https://youtu.be/kxhXZATZ5dE) 🛠️
 
 ---
 
@@ -51,7 +52,8 @@ Want to improve the project? Feel free to **fork**, submit a **pull request**, o
 ## 📚 Resources Used
 This project was made possible with the help of various resources from other developers. Here are some assets, tutorials, and references that were used:
 
-- **Tilemaps & Sprites** - [Flurmimon](https://www.deviantart.com/flurmimon)
+- **Nature Tileset** - [Flurmimon](https://www.deviantart.com/flurmimon)
+- **Player Tileset** - [Aveontrainer](https://www.deviantart.com/aveontrainer)
 
 If you see your work here and would like credit or modifications, feel free to reach out!
 
