@@ -11,17 +11,21 @@ namespace Game.Gameplay
 		[ExportCategory("Nodes")]
 		[Export] public Node2D Character;
 		[Export] public CharacterInput CharacterInput;
+		[Export] public CharacterCollisionRayCast CharacterCollisionRayCast;
 
 		[ExportCategory("Movement")]
 		[Export] public Vector2 TargetPosition = Vector2.Down;
 		[Export] public bool IsWalking = false;
+		[Export] public bool CollisionDetected = false;
 
 		public override void _Ready()
 		{
 			CharacterInput.Walk += StartWalking;
 			CharacterInput.Turn += Turn;
 
-			Logger.Info("Loading player movement component ...");
+			CharacterCollisionRayCast.Collision += (value) => CollisionDetected = value;
+
+			Logger.Info("Loading character movement component ...");
 		}
 
 		public override void _Process(double delta)
@@ -34,9 +38,14 @@ namespace Game.Gameplay
 			return IsWalking;
 		}
 
+		public bool IsColliding()
+		{
+			return CollisionDetected;
+		}
+
 		public void StartWalking()
 		{
-			if (!IsMoving())
+			if (!IsMoving() && !IsColliding())
 			{
 				EmitSignal(SignalName.Animation, "walk");
 				TargetPosition = Character.Position + CharacterInput.Direction * Globals.Instance.GRID_SIZE;
