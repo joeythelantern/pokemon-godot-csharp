@@ -1,123 +1,128 @@
 using Game.Core;
 using Godot;
-using System;
 
 namespace Game.Gameplay
 {
-	public partial class CharacterMovement : Node
-	{
-		[Signal] public delegate void AnimationEventHandler(string animationType);
+    public partial class CharacterMovement : Node
+    {
+        [Signal]
+        public delegate void AnimationEventHandler(string animationType);
 
-		[ExportCategory("Nodes")]
-		[Export] public Node2D Character;
-		[Export] public CharacterInput CharacterInput;
+        [ExportCategory("Nodes")]
+        [Export]
+        public Node2D Character;
 
-		[ExportCategory("Movement")]
-		[Export] public Vector2 TargetPosition = Vector2.Down;
-		[Export] public bool IsWalking = false;
+        [Export]
+        public CharacterInput CharacterInput;
 
-		public override void _Ready()
-		{
-			CharacterInput.Walk += StartWalking;
-			CharacterInput.Turn += Turn;
+        [ExportCategory("Movement")]
+        [Export]
+        public Vector2 TargetPosition = Vector2.Down;
 
-			Logger.Info("Loading character movement component ...");
-		}
+        [Export]
+        public bool IsWalking = false;
 
-		public override void _Process(double delta)
-		{
-			Walk(delta);
-		}
+        public override void _Ready()
+        {
+            CharacterInput.Walk += StartWalking;
+            CharacterInput.Turn += Turn;
 
-		public bool IsMoving()
-		{
-			return IsWalking;
-		}
+            Logger.Info("Loading character movement component ...");
+        }
 
-		public bool IsTargetOccupied(Vector2 targetPosition)
-		{
-			var spaceState = GetViewport().GetWorld2D().DirectSpaceState;
+        public override void _Process(double delta)
+        {
+            Walk(delta);
+        }
 
-			Vector2 adjustedTargetPosition = targetPosition;
-			adjustedTargetPosition.X += 8;
-			adjustedTargetPosition.Y += 8;
+        public bool IsMoving()
+        {
+            return IsWalking;
+        }
 
-			var query = new PhysicsPointQueryParameters2D
-			{
-				Position = adjustedTargetPosition,
-				CollisionMask = 1,
-				CollideWithAreas = true
-			};
+        public bool IsTargetOccupied(Vector2 targetPosition)
+        {
+            var spaceState = GetViewport().GetWorld2D().DirectSpaceState;
 
-			var result = spaceState.IntersectPoint(query);
+            Vector2 adjustedTargetPosition = targetPosition;
+            adjustedTargetPosition.X += 8;
+            adjustedTargetPosition.Y += 8;
 
-			if (result.Count > 0)
-			{
-				foreach (var collision in result)
-				{
-					var collider = (Node)(GodotObject)collision["collider"];
-					var colliderType = collider.GetType().Name;
+            var query = new PhysicsPointQueryParameters2D
+            {
+                Position = adjustedTargetPosition,
+                CollisionMask = 1,
+                CollideWithAreas = true,
+            };
 
-					switch (colliderType)
-					{
-						case "TileMapLayer":
-							return true;
-						default:
-							return true;
-					}
-				}
-			}
+            var result = spaceState.IntersectPoint(query);
 
-			return false;
-		}
+            if (result.Count > 0)
+            {
+                foreach (var collision in result)
+                {
+                    var collider = (Node)(GodotObject)collision["collider"];
+                    var colliderType = collider.GetType().Name;
 
-		public void StartWalking()
-		{
-			TargetPosition = Character.Position + CharacterInput.Direction * Globals.Instance.GRID_SIZE;
+                    switch (colliderType)
+                    {
+                        case "TileMapLayer":
+                            return true;
+                        default:
+                            return true;
+                    }
+                }
+            }
 
-			if (!IsMoving() && !IsTargetOccupied(TargetPosition))
-			{
-				EmitSignal(SignalName.Animation, "walk");
-				Logger.Info($"{GetParent().Name} moving from {Character.Position} to {TargetPosition}");
-				IsWalking = true;
-			}
-		}
+            return false;
+        }
 
-		public void Walk(double delta)
-		{
-			if (IsWalking)
-			{
-				Character.Position = Character.Position.MoveToward(TargetPosition, (float)delta * Globals.Instance.GRID_SIZE * 4);
+        public void StartWalking()
+        {
+            TargetPosition = Character.Position + CharacterInput.Direction * Globals.Instance.GRID_SIZE;
 
-				if (Character.Position.DistanceTo(TargetPosition) < 1f)
-				{
-					StopWalking();
-				}
-			}
-			else
-			{
-				EmitSignal(SignalName.Animation, "idle");
-			}
-		}
+            if (!IsMoving() && !IsTargetOccupied(TargetPosition))
+            {
+                EmitSignal(SignalName.Animation, "walk");
+                Logger.Info($"{GetParent().Name} moving from {Character.Position} to {TargetPosition}");
+                IsWalking = true;
+            }
+        }
 
-		public void StopWalking()
-		{
-			IsWalking = false;
-			SnapPositionToGrid();
-		}
+        public void Walk(double delta)
+        {
+            if (IsWalking)
+            {
+                Character.Position = Character.Position.MoveToward(TargetPosition, (float)delta * Globals.Instance.GRID_SIZE * 4);
 
-		public void Turn()
-		{
-			EmitSignal(SignalName.Animation, "turn");
-		}
+                if (Character.Position.DistanceTo(TargetPosition) < 1f)
+                {
+                    StopWalking();
+                }
+            }
+            else
+            {
+                EmitSignal(SignalName.Animation, "idle");
+            }
+        }
 
-		public void SnapPositionToGrid()
-		{
-			Character.Position = new Vector2(
-				Mathf.Round(Character.Position.X / Globals.Instance.GRID_SIZE) * Globals.Instance.GRID_SIZE,
-				Mathf.Round(Character.Position.Y / Globals.Instance.GRID_SIZE) * Globals.Instance.GRID_SIZE
-			);
-		}
-	}
+        public void StopWalking()
+        {
+            IsWalking = false;
+            SnapPositionToGrid();
+        }
+
+        public void Turn()
+        {
+            EmitSignal(SignalName.Animation, "turn");
+        }
+
+        public void SnapPositionToGrid()
+        {
+            Character.Position = new Vector2(
+                Mathf.Round(Character.Position.X / Globals.Instance.GRID_SIZE) * Globals.Instance.GRID_SIZE,
+                Mathf.Round(Character.Position.Y / Globals.Instance.GRID_SIZE) * Globals.Instance.GRID_SIZE
+            );
+        }
+    }
 }
-

@@ -2,42 +2,45 @@ using Godot;
 
 namespace Game.Utilities
 {
-	public partial class StateMachine : Node
-	{
-		[ExportCategory("State Machine Vars")]
-		[Export] public Node Customer;
-		[Export] public State CurrentState;
+    public partial class StateMachine : Node
+    {
+        [ExportCategory("State Machine Vars")]
+        [Export]
+        public Node Customer;
 
-		public override void _Ready()
-		{
-			foreach (Node child in GetChildren())
-			{
-				if (child is State state)
-				{
-					state.StateOwner = Customer;
-					state.SetProcess(false);
-				}
-			}
-		}
+        [Export]
+        public State CurrentState;
 
-		public string GetCurrentState()
-		{
-			return CurrentState.Name.ToString();
-		}
+        public override void _Ready()
+        {
+            foreach (Node child in GetChildren())
+            {
+                if (child is State state)
+                {
+                    state.StateOwner = Customer;
+                    state.SetProcess(false);
+                }
+            }
+        }
 
-		public void ChangeState(State newState)
-		{
-			CurrentState?.ExitState();
-			CurrentState = newState;
-			CurrentState?.EnterState();
+        public string GetCurrentState()
+        {
+            return CurrentState.Name.ToString();
+        }
 
-			foreach (Node child in GetChildren())
-			{
-				if (child is State state)
-				{
-					state.SetProcess(child == CurrentState);
-				}
-			}			
-		}
-	}
+        public void ChangeState(State newState)
+        {
+            CurrentState?.ExitState();
+            CurrentState = newState;
+            CurrentState?.EnterState();
+
+            foreach (Node child in GetChildren())
+            {
+                if (child is State state)
+                {
+                    state.SetProcess(child == CurrentState);
+                }
+            }
+        }
+    }
 }
