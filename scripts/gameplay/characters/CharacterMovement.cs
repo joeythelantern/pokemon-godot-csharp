@@ -11,19 +11,15 @@ namespace Game.Gameplay
 		[ExportCategory("Nodes")]
 		[Export] public Node2D Character;
 		[Export] public CharacterInput CharacterInput;
-		[Export] public CharacterCollisionRayCast CharacterCollisionRayCast;
 
 		[ExportCategory("Movement")]
 		[Export] public Vector2 TargetPosition = Vector2.Down;
 		[Export] public bool IsWalking = false;
-		[Export] public bool CollisionDetected = false;
 
 		public override void _Ready()
 		{
 			CharacterInput.Walk += StartWalking;
 			CharacterInput.Turn += Turn;
-
-			CharacterCollisionRayCast.Collision += (value) => CollisionDetected = value;
 
 			Logger.Info("Loading character movement component ...");
 		}
@@ -38,25 +34,58 @@ namespace Game.Gameplay
 			return IsWalking;
 		}
 
-		public bool IsColliding()
+		public bool IsTargetOccupied(Vector2 targetPosition)
 		{
-			return CollisionDetected;
+			var spaceState = GetViewport().GetWorld2D().DirectSpaceState;
+
+			Vector2 adjustedTargetPosition = targetPosition;
+			adjustedTargetPosition.X += 8;
+			adjustedTargetPosition.Y += 8;
+
+			var query = new PhysicsPointQueryParameters2D
+			{
+				Position = adjustedTargetPosition,
+				CollisionMask = 1,
+				CollideWithAreas = true
+			};
+
+			var result = spaceState.IntersectPoint(query);
+
+			if (result.Count > 0)
+			{
+				foreach (var collision in result)
+				{
+					var collider = (Node)(GodotObject)collision["collider"];
+					var colliderType = collider.GetType().Name;
+
+					switch (colliderType)
+					{
+						case "TileMapLayer":
+							return true;
+						default:
+							return true;
+					}
+				}
+			}
+
+			return false;
 		}
 
 		public void StartWalking()
 		{
-			if (!IsMoving() && !IsColliding())
+			TargetPosition = Character.Position + CharacterInput.Direction * Globals.Instance.GRID_SIZE;
+
+			if (!IsMoving() && !IsTargetOccupied(TargetPosition))
 			{
 				EmitSignal(SignalName.Animation, "walk");
-				TargetPosition = Character.Position + CharacterInput.Direction * Globals.Instance.GRID_SIZE;
-				Logger.Info($"Moving from {Character.Position} to {TargetPosition}");
+				Logger.Info($"{GetParent().Name} moving from {Character.Position} to {TargetPosition}");
 				IsWalking = true;
 			}
 		}
 
 		public void Walk(double delta)
 		{
-			if (IsWalking) 
+			if (IsWalking)
 			{
 				Character.Position = Character.Position.MoveToward(TargetPosition, (float)delta * Globals.Instance.GRID_SIZE * 4);
 

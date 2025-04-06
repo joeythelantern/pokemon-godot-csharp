@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://by5pxugmp1xbl"]
+[gd_scene load_steps=38 format=3 uid="uid://by5pxugmp1xbl"]
 
 [ext_resource type="Texture2D" uid="uid://c0y34af64xcfy" path="res://assets/characters/player.png" id="1_dsppa"]
 [ext_resource type="Script" path="res://scripts/gameplay/characters/PlayerInput.cs" id="1_m1650"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://scripts/gameplay/characters/CharacterMovement.cs" id="2_ikivw"]
 [ext_resource type="Script" path="res://scripts/gameplay/characters/CharacterAnimation.cs" id="4_qfswh"]
 [ext_resource type="Script" path="res://scripts/utilities/StateMachine.cs" id="5_nuhm4"]
-[ext_resource type="Script" path="res://scripts/gameplay/characters/CharacterCollisionRayCast.cs" id="6_5wqim"]
 [ext_resource type="Script" path="res://scripts/gameplay/characters/states/PlayerRoamState.cs" id="6_lta2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rv3j1"]
@@ -282,11 +281,10 @@ shape = SubResource("RectangleShape2D_rv3j1")
 [node name="Input" type="Node" parent="."]
 script = ExtResource("1_m1650")
 
-[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Character", "CharacterInput", "CharacterCollisionRayCast")]
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Character", "CharacterInput")]
 script = ExtResource("2_ikivw")
 Character = NodePath("..")
 CharacterInput = NodePath("../Input")
-CharacterCollisionRayCast = NodePath("../CollisionRayCast")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("CharacterInput", "CharacterMovement")]
 texture_filter = 1
@@ -303,19 +301,13 @@ position = Vector2(8, 8)
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
-[node name="CollisionRayCast" type="RayCast2D" parent="." node_paths=PackedStringArray("CharacterInput")]
-position = Vector2(8, 8)
-target_position = Vector2(0, 16)
-collide_with_areas = true
-script = ExtResource("6_5wqim")
-CharacterInput = NodePath("../Input")
-
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer", "CurrentState")]
 script = ExtResource("5_nuhm4")
 Customer = NodePath("..")
 CurrentState = NodePath("Roam")
 
-[node name="Roam" type="Node" parent="StateMachine" node_paths=PackedStringArray("PlayerInput", "StateOwner")]
+[node name="Roam" type="Node" parent="StateMachine" node_paths=PackedStringArray("PlayerInput", "CharacterMovement", "StateOwner")]
 script = ExtResource("6_lta2g")
 PlayerInput = NodePath("../../Input")
+CharacterMovement = NodePath("../../Movement")
 StateOwner = NodePath("../..")

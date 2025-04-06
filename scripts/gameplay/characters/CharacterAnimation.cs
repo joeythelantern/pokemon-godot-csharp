@@ -86,7 +86,6 @@ namespace Game.Gameplay
 
 			if (previousAnimation != ECharacterAnimation)
 			{
-				Logger.Info($"Playing animation {ECharacterAnimation}");
 				Play(ECharacterAnimation.ToString());
 			}
 		}
