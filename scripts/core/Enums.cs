@@ -1,13 +1,16 @@
 namespace Game.Core
 {
+    #region Debugging
     public enum LogLevel
     {
         DEBUG,
         INFO,
         WARNING,
-        ERROR
+        ERROR,
     }
+    #endregion
 
+    #region Characters
     public enum ECharacterAnimation
     {
         idle_down,
@@ -23,4 +26,5 @@ namespace Game.Core
         walk_left,
         walk_right,
     }
+    #endregion
 }
