@@ -1,6 +1,6 @@
 {
     "printWidth": 200,
-    "useTabs": false,
+    "useTabs": true,
     "tabWidth": 4,
     "endOfLine": "auto"
 }

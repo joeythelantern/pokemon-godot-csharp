@@ -1,8 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cedxn4kawkw32"]
 
-[ext_resource type="PackedScene" uid="uid://bhequssh43v25" path="res://scenes/levels/small_town.tscn" id="1_1xsb8"]
+[ext_resource type="Script" path="res://scripts/core/GameManager.cs" id="1_ms0qm"]
 
-[node name="GameManager" type="Node"]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("GameViewPort")]
+script = ExtResource("1_ms0qm")
+GameViewPort = NodePath("Control/SubViewportContainer/SubViewport")
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1
@@ -29,5 +31,3 @@ size = Vector2i(1152, 648)
 size_2d_override = Vector2i(1152, 648)
 size_2d_override_stretch = true
 render_target_update_mode = 4
-
-[node name="Level" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("1_1xsb8")]

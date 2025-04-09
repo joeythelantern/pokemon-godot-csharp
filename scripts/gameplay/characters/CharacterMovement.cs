@@ -67,6 +67,7 @@ namespace Game.Gameplay
                     return colliderType switch
                     {
                         "TileMapLayer" => true,
+                        "SceneTrigger" => false,
                         _ => true,
                     };
                 }
@@ -77,6 +78,9 @@ namespace Game.Gameplay
 
         public void StartWalking()
         {
+            if (SceneManager.IsChanging)
+                return;
+
             TargetPosition = Character.Position + CharacterInput.Direction * Globals.Instance.GRID_SIZE;
 
             if (!IsMoving() && !IsTargetOccupied(TargetPosition))

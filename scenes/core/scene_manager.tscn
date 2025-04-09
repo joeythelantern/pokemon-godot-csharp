@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx3x2jbv442o4"]
+
+[ext_resource type="Script" path="res://scripts/core/SceneManager.cs" id="1_hx5sb"]
+
+[node name="SceneManager" type="Node" node_paths=PackedStringArray("FadeRect", "AllLevels")]
+script = ExtResource("1_hx5sb")
+FadeRect = NodePath("Control/ColorRect")
+AllLevels = []
+
+[node name="Control" type="Control" parent="."]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

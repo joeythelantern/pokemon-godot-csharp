@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=4 uid="uid://bhequssh43v25"]
+[gd_scene load_steps=7 format=4 uid="uid://bhequssh43v25"]
 
+[ext_resource type="Script" path="res://scripts/gameplay/levels/Level.cs" id="1_2cpqh"]
 [ext_resource type="TileSet" uid="uid://cx5l6e3tq8rem" path="res://resources/tilesets/level.tres" id="1_467iw"]
-[ext_resource type="PackedScene" uid="uid://by5pxugmp1xbl" path="res://scenes/characters/player.tscn" id="2_jl3ph"]
+[ext_resource type="PackedScene" uid="uid://cardhe40oeavn" path="res://scenes/levels/spawn_point.tscn" id="3_14dux"]
+[ext_resource type="PackedScene" uid="uid://b1vjurr1j5v8q" path="res://scenes/levels/scene_trigger.tscn" id="3_x2ndx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2wcl"]
 size = Vector2(16, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r53i7"]
+size = Vector2(16, 64)
+
 [node name="Level" type="Node2D"]
+script = ExtResource("1_2cpqh")
+Bottom = 320
+Right = 512
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -51,9 +59,6 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAABABMAAgAEAAMAAAADABMAAgAEAAMAAAAFABMAAgACAAMAAAAHABMAAgAEAAMAAAAJABMAAgAGAAMAAAALABMAAgAEAAMAAAANABMAAgAGAAMAAAAPABMAAgAEAAMAAAARABMAAgAEAAMAAAATABMAAgAGAAMAAAAVABMAAgAAAAMAAAAXABMAAgACAAMAAAAZABMAAgAEAAMAAAAbABMAAgAGAAMAAAAdABMAAgAEAAMAAAAfABMAAgACAAMAAAAeABIAAgAGAAMAAAAcABIAAgAAAAMAAAAaABIAAgACAAMAAAAYABIAAgAEAAMAAAAWABIAAgACAAMAAAAUABIAAgAEAAMAAAASABIAAgACAAMAAAAQABIAAgAAAAMAAAAOABIAAgAEAAMAAAAMABIAAgACAAMAAAAKABIAAgAAAAMAAAAIABIAAgACAAMAAAAGABIAAgAAAAMAAAAEABIAAgAAAAMAAAACABIAAgAGAAMAAAAgABIAAgAEAAMAAAAAABIAAgAGAAMAAAABABEAAgACAAMAAAABAA8AAgAGAAMAAAABAA0AAgAGAAMAAAABAAgAAgAGAAMAAAABAAYAAgAEAAMAAAABAAQAAgAAAAMAAAABAAIAAgAAAAMAAAABAAAAAgACAAMAAAACAAEAAgAEAAMAAAAEAAEAAgAAAAMAAAAGAAEAAgAGAAMAAAAIAAEAAgAEAAMAAAAKAAEAAgAEAAMAAAAMAAEAAgAGAAMAAAAOAAEAAgAGAAMAAAAQAAEAAgAAAAMAAAASAAEAAgAGAAMAAAAUAAEAAgAEAAMAAAAWAAEAAgAEAAMAAAAYAAEAAgAAAAMAAAAaAAEAAgAEAAMAAAAcAAEAAgACAAMAAAAeAAEAAgAEAAMAAAAgAAEAAgAAAAMAAAADAAAAAgAAAAMAAAAFAAAAAgAAAAMAAAAHAAAAAgAEAAMAAAAJAAAAAgAGAAMAAAALAAAAAgAEAAMAAAANAAAAAgAGAAMAAAAPAAAAAgAGAAMAAAARAAAAAgAGAAMAAAATAAAAAgAEAAMAAAAVAAAAAgAAAAMAAAAXAAAAAgAAAAMAAAAZAAAAAgAGAAMAAAAbAAAAAgACAAMAAAAdAAAAAgAEAAMAAAAfAAAAAgAAAAMAAAAhAAAAAgACAAMAAAAhABMAAgAEAAMAAAAAABAAAgAAAAMAAAAAAA4AAgAGAAMAAAAAAAcAAgAAAAMAAAAAAAUAAgAGAAMAAAAAAAMAAgAAAAMAAAAAAAEAAgAAAAMAAAAVAAUAAAAAAAMAAAAVAAYAAAAAAAQAAAAVAAcAAAAAAAUAAAAWAAUAAAABAAMAAAAWAAYAAAABAAQAAAAWAAcAAAABAAUAAAATAAUAAAAAAAMAAAAUAAUAAAABAAMAAAAUAAYAAAABAAQAAAATAAYAAAAAAAQAAAATAAcAAAAAAAUAAAAUAAcAAAABAAUAAAALAAsAAAACAAMAAAALAAwAAAACAAQAAAALAA0AAAACAAUAAAAMAAsAAAADAAMAAAAMAAwAAAADAAQAAAAMAA0AAAADAAUAAAAKAAwAAAAeAAQAAAAKAA0AAAAeAAUAAAAJAAwAAAAeAAQAAAAJAA0AAAAeAAUAAAA=")
 tile_set = ExtResource("1_467iw")
 
-[node name="Player" parent="." instance=ExtResource("2_jl3ph")]
-position = Vector2(320, 224)
-
 [node name="Boundaries" type="Node2D" parent="."]
 
 [node name="1" type="StaticBody2D" parent="Boundaries"]
@@ -61,3 +66,54 @@ position = Vector2(320, 224)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/1"]
 position = Vector2(440, 80)
 shape = SubResource("RectangleShape2D_r2wcl")
+
+[node name="2" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/2"]
+position = Vector2(-8, 160)
+shape = SubResource("RectangleShape2D_r53i7")
+
+[node name="SceneTriggers" type="Node2D" parent="."]
+
+[node name="SceneTrigger" parent="SceneTriggers" instance=ExtResource("3_x2ndx")]
+position = Vector2(64, 128)
+TargetLevelName = 1
+EntryDirection = Vector2(0, 1)
+
+[node name="SceneTrigger2" parent="SceneTriggers" instance=ExtResource("3_x2ndx")]
+position = Vector2(192, 128)
+TargetLevelName = 2
+CurrentLevelTrigger = 1
+EntryDirection = Vector2(0, 1)
+Locked = true
+
+[node name="SceneTrigger3" parent="SceneTriggers" instance=ExtResource("3_x2ndx")]
+position = Vector2(320, 208)
+TargetLevelName = 3
+CurrentLevelTrigger = 2
+EntryDirection = Vector2(0, 1)
+
+[node name="SceneTrigger4" parent="SceneTriggers" instance=ExtResource("3_x2ndx")]
+position = Vector2(448, 128)
+TargetLevelName = 4
+CurrentLevelTrigger = 3
+EntryDirection = Vector2(0, 1)
+
+[node name="SceneTrigger5" parent="SceneTriggers" instance=ExtResource("3_x2ndx")]
+position = Vector2(416, 80)
+TargetLevelName = 4
+TargetLevelTrigger = 1
+CurrentLevelTrigger = 4
+EntryDirection = Vector2(-1, 0)
+
+[node name="SceneTrigger6" parent="SceneTriggers" instance=ExtResource("3_x2ndx")]
+position = Vector2(416, 64)
+TargetLevelName = 4
+TargetLevelTrigger = 2
+CurrentLevelTrigger = 5
+EntryDirection = Vector2(-1, 0)
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("3_14dux")]
+position = Vector2(400, 80)
