@@ -12,7 +12,9 @@ Follow along with the series! Each video will cover a different aspect of the ga
 
 1. [Part 1 - Project Setup](https://youtu.be/QylyjVsmW3E) 🛠️
 2. [Part 2 - Create a Level with TileMapLayer](https://youtu.be/UOqqq8CiHr0) 🛠️
-2. [Part 3 - Creating the Player](https://youtu.be/kxhXZATZ5dE) 🛠️
+3. [Part 3 - Creating the Player](https://youtu.be/kxhXZATZ5dE) 🛠️
+4. [Part 4 - Collisions](https://youtu.be/hRQz75tK7lU) 🛠️
+5. [Part 5 - Changing Levels](https://youtu.be/Btpo88PUDR0) 🛠️
 
 ---
 
