@@ -26,6 +26,12 @@ namespace Game.Core
         walk_left,
         walk_right,
     }
+
+    public enum ECharacterMovement
+    {
+        WALKING,
+        JUMPING
+    }
     #endregion
 
     #region levels

@@ -22,9 +22,28 @@ namespace Game.Gameplay
         [Export]
         public bool IsWalking = false;
 
+        [Export]
+        public ECharacterMovement ECharacterMovement = ECharacterMovement.WALKING;
+
+        [ExportCategory("Jumping")]
+        [Export]
+        public Vector2 StartPosition;
+
+        [Export]
+        public bool IsJumping = false;
+
+        [Export]
+        public float JumpHeight = 10f;
+
+        [Export]
+        public float LerpSpeed = 2f;
+
+        [Export]
+        public float Progress = 0f;
+
         public override void _Ready()
         {
-            CharacterInput.Walk += StartWalking;
+            CharacterInput.Walk += StartMoving;
             CharacterInput.Turn += Turn;
 
             Logger.Info("Loading character movement component ...");
@@ -33,11 +52,12 @@ namespace Game.Gameplay
         public override void _Process(double delta)
         {
             Walk(delta);
+            Jump(delta);
         }
 
         public bool IsMoving()
         {
-            return IsWalking;
+            return IsWalking || IsJumping;
         }
 
         public bool IsTargetOccupied(Vector2 targetPosition)
@@ -66,7 +86,7 @@ namespace Game.Gameplay
 
                     return colliderType switch
                     {
-                        "TileMapLayer" => true,
+                        "TileMapLayer" => GetTileMapLayerCollision((TileMapLayer)collider, adjustedTargetPosition),
                         "SceneTrigger" => false,
                         _ => true,
                     };
@@ -76,7 +96,50 @@ namespace Game.Gameplay
             return false;
         }
 
-        public void StartWalking()
+        public bool GetTileMapLayerCollision(TileMapLayer tileMapLayer, Vector2 adjustedTargetPosition)
+        {
+            Vector2I tileCoordinates = tileMapLayer.LocalToMap(adjustedTargetPosition);
+            TileData tileData = tileMapLayer.GetCellTileData(tileCoordinates);
+
+            if (tileData == null)
+                return true;
+
+            var ledgeDirection = (string)tileData.GetCustomData("LEDGE");
+
+            if (ledgeDirection == null)
+                return true;
+
+            Logger.Info(ledgeDirection);
+
+            switch (ledgeDirection)
+            {
+                case "DOWN":
+                    if (CharacterInput.Direction == Vector2.Down)
+                    {
+                        ECharacterMovement = ECharacterMovement.JUMPING;
+                        return false;
+                    }
+                    break;
+                case "LEFT":
+                    if (CharacterInput.Direction == Vector2.Left)
+                    {
+                        ECharacterMovement = ECharacterMovement.JUMPING;
+                        return false;
+                    }
+                    break;
+                case "RIGHT":
+                    if (CharacterInput.Direction == Vector2.Right)
+                    {
+                        ECharacterMovement = ECharacterMovement.JUMPING;
+                        return false;
+                    }
+                    break;
+            }
+
+            return true;
+        }
+
+        public void StartMoving()
         {
             if (SceneManager.IsChanging)
                 return;
@@ -87,7 +150,18 @@ namespace Game.Gameplay
             {
                 EmitSignal(SignalName.Animation, "walk");
                 Logger.Info($"{GetParent().Name} moving from {Character.Position} to {TargetPosition}");
-                IsWalking = true;
+
+                if (ECharacterMovement == ECharacterMovement.JUMPING)
+                {
+                    Progress = 0f;
+                    StartPosition = Character.Position;
+                    TargetPosition = Character.Position + CharacterInput.Direction * (Globals.Instance.GRID_SIZE * 2);
+                    IsJumping = true;
+                }
+                else
+                {
+                    IsWalking = true;
+                }
             }
         }
 
@@ -99,7 +173,7 @@ namespace Game.Gameplay
 
                 if (Character.Position.DistanceTo(TargetPosition) < 1f)
                 {
-                    StopWalking();
+                    StopMoving();
                 }
             }
             else
@@ -108,9 +182,34 @@ namespace Game.Gameplay
             }
         }
 
-        public void StopWalking()
+        public void Jump(double delta)
+        {
+            if (IsJumping)
+            {
+                Logger.Info("Jumping");
+                Progress += LerpSpeed * (float)delta;
+
+                Vector2 position = StartPosition.Lerp(TargetPosition, Progress);
+
+                float t = Progress;
+                float parabolicOffset = JumpHeight * (1 - 4 * (t - 0.5f) * (t - 0.5f));
+
+                position.Y -= parabolicOffset;
+
+                Character.Position = position;
+
+                if (Progress >= 1f)
+                {
+                    StopMoving();
+                }
+            }
+        }
+
+        public void StopMoving()
         {
             IsWalking = false;
+            IsJumping = false;
+            ECharacterMovement = ECharacterMovement.WALKING;
             SnapPositionToGrid();
         }
 
