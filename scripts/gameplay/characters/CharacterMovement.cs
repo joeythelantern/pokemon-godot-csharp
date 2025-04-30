@@ -53,6 +53,11 @@ namespace Game.Gameplay
         {
             Walk(delta);
             Jump(delta);
+
+            if (!IsMoving() && !Modules.IsActionPressed())
+            {
+                EmitSignal(SignalName.Animation, "idle");
+            }
         }
 
         public bool IsMoving()
@@ -176,23 +181,17 @@ namespace Game.Gameplay
                     StopMoving();
                 }
             }
-            else
-            {
-                EmitSignal(SignalName.Animation, "idle");
-            }
         }
 
         public void Jump(double delta)
         {
             if (IsJumping)
             {
-                Logger.Info("Jumping");
                 Progress += LerpSpeed * (float)delta;
 
                 Vector2 position = StartPosition.Lerp(TargetPosition, Progress);
 
-                float t = Progress;
-                float parabolicOffset = JumpHeight * (1 - 4 * (t - 0.5f) * (t - 0.5f));
+                float parabolicOffset = JumpHeight * (1 - 4 * (Progress - 0.5f) * (Progress - 0.5f));
 
                 position.Y -= parabolicOffset;
 
