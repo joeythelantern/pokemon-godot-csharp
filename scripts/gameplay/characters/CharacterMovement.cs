@@ -191,7 +191,7 @@ namespace Game.Gameplay
                 Progress += LerpSpeed * (float)delta;
                 Vector2 position = StartPosition.Lerp(TargetPosition, Progress);
                 float parabolicOffset = JumpHeight * (1 - 4 * (Progress - 0.5f) * (Progress - 0.5f));
-                position.Y = parabolicOffset;
+                position.Y -= parabolicOffset;
 
                 Character.Position = position;
 
