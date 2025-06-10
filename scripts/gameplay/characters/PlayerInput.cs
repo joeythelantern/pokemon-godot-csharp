@@ -7,7 +7,7 @@ namespace Game.Gameplay
     {
         [ExportCategory("Player Input")]
         [Export]
-        public double HoldThreshold = 0.1f;
+        public double HoldThreshold = 0.2f;
 
         [Export]
         public double HoldTime = 0.0f;

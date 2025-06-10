@@ -23,6 +23,10 @@ namespace Game.Gameplay
         public bool IsWalking = false;
 
         [Export]
+        public ECharacterMovement ECharacterMovement = ECharacterMovement.WALKING;
+
+        [ExportCategory("Jumping")]
+        [Export]
         public Vector2 StartPosition;
 
         [Export]
@@ -37,9 +41,6 @@ namespace Game.Gameplay
         [Export]
         public float Progress = 0f;
 
-        [Export]
-        public ECharacterMovement ECharacterMovement = ECharacterMovement.WALKING;
-
         public override void _Ready()
         {
             CharacterInput.Walk += StartMoving;
@@ -53,7 +54,7 @@ namespace Game.Gameplay
             Walk(delta);
             Jump(delta);
 
-            if (!IsMoving() && !Modules.IsActionJustPressed())
+            if (!IsMoving() && !Modules.IsActionPressed())
             {
                 EmitSignal(SignalName.Animation, "idle");
             }
@@ -105,17 +106,15 @@ namespace Game.Gameplay
             Vector2I tileCoordinates = tileMapLayer.LocalToMap(adjustedTargetPosition);
             TileData tileData = tileMapLayer.GetCellTileData(tileCoordinates);
 
-            Logger.Info("Tile Data: ", tileData);
-
             if (tileData == null)
                 return true;
 
             var ledgeDirection = (string)tileData.GetCustomData("LEDGE");
 
-            Logger.Info("Ledge Direction: ", ledgeDirection);
-
             if (ledgeDirection == null)
                 return true;
+
+            Logger.Info(ledgeDirection);
 
             switch (ledgeDirection)
             {
@@ -189,8 +188,11 @@ namespace Game.Gameplay
             if (IsJumping)
             {
                 Progress += LerpSpeed * (float)delta;
+
                 Vector2 position = StartPosition.Lerp(TargetPosition, Progress);
+
                 float parabolicOffset = JumpHeight * (1 - 4 * (Progress - 0.5f) * (Progress - 0.5f));
+
                 position.Y -= parabolicOffset;
 
                 Character.Position = position;
