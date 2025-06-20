@@ -50,4 +50,60 @@ namespace Game.Core
         SCENETRIGGERS,
     }
     #endregion
+
+    #region pokemon
+    public enum PokemonName
+    {
+        Bulbasaur,
+    }
+
+    public enum PokemonType
+    {
+        Normal,
+        Fire,
+        Water,
+        Grass,
+        Electric,
+        Ice,
+        Fighting,
+        Poison,
+        Ground,
+        Flying,
+        Psychic,
+        Bug,
+        Rock,
+        Ghost,
+        Dark,
+        Dragon,
+        Steel,
+        Fairy,
+        NONE
+    }
+
+    public enum Gender
+    {
+        MALE,
+        FEMALE,
+        GENDERLESS
+    }
+
+    public enum ExperienceGroup
+    {
+        MediumFast,
+        Eratic,
+        Fluctuating,
+        MediumSlow,
+        Fast,
+        Slow,
+    }
+    #endregion
+
+    #region moves
+    public enum MoveName
+    {
+        TACKLE,
+        SCRATCH
+    }
+
+    #endregion
 }

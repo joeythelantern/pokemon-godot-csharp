@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="PokemonResource" load_steps=2 format=3 uid="uid://b5dcqu8eaom1u"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/pokemon/PokemonResource.cs" id="1_0mn3h"]
+
+[resource]
+script = ExtResource("1_0mn3h")
+Name = ""
+Number = 0
+PrimaryType = 2
+SecondaryType = 6
+ExperienceGroup = 0
+Genders = Array[int]([])
+Description = ""
+Weight = 0
+Height = 0
+BaseHP = 0
+BaseAttack = 0
+BaseDefence = 0
+BaseSpecialAttack = 0
+BaseSpecialDefence = 0
+BaseSpeed = 0
+LevelUpMoves = {}
+TMs = []
+HMs = []
