@@ -10,66 +10,66 @@ namespace Game.Gameplay
 	{
 		[ExportCategory("Basic Info")]
 		[Export]
-		public PokemonName Name { get; set; }
+		public string Name;
 
 		[Export]
-		public int Number { get; set; }
+		public int Number;
 
 		[Export]
-		public PokemonType PrimaryType { get; set; }
+		public PokemonType PrimaryType;
 
 		[Export]
-		public PokemonType SecondaryType { get; set; }
+		public PokemonType SecondaryType;
 
 		[Export]
-		public ExperienceGroup ExperienceGroup { get; set; }
+		public ExperienceGroup ExperienceGroup;
 
 		[Export]
-		public Array<Gender> Genders { get; set; }
+		public Array<Gender> Genders;
 
 		[Export]
-		public string Description { get; set; }
+		public string Description;
 
 		[ExportCategory("Stats")]
 		[Export]
-		public int Weight { get; set; }
+		public int Weight;
 
 		[Export]
-		public int Height { get; set; }
+		public int Height;
 
 		[Export]
-		public int BaseHP { get; set; }
+		public int BaseHP;
 
 		[Export]
-		public int BaseAttack { get; set; }
+		public int BaseAttack;
 
 		[Export]
-		public int BaseDefence { get; set; }
+		public int BaseDefence;
 
 		[Export]
-		public int BaseSpecialAttack { get; set; }
+		public int BaseSpecialAttack;
 
 		[Export]
-		public int BaseSpecialDefence { get; set; }
+		public int BaseSpecialDefence;
 
 		[Export]
-		public int BaseSpeed { get; set; }
+		public int BaseSpeed;
 
 		[ExportCategory("Moves")]
 		[Export]
-		public Dictionary<int, MoveName> LevelUpMoves { get; set; }
+		public Array<LevelUpMove> LevelUpMoves;
 
 		[Export]
-		public Array<int> TechnicalMachines { get; set; }
+		public Array<TechnicalMachine> TechnicalMachines;
 
 		[Export]
-		public Array<int> HiddenMachines { get; set; }
+		public Array<HiddenMachine> HiddenMachines;
 
 		[ExportCategory("Sprites")]
 		[Export]
-		public Texture2D FrontSprite { get; set; }
+		public Texture2D FrontSprite;
 
 		[Export]
-		public Texture2D BackSprite { get; set; }
+		public Texture2D BackSprite;
 	}
 }

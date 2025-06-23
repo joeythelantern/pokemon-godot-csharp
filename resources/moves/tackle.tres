@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bk1756ovycjlv"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_0xloa"]
+
+[resource]
+script = ExtResource("1_0xloa")
+Type = 0
+Category = ""
+Power = 0
+PP = 0
+MaxPP = 0
+Accuracy = 0

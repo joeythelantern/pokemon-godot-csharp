@@ -4,12 +4,12 @@
 
 [resource]
 script = ExtResource("1_0mn3h")
-Name = ""
+Name = 0
 Number = 0
-PrimaryType = 2
-SecondaryType = 6
+PrimaryType = 3
+SecondaryType = 7
 ExperienceGroup = 0
-Genders = Array[int]([])
+Genders = Array[int]([0, 1])
 Description = ""
 Weight = 0
 Height = 0
@@ -20,5 +20,5 @@ BaseSpecialAttack = 0
 BaseSpecialDefence = 0
 BaseSpeed = 0
 LevelUpMoves = {}
-TMs = []
-HMs = []
+TechnicalMachines = []
+HiddenMachines = []

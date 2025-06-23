@@ -54,7 +54,7 @@ namespace Game.Core
     #region pokemon
     public enum PokemonName
     {
-        Bulbasaur,
+        bulbasaur,
     }
 
     public enum PokemonType
@@ -101,8 +101,8 @@ namespace Game.Core
     #region moves
     public enum MoveName
     {
-        TACKLE,
-        SCRATCH
+        Tackle,
+        Scratch
     }
 
     #endregion
