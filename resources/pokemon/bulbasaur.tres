@@ -1,24 +1,37 @@
-[gd_resource type="Resource" script_class="PokemonResource" load_steps=2 format=3 uid="uid://b5dcqu8eaom1u"]
+[gd_resource type="Resource" script_class="PokemonResource" load_steps=9 format=3 uid="uid://b5dcqu8eaom1u"]
 
-[ext_resource type="Script" path="res://scripts/gameplay/pokemon/PokemonResource.cs" id="1_0mn3h"]
+[ext_resource type="Texture2D" uid="uid://bowcx3opu2o8s" path="res://assets/pokemon/normal/back/1.png" id="1_crylv"]
+[ext_resource type="Script" path="res://scripts/gameplay/pokemon/PokemonResource.cs" id="1_o7xkd"]
+[ext_resource type="Script" path="res://scripts/gameplay/moves/LevelUpMove.cs" id="1_vchx4"]
+[ext_resource type="Resource" uid="uid://iwvdk8buxrxy" path="res://resources/machines/TM19.tres" id="2_4pd27"]
+[ext_resource type="Texture2D" uid="uid://db0ulwrb6s1v8" path="res://assets/pokemon/normal/front/1.png" id="2_cr2hh"]
+[ext_resource type="Texture2D" uid="uid://df0tqdhaufbyx" path="res://assets/pokemon/shiny/back/1.png" id="4_8t0th"]
+[ext_resource type="Texture2D" uid="uid://drsw2k5aekkwf" path="res://assets/pokemon/shiny/front/1.png" id="5_36sa4"]
+
+[sub_resource type="Resource" id="Resource_afkb8"]
+script = ExtResource("1_vchx4")
+Level = 0
+Move = 2
 
 [resource]
-script = ExtResource("1_0mn3h")
-Name = 0
-Number = 0
+script = ExtResource("1_o7xkd")
+Name = "Bulbasaur"
+Number = 1
 PrimaryType = 3
 SecondaryType = 7
-ExperienceGroup = 0
-Genders = Array[int]([0, 1])
+ExperienceGroup = 3
+Genders = []
 Description = ""
-Weight = 0
-Height = 0
-BaseHP = 0
-BaseAttack = 0
-BaseDefence = 0
-BaseSpecialAttack = 0
-BaseSpecialDefence = 0
-BaseSpeed = 0
-LevelUpMoves = {}
-TechnicalMachines = []
+BaseHP = 45
+BaseAttack = 49
+BaseDefence = 49
+BaseSpecialAttack = 65
+BaseSpecialDefence = 65
+BaseSpeed = 45
+LevelUpMoves = [SubResource("Resource_afkb8")]
+TechnicalMachines = [ExtResource("2_4pd27")]
 HiddenMachines = []
+FrontSprite = ExtResource("2_cr2hh")
+BackSprite = ExtResource("1_crylv")
+ShinyFrontSprite = ExtResource("5_36sa4")
+ShinyBackSprite = ExtResource("4_8t0th")

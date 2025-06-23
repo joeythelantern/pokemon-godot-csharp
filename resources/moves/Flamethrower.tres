@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://d2yt5r68stwcv"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/moves/Move.cs" id="1_sbxi5"]
+
+[resource]
+script = ExtResource("1_sbxi5")
+Name = 0
+Type = 1
+Category = 1
+Power = 95
+PP = 15
+Accuracy = 100

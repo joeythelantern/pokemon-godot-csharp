@@ -11,6 +11,6 @@ namespace Game.Gameplay
         public int Number;
 
         [Export]
-        public MoveName Move;
+        public Move Move;
     }
 }

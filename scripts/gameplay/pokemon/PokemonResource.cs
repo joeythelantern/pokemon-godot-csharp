@@ -32,12 +32,6 @@ namespace Game.Gameplay
 
 		[ExportCategory("Stats")]
 		[Export]
-		public int Weight;
-
-		[Export]
-		public int Height;
-
-		[Export]
 		public int BaseHP;
 
 		[Export]
@@ -71,5 +65,11 @@ namespace Game.Gameplay
 
 		[Export]
 		public Texture2D BackSprite;
+
+		[Export]
+		public Texture2D ShinyFrontSprite;
+
+		[Export]
+		public Texture2D ShinyBackSprite;
 	}
 }

@@ -101,8 +101,16 @@ namespace Game.Core
     #region moves
     public enum MoveName
     {
+        Flamethrower,
+        GigaDrain,
+        Scratch,
         Tackle,
-        Scratch
+    }
+
+    public enum MoveCategory
+    {
+        Physical,
+        Special
     }
 
     #endregion

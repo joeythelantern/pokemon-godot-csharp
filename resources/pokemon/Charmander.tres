@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="PokemonResource" load_steps=9 format=3 uid="uid://bes4t1d7m1fr4"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/pokemon/PokemonResource.cs" id="1_74jk7"]
+[ext_resource type="Texture2D" uid="uid://byh6omrpwkf2e" path="res://assets/pokemon/normal/back/4.png" id="1_f23d8"]
+[ext_resource type="Texture2D" uid="uid://dnvoen7yg8c2p" path="res://assets/pokemon/normal/front/4.png" id="2_j17cl"]
+[ext_resource type="Script" path="res://scripts/gameplay/moves/LevelUpMove.cs" id="3_a24ux"]
+[ext_resource type="Texture2D" uid="uid://bhsyob73g0yaw" path="res://assets/pokemon/shiny/back/4.png" id="4_auxrx"]
+[ext_resource type="Texture2D" uid="uid://bu1neqjfl3d7i" path="res://assets/pokemon/shiny/front/4.png" id="5_svwy3"]
+[ext_resource type="Resource" uid="uid://cs4howpf1h5m6" path="res://resources/machines/TM35.tres" id="6_dbf6c"]
+
+[sub_resource type="Resource" id="Resource_dava5"]
+script = ExtResource("3_a24ux")
+Level = 0
+Move = 2
+
+[resource]
+script = ExtResource("1_74jk7")
+Name = "Charmander"
+Number = 4
+PrimaryType = 1
+SecondaryType = 18
+ExperienceGroup = 3
+Genders = Array[int]([0, 1])
+Description = ""
+BaseHP = 39
+BaseAttack = 52
+BaseDefence = 43
+BaseSpecialAttack = 60
+BaseSpecialDefence = 50
+BaseSpeed = 65
+LevelUpMoves = Array[Object]([SubResource("Resource_dava5")])
+TechnicalMachines = Array[Object]([ExtResource("6_dbf6c")])
+HiddenMachines = null
+FrontSprite = ExtResource("2_j17cl")
+BackSprite = ExtResource("1_f23d8")
+ShinyFrontSprite = ExtResource("5_svwy3")
+ShinyBackSprite = ExtResource("4_auxrx")

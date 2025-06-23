@@ -15,16 +15,13 @@ namespace Game.Gameplay
         public PokemonType Type;
 
         [Export]
-        public string Category;
+        public MoveCategory Category;
 
         [Export]
         public int Power;
 
         [Export]
         public int PP;
-
-        [Export]
-        public int MaxPP;
 
         [Export]
         public int Accuracy;

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TechnicalMachine" load_steps=3 format=3 uid="uid://cs4howpf1h5m6"]
+
+[ext_resource type="Resource" uid="uid://d2yt5r68stwcv" path="res://resources/moves/Flamethrower.tres" id="1_o58b2"]
+[ext_resource type="Script" path="res://scripts/gameplay/moves/TechnicalMachine.cs" id="1_qpbbl"]
+
+[resource]
+script = ExtResource("1_qpbbl")
+Number = 35
+Move = ExtResource("1_o58b2")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Move" load_steps=2 format=3 uid="uid://cfp125e58yp0w"]
+
+[ext_resource type="Script" path="res://scripts/gameplay/moves/Move.cs" id="1_mqi0i"]
+
+[resource]
+script = ExtResource("1_mqi0i")
+Name = 1
+Type = 0
+Category = 0
+Power = 40
+PP = 35
+Accuracy = 100
