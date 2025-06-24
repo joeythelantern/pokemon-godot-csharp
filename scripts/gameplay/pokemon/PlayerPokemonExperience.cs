@@ -8,6 +8,6 @@ namespace Game.Gameplay
 		public int Experience;
 
 		[Export]
-		public string Level;
+		public int Level;
 	}
 }

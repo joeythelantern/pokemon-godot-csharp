@@ -16,6 +16,10 @@ namespace Game.Gameplay
 		public int Number;
 
 		[Export]
+		public string Description;
+
+		[ExportCategory("Attributes")]
+		[Export]
 		public PokemonType PrimaryType;
 
 		[Export]
@@ -28,7 +32,7 @@ namespace Game.Gameplay
 		public Array<Gender> Genders;
 
 		[Export]
-		public string Description;
+		public Array<Ability> Abilities;
 
 		[ExportCategory("Stats")]
 		[Export]

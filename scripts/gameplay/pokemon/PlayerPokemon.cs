@@ -33,6 +33,10 @@ namespace Game.Gameplay
 		public Status Status;
 
 		[Export]
+		public string Characteristic;
+
+		[ExportCategory("Moves")]
+		[Export]
 		public Array<Move> Moves;
 
 		[ExportCategory("Components")]

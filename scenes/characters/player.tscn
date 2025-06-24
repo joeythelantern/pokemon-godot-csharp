@@ -313,3 +313,5 @@ script = ExtResource("6_lta2g")
 PlayerInput = NodePath("../../Input")
 CharacterMovement = NodePath("../../Movement")
 StateOwner = NodePath("../..")
+
+[node name="Pokemon" type="Node" parent="."]

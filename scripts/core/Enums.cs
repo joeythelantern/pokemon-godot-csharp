@@ -145,6 +145,15 @@ namespace Game.Core
         Blaze,
         SolarPower
     }
+
+    public enum Stat
+    {
+        Attack,
+        Defence,
+        Speed,
+        SpecialAttack,
+        SpecialDefence
+    }
     #endregion
 
     #region moves
