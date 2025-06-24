@@ -54,7 +54,8 @@ namespace Game.Core
     #region pokemon
     public enum PokemonName
     {
-        bulbasaur,
+        Bulbasaur,
+        Charmander
     }
 
     public enum PokemonType
@@ -80,6 +81,46 @@ namespace Game.Core
         NONE
     }
 
+    public enum Nature
+    {
+        Hardy,
+        Lonely,
+        Brave,
+        Adamant,
+        Naughty,
+        Bold,
+        Docile,
+        Relaxed,
+        Impish,
+        Lax,
+        Timid,
+        Hasty,
+        Serious,
+        Jolly,
+        Naive,
+        Modest,
+        Mild,
+        Quiet,
+        Bashful,
+        Rash,
+        Calm,
+        Gentle,
+        Sassy,
+        Careful,
+        Quirky
+    }
+
+    public enum Status
+    {
+        SLEEP,
+        POISON,
+        PARALYSIS,
+        BURN,
+        FREEZE,
+        FAINT,
+        NONE
+    }
+
     public enum Gender
     {
         MALE,
@@ -96,6 +137,14 @@ namespace Game.Core
         Fast,
         Slow,
     }
+
+    public enum Ability
+    {
+        Overgrow,
+        Chlorophyll,
+        Blaze,
+        SolarPower
+    }
     #endregion
 
     #region moves
@@ -110,7 +159,8 @@ namespace Game.Core
     public enum MoveCategory
     {
         Physical,
-        Special
+        Special,
+        Effect
     }
 
     #endregion

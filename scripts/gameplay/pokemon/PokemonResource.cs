@@ -10,7 +10,7 @@ namespace Game.Gameplay
 	{
 		[ExportCategory("Basic Info")]
 		[Export]
-		public string Name;
+		public PokemonName Name;
 
 		[Export]
 		public int Number;

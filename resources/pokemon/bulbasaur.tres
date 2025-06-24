@@ -15,13 +15,13 @@ Move = 2
 
 [resource]
 script = ExtResource("1_o7xkd")
-Name = "Bulbasaur"
+Name = 0
 Number = 1
 PrimaryType = 3
 SecondaryType = 7
 ExperienceGroup = 3
-Genders = []
-Description = ""
+Genders = [0, 1]
+Description = "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON."
 BaseHP = 45
 BaseAttack = 49
 BaseDefence = 49

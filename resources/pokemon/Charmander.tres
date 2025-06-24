@@ -15,13 +15,13 @@ Move = 2
 
 [resource]
 script = ExtResource("1_74jk7")
-Name = "Charmander"
+Name = 1
 Number = 4
 PrimaryType = 1
 SecondaryType = 18
 ExperienceGroup = 3
 Genders = Array[int]([0, 1])
-Description = ""
+Description = "From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out."
 BaseHP = 39
 BaseAttack = 52
 BaseDefence = 43
@@ -30,7 +30,7 @@ BaseSpecialDefence = 50
 BaseSpeed = 65
 LevelUpMoves = Array[Object]([SubResource("Resource_dava5")])
 TechnicalMachines = Array[Object]([ExtResource("6_dbf6c")])
-HiddenMachines = null
+HiddenMachines = []
 FrontSprite = ExtResource("2_j17cl")
 BackSprite = ExtResource("1_f23d8")
 ShinyFrontSprite = ExtResource("5_svwy3")
