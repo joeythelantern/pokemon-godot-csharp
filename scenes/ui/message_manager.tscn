@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://7lnryey4ibwf"]
+
+[ext_resource type="Script" path="res://scripts/ui/MessageManager.cs" id="1_poklo"]
+[ext_resource type="Texture2D" uid="uid://c3yqc7n3jcfh6" path="res://assets/ui/message_box.png" id="1_ps5le"]
+[ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="2_2rnny"]
+
+[node name="MessageManager" type="CanvasLayer" node_paths=PackedStringArray("Box", "Label")]
+script = ExtResource("1_poklo")
+Box = NodePath("Control/ChatBox")
+Label = NodePath("Control/ChatBox/RichTextLabel")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChatBox" type="NinePatchRect" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.263889
+anchor_top = 0.740741
+anchor_right = 0.736111
+anchor_bottom = 0.901235
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ps5le")
+region_rect = Rect2(-3, -3, 237, 83)
+patch_margin_left = 17
+patch_margin_top = 14
+patch_margin_right = 13
+patch_margin_bottom = 14
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ChatBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0294118
+anchor_top = 0.125
+anchor_right = 0.970589
+anchor_bottom = 0.875
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.384314, 0.458824, 0.435294, 1)
+theme_override_fonts/normal_font = ExtResource("2_2rnny")
+theme_override_font_sizes/normal_font_size = 37
+text = "Placeholder"
+scroll_following = true
+metadata/_edit_use_anchors_ = true

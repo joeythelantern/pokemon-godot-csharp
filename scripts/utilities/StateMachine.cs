@@ -42,5 +42,22 @@ namespace Game.Utilities
                 }
             }
         }
+
+        public void ChangeState(string newState)
+        {
+            var _state = GetNode<State>(newState);
+
+            CurrentState?.ExitState();
+            CurrentState = _state;
+            CurrentState?.EnterState();
+
+            foreach (Node child in GetChildren())
+            {
+                if (child is State state)
+                {
+                    state.SetProcess(child == CurrentState);
+                }
+            }
+        }
     }
 }
