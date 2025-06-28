@@ -1,5 +1,6 @@
 using Godot;
 using Game.Gameplay;
+using Game.UI;
 
 namespace Game.Core;
 
@@ -22,6 +23,8 @@ public partial class GameManager : Node
 		Logger.Info("Loading game manager ...");
 
 		SceneManager.ChangeLevel(spawn: true);
+
+		MessageManager.PlayText("Hey!");
 	}
 
 	public static SubViewport GetGameViewPort()

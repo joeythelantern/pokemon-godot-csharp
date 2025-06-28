@@ -57,6 +57,13 @@ public partial class MessageManager : CanvasLayer
 		if (!Instance.Box.Visible)
 			Instance.Box.Visible = true;
 
+		if (Instance.Messages.Count == 0)
+		{
+			Logger.Info("Bye bye");
+			Instance.Box.Visible = false;
+			return;
+		}
+
 		Instance.IsScrolling = true;
 		Instance.Label.Text = "";
 
