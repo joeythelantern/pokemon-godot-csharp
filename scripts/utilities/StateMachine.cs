@@ -1,62 +1,61 @@
 using Godot;
 
-namespace Game.Utilities
+namespace Game.Utilities;
+
+public partial class StateMachine : Node
 {
-    public partial class StateMachine : Node
+    [ExportCategory("State Machine Vars")]
+    [Export]
+    public Node Customer;
+
+    [Export]
+    public State CurrentState;
+
+    public override void _Ready()
     {
-        [ExportCategory("State Machine Vars")]
-        [Export]
-        public Node Customer;
-
-        [Export]
-        public State CurrentState;
-
-        public override void _Ready()
+        foreach (Node child in GetChildren())
         {
-            foreach (Node child in GetChildren())
+            if (child is State state)
             {
-                if (child is State state)
-                {
-                    state.StateOwner = Customer;
-                    state.SetProcess(false);
-                }
+                state.StateOwner = Customer;
+                state.SetProcess(false);
             }
         }
+    }
 
-        public string GetCurrentState()
+    public string GetCurrentState()
+    {
+        return CurrentState.Name.ToString();
+    }
+
+    public void ChangeState(State newState)
+    {
+        CurrentState?.ExitState();
+        CurrentState = newState;
+        CurrentState?.EnterState();
+
+        foreach (Node child in GetChildren())
         {
-            return CurrentState.Name.ToString();
-        }
-
-        public void ChangeState(State newState)
-        {
-            CurrentState?.ExitState();
-            CurrentState = newState;
-            CurrentState?.EnterState();
-
-            foreach (Node child in GetChildren())
+            if (child is State state)
             {
-                if (child is State state)
-                {
-                    state.SetProcess(child == CurrentState);
-                }
+                state.SetProcess(child == CurrentState);
             }
         }
+    }
 
-        public void ChangeState(string newState)
+    public void ChangeState(string newState)
+    {
+        var _state = GetNode<State>(newState);
+
+        CurrentState?.ExitState();
+        CurrentState = _state;
+        CurrentState?.EnterState();
+
+        foreach (Node child in GetChildren())
         {
-            var _state = GetNode<State>(newState);
-
-            CurrentState?.ExitState();
-            CurrentState = _state;
-            CurrentState?.EnterState();
-
-            foreach (Node child in GetChildren())
+            if (child is State state)
             {
-                if (child is State state)
-                {
-                    state.SetProcess(child == CurrentState);
-                }
+                state.SetProcess(child == CurrentState);
             }
         }
     }

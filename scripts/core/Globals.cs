@@ -16,9 +16,4 @@ public partial class Globals : Node
 
         Logger.Info("Loading Globals ...");
     }
-
-    public static void EmitGlobalSignal(StringName signal, params Variant[] args)
-    {
-        Instance.EmitSignal(signal, args);
-    }
 }
