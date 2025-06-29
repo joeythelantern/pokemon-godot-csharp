@@ -24,7 +24,7 @@ public partial class GameManager : Node
 
 		SceneManager.ChangeLevel(spawn: true);
 
-		MessageManager.PlayText("Hey!");
+		MessageManager.PlayText("Hey!", "Welcome to PokeGodot!");
 	}
 
 	public static SubViewport GetGameViewPort()

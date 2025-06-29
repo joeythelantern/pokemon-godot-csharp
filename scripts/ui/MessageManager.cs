@@ -29,21 +29,14 @@ public partial class MessageManager : CanvasLayer
 		Logger.Info("Loading Message Manager ...");
 	}
 
-	public static void PlayText(string message)
+	public static void PlayText(params string[] payload)
 	{
 		if (IsReading()) return;
-
-		PlayText([message]);
-	}
-
-	public static void PlayText(Array<string> payload)
-	{
-		if (IsReading()) return;
-		if (payload.Count == 0) return;
+		if (payload.Length == 0) return;
 
 		Signals.EmitGlobalSignal(Signals.SignalName.MessageBoxOpen, true);
 
-		Instance.Messages = payload;
+		Instance.Messages = [.. payload];
 		ScrollText();
 	}
 
