@@ -5,6 +5,7 @@ namespace Game.Gameplay;
 
 public partial class Player : CharacterBody2D
 {
+    [ExportCategory("Components")]
     [Export]
     public StateMachine StateMachine;
 
