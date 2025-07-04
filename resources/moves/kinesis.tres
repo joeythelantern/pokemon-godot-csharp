@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_8dtg0"]
 [ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_tbclh"]
 
-[sub_resource type="Resource" id="Resource_jtrru"]
+[sub_resource type="Resource" id="Resource_m5inl"]
 script = ExtResource("1_8dtg0")
 Stat = 7
 Change = -1
@@ -26,4 +26,4 @@ Power = 0
 PP = 15
 AilmentChance = 0
 Ailment = 0
-StatChanges = [SubResource("Resource_jtrru")]
+StatChanges = [SubResource("Resource_m5inl")]
