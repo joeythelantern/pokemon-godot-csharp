@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b4fnhi1cffgm"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_s32sc"]
+
+[resource]
+script = ExtResource("1_s32sc")
+Name = "sky-attack"
+Type = 10
+Category = 0
+Accuracy = 90
+CritRate = 1
+Drain = 0
+FlinchChance = 30
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 140
+PP = 5
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://vfjpa3yftvxg"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_yuj8s"]
+
+[resource]
+script = ExtResource("1_yuj8s")
+Name = "rolling-kick"
+Type = 7
+Category = 0
+Accuracy = 85
+CritRate = 0
+Drain = 0
+FlinchChance = 30
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 60
+PP = 15
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

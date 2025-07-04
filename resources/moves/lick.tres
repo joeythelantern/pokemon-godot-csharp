@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ca7d2dnnr3a2w"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_v77rk"]
+
+[resource]
+script = ExtResource("1_v77rk")
+Name = "lick"
+Type = 14
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 30
+PP = 30
+AilmentChance = 30
+Ailment = 3
+StatChanges = []

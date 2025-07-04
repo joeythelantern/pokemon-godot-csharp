@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8t0w7aw7gmx3"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_0g5mb"]
+
+[resource]
+script = ExtResource("1_0g5mb")
+Name = "ice-beam"
+Type = 6
+Category = 1
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 90
+PP = 10
+AilmentChance = 10
+Ailment = 2
+StatChanges = []

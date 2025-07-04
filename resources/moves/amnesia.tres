@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c7pg3o187qf5h"]
+
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_7tm5u"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_156to"]
+
+[sub_resource type="Resource" id="Resource_ncjtj"]
+script = ExtResource("1_7tm5u")
+Stat = 5
+Change = 2
+
+[resource]
+script = ExtResource("1_156to")
+Name = "amnesia"
+Type = 11
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = [SubResource("Resource_ncjtj")]

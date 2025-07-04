@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b8wqs4g4jrhpk"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_dk4uo"]
+
+[resource]
+script = ExtResource("1_dk4uo")
+Name = "struggle"
+Type = 1
+Category = 0
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = -25
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 50
+PP = 1
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

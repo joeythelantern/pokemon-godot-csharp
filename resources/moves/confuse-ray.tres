@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bow6rdauyfl6h"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_api12"]
+
+[resource]
+script = ExtResource("1_api12")
+Name = "confuse-ray"
+Type = 14
+Category = 2
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = 5
+MinHits = -1
+MinTurns = 2
+Power = 0
+PP = 10
+AilmentChance = 0
+Ailment = 7
+StatChanges = []

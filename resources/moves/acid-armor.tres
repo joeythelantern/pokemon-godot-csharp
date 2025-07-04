@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://df14m3mli7sgw"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_je01i"]
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_wouij"]
+
+[sub_resource type="Resource" id="Resource_k66vu"]
+script = ExtResource("1_wouij")
+Stat = 3
+Change = 2
+
+[resource]
+script = ExtResource("1_je01i")
+Name = "acid-armor"
+Type = 8
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = [SubResource("Resource_k66vu")]

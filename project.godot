@@ -25,6 +25,10 @@ SceneManager="*res://scenes/core/scene_manager.tscn"
 
 project/assembly_name="Pokemon-Godot"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MoveImporter/plugin.cfg")
+
 [input]
 
 use={

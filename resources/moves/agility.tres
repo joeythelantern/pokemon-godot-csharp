@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b8chqwrmpede7"]
+
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_6m1xa"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_ric0d"]
+
+[sub_resource type="Resource" id="Resource_ket2c"]
+script = ExtResource("1_6m1xa")
+Stat = 6
+Change = 2
+
+[resource]
+script = ExtResource("2_ric0d")
+Name = "agility"
+Type = 11
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 30
+AilmentChance = 0
+Ailment = 0
+StatChanges = [SubResource("Resource_ket2c")]

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cmi63lsw8lmyp"]
+
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_t701m"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_13r21"]
+
+[sub_resource type="Resource" id="Resource_374xq"]
+script = ExtResource("1_t701m")
+Stat = 2
+Change = -1
+
+[resource]
+script = ExtResource("2_13r21")
+Name = "growl"
+Type = 1
+Category = 2
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 40
+AilmentChance = 0
+Ailment = 0
+StatChanges = [SubResource("Resource_374xq")]

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bovmpkouog3mg"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_n0b4k"]
+
+[resource]
+script = ExtResource("1_n0b4k")
+Name = "take-down"
+Type = 1
+Category = 0
+Accuracy = 85
+CritRate = 0
+Drain = -25
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 90
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

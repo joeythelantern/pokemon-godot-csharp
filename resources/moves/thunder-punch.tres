@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://datcd7r0f6cny"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_f2a56"]
+
+[resource]
+script = ExtResource("1_f2a56")
+Name = "thunder-punch"
+Type = 5
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 75
+PP = 15
+AilmentChance = 10
+Ailment = 3
+StatChanges = []

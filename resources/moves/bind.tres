@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ddgwaxvjtpyk6"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_jeyf0"]
+
+[resource]
+script = ExtResource("1_jeyf0")
+Name = "bind"
+Type = 1
+Category = 0
+Accuracy = 85
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = 6
+MinHits = -1
+MinTurns = 5
+Power = 15
+PP = 20
+AilmentChance = 100
+Ailment = 8
+StatChanges = []

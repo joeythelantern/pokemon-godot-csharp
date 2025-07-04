@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bwsavmtehca8x"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_yn8yl"]
+
+[resource]
+script = ExtResource("1_yn8yl")
+Name = "spore"
+Type = 4
+Category = 2
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = 4
+MinHits = -1
+MinTurns = 2
+Power = 0
+PP = 15
+AilmentChance = 0
+Ailment = 6
+StatChanges = []

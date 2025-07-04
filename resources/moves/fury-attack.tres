@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://fl7y68jk8xfc"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_nlmqh"]
+
+[resource]
+script = ExtResource("1_nlmqh")
+Name = "fury-attack"
+Type = 1
+Category = 0
+Accuracy = 85
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 5
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 15
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

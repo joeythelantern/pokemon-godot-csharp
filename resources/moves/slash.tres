@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b56kwhkleg3p3"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_s0wgw"]
+
+[resource]
+script = ExtResource("1_s0wgw")
+Name = "slash"
+Type = 1
+Category = 0
+Accuracy = 100
+CritRate = 1
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 70
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

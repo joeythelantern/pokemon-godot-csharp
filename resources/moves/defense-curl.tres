@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://gdw5s3t0256w"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_oxr6e"]
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_v8uho"]
+
+[sub_resource type="Resource" id="Resource_25g0u"]
+script = ExtResource("1_v8uho")
+Stat = 3
+Change = 1
+
+[resource]
+script = ExtResource("1_oxr6e")
+Name = "defense-curl"
+Type = 1
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 40
+AilmentChance = 0
+Ailment = 0
+StatChanges = [SubResource("Resource_25g0u")]

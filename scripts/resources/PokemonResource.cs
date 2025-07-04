@@ -1,5 +1,3 @@
-using Godot;
-
 namespace Game.Resources;
 
 public enum PokemonType
@@ -23,4 +21,34 @@ public enum PokemonType
     Dark,
     Steel,
     Fairy
+}
+
+
+public enum PokemonAilment
+{
+    None,
+    Burn,
+    Freeze,
+    Paralysis,
+    Poison,
+    Toxic,
+    Sleep,
+    Confusion,
+    Trap,
+    LeechSeed,
+    Disable,
+    Unknown
+}
+
+public enum PokemonStat
+{
+    None,
+    HP,
+    Attack,
+    Defense,
+    SpecialAttack,
+    SpecialDefense,
+    Speed,
+    Accuracy,
+    Evasion
 }

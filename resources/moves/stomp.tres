@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b6sgnq2fuv8uk"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_acp63"]
+
+[resource]
+script = ExtResource("1_acp63")
+Name = "stomp"
+Type = 1
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 30
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 65
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

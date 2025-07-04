@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://msmcvvq6g3j0"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_gal85"]
+
+[resource]
+script = ExtResource("1_gal85")
+Name = "pin-missile"
+Type = 12
+Category = 0
+Accuracy = 95
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 5
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 25
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

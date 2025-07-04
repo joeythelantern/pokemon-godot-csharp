@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ctuflq02vqfvi"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_xj8s3"]
+
+[resource]
+script = ExtResource("1_xj8s3")
+Name = "clamp"
+Type = 3
+Category = 0
+Accuracy = 85
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = 6
+MinHits = -1
+MinTurns = 5
+Power = 35
+PP = 15
+AilmentChance = 100
+Ailment = 8
+StatChanges = []

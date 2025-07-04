@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bjnyx83wd05o1"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_l5of8"]
+
+[resource]
+script = ExtResource("1_l5of8")
+Name = "fire-punch"
+Type = 2
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 75
+PP = 15
+AilmentChance = 10
+Ailment = 1
+StatChanges = []

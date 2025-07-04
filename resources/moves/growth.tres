@@ -1,0 +1,34 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bw6uwp7bhsx8o"]
+
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_7n3t1"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_jd6u8"]
+
+[sub_resource type="Resource" id="Resource_capfk"]
+script = ExtResource("1_7n3t1")
+Stat = 2
+Change = 1
+
+[sub_resource type="Resource" id="Resource_75yh8"]
+script = ExtResource("1_7n3t1")
+Stat = 4
+Change = 1
+
+[resource]
+script = ExtResource("2_jd6u8")
+Name = "growth"
+Type = 1
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = [SubResource("Resource_capfk"), SubResource("Resource_75yh8")]

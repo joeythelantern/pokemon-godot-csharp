@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://seoxl1wrsbhn"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_xp1cj"]
+
+[resource]
+script = ExtResource("1_xp1cj")
+Name = "reflect"
+Type = 11
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

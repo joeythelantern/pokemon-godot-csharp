@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cr7ni7h4omy5y"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_w5u45"]
+
+[resource]
+script = ExtResource("1_w5u45")
+Name = "toxic"
+Type = 8
+Category = 2
+Accuracy = 90
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = 15
+MinHits = -1
+MinTurns = 15
+Power = 0
+PP = 10
+AilmentChance = 0
+Ailment = 4
+StatChanges = []
