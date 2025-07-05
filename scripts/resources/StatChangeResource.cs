@@ -1,3 +1,4 @@
+using Game.Core;
 using Godot;
 
 namespace Game.Resources;
