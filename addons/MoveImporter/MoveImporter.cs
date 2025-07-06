@@ -90,6 +90,7 @@ public partial class MoveImporter : EditorPlugin
 
 		var typeString = data["type"]?["name"]?.ToString();
 		var type = PokemonType.None;
+
 		if (!string.IsNullOrEmpty(typeString))
 		{
 			if (Enum.TryParse(typeString, true, out PokemonType parsedType))
