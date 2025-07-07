@@ -60,11 +60,11 @@ public partial class PokemonResource : Resource
 
     [ExportCategory("Moves")]
     [Export]
-    public Array<LevelUpMoveResource> LevelUpMoves;
+    public Array<string> LearnableMoves;
 
     [Export]
-    public Array<TMResource> TechnicalMachines;
+    public Dictionary<string, int> LevelUpMoves;
 
     [Export]
-    public Array<HMResource> HiddenMachines;
+    public Array<string> Machines;
 }

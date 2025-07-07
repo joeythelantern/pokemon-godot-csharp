@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using HttpClient = System.Net.Http.HttpClient;
+using Godot.Collections;
 
 [Tool]
 public partial class PokemonImporter : EditorPlugin
@@ -165,9 +166,9 @@ public partial class PokemonImporter : EditorPlugin
 		pokemonResource.ShinyFrontSprite = await LoadTextureFromUrl(frontShinyUrl, spriteFolderPath, $"{pokemonName}_shiny_front.png");
 		pokemonResource.ShinyBackSprite = await LoadTextureFromUrl(backShinyUrl, spriteFolderPath, $"{pokemonName}_shiny_back.png");
 
-		pokemonResource.LevelUpMoves = [];
-		pokemonResource.TechnicalMachines = [];
-		pokemonResource.HiddenMachines = [];
+		pokemonResource.LearnableMoves = GetAllLearnableMovesForGenOne((JArray)pokemonData["moves"]);
+		pokemonResource.LevelUpMoves = GetLevelUpResourcesForGenOne((JArray)pokemonData["moves"]);
+		pokemonResource.Machines = GetAllMachinesForGenOne((JArray)pokemonData["moves"]);
 
 		var savePath = $"{pokemonFolderPath}{pokemonName}.tres";
 
@@ -213,6 +214,78 @@ public partial class PokemonImporter : EditorPlugin
 			Logger.Error($"Failed to create Texture2D from downloaded sprite {resourcePath}: {e.Message}");
 			return null;
 		}
+	}
+
+	public Array<string> GetAllLearnableMovesForGenOne(JArray moves)
+	{
+		Array<string> learnableMoves = [];
+
+		foreach (var move in moves)
+		{
+			string name = (string)move["move"]["name"];
+
+			foreach (var versionGroup in move["version_group_details"])
+			{
+				string version = (string)versionGroup["version_group"]["name"];
+
+				if (version == "red-blue" || version == "yellow")
+				{
+					learnableMoves.Add(name);
+					break;
+				}
+			}
+		}
+
+		return learnableMoves;
+	}
+
+	public Dictionary<string, int> GetLevelUpResourcesForGenOne(JArray moves)
+	{
+		Dictionary<string, int> levelUpMoves = [];
+
+		foreach (var move in moves)
+		{
+			string name = (string)move["move"]["name"];
+
+			foreach (var versionGroup in move["version_group_details"])
+			{
+				string version = (string)versionGroup["version_group"]["name"];
+				int level = (int)versionGroup["level_learned_at"];
+
+				if ((version == "red-blue" || version == "yellow") && level != 0)
+				{
+					levelUpMoves.Add(name, level);
+
+					break;
+				}
+			}
+		}
+
+		return levelUpMoves;
+	}
+
+	public Array<string> GetAllMachinesForGenOne(JArray moves)
+	{
+		Array<string> machineMoves = [];
+
+		foreach (var move in moves)
+		{
+			string name = (string)move["move"]["name"];
+
+			foreach (var versionGroup in move["version_group_details"])
+			{
+				string version = (string)versionGroup["version_group"]["name"];
+				string method = (string)versionGroup["move_learn_method"]["name"];
+
+				if ((version == "red-blue" || version == "yellow") && method == "machine")
+				{
+					machineMoves.Add(name);
+					break;
+				}
+			}
+		}
+
+		return machineMoves;
 	}
 }
 #endif
