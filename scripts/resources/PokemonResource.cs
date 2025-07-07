@@ -9,13 +9,13 @@ public partial class PokemonResource : Resource
 {
     [ExportCategory("Basic Info")]
     [Export]
-    public string Name = "";
+    public string Name;
 
     [Export]
-    public string UUID = "";
+    public int Id;
 
     [Export]
-    public string Description = "";
+    public string Description;
 
     [ExportCategory("Stats")]
     [Export]
