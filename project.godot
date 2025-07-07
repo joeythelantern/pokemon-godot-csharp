@@ -27,7 +27,7 @@ project/assembly_name="Pokemon-Godot"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/MoveImporter/plugin.cfg")
+enabled=PackedStringArray("res://addons/MoveImporter/plugin.cfg", "res://addons/pokemonimporter/plugin.cfg")
 
 [input]
 

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cpx6egnysker8"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cpx6egnysker8"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_3ym7m"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_yjnw5"]
 
 [resource]
-script = ExtResource("1_3ym7m")
+script = ExtResource("1_yjnw5")
 Name = "explosion"
 Type = 1
 Category = 0

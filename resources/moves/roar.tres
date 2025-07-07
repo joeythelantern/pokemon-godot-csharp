@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cv67k7ncplh3i"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cv67k7ncplh3i"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_yyh1i"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_5t6vm"]
 
 [resource]
-script = ExtResource("1_yyh1i")
+script = ExtResource("1_5t6vm")
 Name = "roar"
 Type = 1
 Category = 2

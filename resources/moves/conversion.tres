@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c0qlbeku32ss3"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://c0qlbeku32ss3"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_1sa1n"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_82iif"]
 
 [resource]
-script = ExtResource("1_1sa1n")
+script = ExtResource("1_82iif")
 Name = "conversion"
 Type = 1
 Category = 2

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bwsavmtehca8x"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bwsavmtehca8x"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_yn8yl"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_07m6v"]
 
 [resource]
-script = ExtResource("1_yn8yl")
+script = ExtResource("1_07m6v")
 Name = "spore"
 Type = 4
 Category = 2

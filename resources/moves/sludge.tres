@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cu4w302luhrt8"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cu4w302luhrt8"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_74wk2"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_8ib4v"]
 
 [resource]
-script = ExtResource("1_74wk2")
+script = ExtResource("1_8ib4v")
 Name = "sludge"
 Type = 8
 Category = 1

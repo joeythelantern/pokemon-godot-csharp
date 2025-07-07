@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b8chqwrmpede7"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=4 format=3 uid="uid://b8chqwrmpede7"]
 
-[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_6m1xa"]
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_ric0d"]
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_uayjf"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_5kbn7"]
 
-[sub_resource type="Resource" id="Resource_qudhv"]
-script = ExtResource("1_6m1xa")
+[sub_resource type="Resource" id="Resource_w5mjf"]
+script = ExtResource("1_uayjf")
 Stat = 6
 Change = 2
 
 [resource]
-script = ExtResource("2_ric0d")
+script = ExtResource("2_5kbn7")
 Name = "agility"
 Type = 11
 Category = 2
@@ -26,4 +26,4 @@ Power = 0
 PP = 30
 AilmentChance = 0
 Ailment = 0
-StatChanges = [SubResource("Resource_qudhv")]
+StatChanges = [SubResource("Resource_w5mjf")]

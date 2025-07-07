@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://6xb4r6vlu8ho"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_eds8m"]
+
+[resource]
+script = ExtResource("1_eds8m")
+Name = "fire-blast"
+Type = 2
+Category = 1
+Accuracy = 85
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 110
+PP = 5
+AilmentChance = 10
+Ailment = 1
+StatChanges = []

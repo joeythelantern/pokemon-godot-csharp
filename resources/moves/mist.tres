@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cgqu30w6ehbyu"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cgqu30w6ehbyu"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_2uy8o"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_j6ry5"]
 
 [resource]
-script = ExtResource("1_2uy8o")
+script = ExtResource("1_j6ry5")
 Name = "mist"
 Type = 6
 Category = 2

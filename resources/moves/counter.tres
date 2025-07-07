@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://beyo03sc2dc4v"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://beyo03sc2dc4v"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_ngknv"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_kvoqy"]
 
 [resource]
-script = ExtResource("1_ngknv")
+script = ExtResource("1_kvoqy")
 Name = "counter"
 Type = 7
 Category = 0

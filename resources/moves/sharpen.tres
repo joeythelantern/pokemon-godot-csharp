@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bcdpwnfrahv8v"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=4 format=3 uid="uid://bcdpwnfrahv8v"]
 
-[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_a8si1"]
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_2e6qk"]
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_b7fpr"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_ryefk"]
 
-[sub_resource type="Resource" id="Resource_arbsw"]
-script = ExtResource("1_a8si1")
+[sub_resource type="Resource" id="Resource_s82ng"]
+script = ExtResource("1_b7fpr")
 Stat = 2
 Change = 1
 
 [resource]
-script = ExtResource("2_2e6qk")
+script = ExtResource("2_ryefk")
 Name = "sharpen"
 Type = 1
 Category = 2
@@ -26,4 +26,4 @@ Power = 0
 PP = 30
 AilmentChance = 0
 Ailment = 0
-StatChanges = [SubResource("Resource_arbsw")]
+StatChanges = [SubResource("Resource_s82ng")]

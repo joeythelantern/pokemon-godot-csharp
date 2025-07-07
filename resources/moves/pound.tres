@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cc7j1owk0qj2n"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cc7j1owk0qj2n"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_odak2"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_racib"]
 
 [resource]
-script = ExtResource("1_odak2")
+script = ExtResource("1_racib")
 Name = "pound"
 Type = 1
 Category = 0

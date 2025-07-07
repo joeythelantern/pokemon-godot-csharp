@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://guswxyy644w7"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://guswxyy644w7"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_ta3jt"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_680yi"]
 
 [resource]
-script = ExtResource("1_ta3jt")
+script = ExtResource("1_680yi")
 Name = "glare"
 Type = 1
 Category = 2

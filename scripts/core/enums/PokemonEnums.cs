@@ -43,7 +43,7 @@ public enum PokemonAilment
 public enum PokemonStat
 {
     None,
-    HP,
+    Hp,
     Attack,
     Defense,
     SpecialAttack,

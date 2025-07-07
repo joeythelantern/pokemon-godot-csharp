@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b6sgnq2fuv8uk"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b6sgnq2fuv8uk"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_acp63"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_xx2uc"]
 
 [resource]
-script = ExtResource("1_acp63")
+script = ExtResource("1_xx2uc")
 Name = "stomp"
 Type = 1
 Category = 0

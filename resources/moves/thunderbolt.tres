@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b62wcqrivjbf7"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b62wcqrivjbf7"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_33a7l"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_7j355"]
 
 [resource]
-script = ExtResource("1_33a7l")
+script = ExtResource("1_7j355")
 Name = "thunderbolt"
 Type = 5
 Category = 1

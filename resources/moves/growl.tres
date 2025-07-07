@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cmi63lsw8lmyp"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=4 format=3 uid="uid://cmi63lsw8lmyp"]
 
-[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_t701m"]
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_13r21"]
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_ni0ex"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_0rl6c"]
 
-[sub_resource type="Resource" id="Resource_kuv8d"]
-script = ExtResource("1_t701m")
+[sub_resource type="Resource" id="Resource_fbmim"]
+script = ExtResource("1_ni0ex")
 Stat = 2
 Change = -1
 
 [resource]
-script = ExtResource("2_13r21")
+script = ExtResource("2_0rl6c")
 Name = "growl"
 Type = 1
 Category = 2
@@ -26,4 +26,4 @@ Power = 0
 PP = 40
 AilmentChance = 0
 Ailment = 0
-StatChanges = [SubResource("Resource_kuv8d")]
+StatChanges = [SubResource("Resource_fbmim")]

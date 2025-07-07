@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bbofxhanuh3oo"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=4 format=3 uid="uid://bbofxhanuh3oo"]
 
-[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_s5y13"]
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_rbh72"]
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_qhbkc"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_nq5v2"]
 
-[sub_resource type="Resource" id="Resource_6tlty"]
-script = ExtResource("1_s5y13")
+[sub_resource type="Resource" id="Resource_6gf6e"]
+script = ExtResource("1_qhbkc")
 Stat = 6
 Change = -1
 
 [resource]
-script = ExtResource("2_rbh72")
+script = ExtResource("2_nq5v2")
 Name = "constrict"
 Type = 1
 Category = 0
@@ -26,4 +26,4 @@ Power = 10
 PP = 35
 AilmentChance = 0
 Ailment = 0
-StatChanges = [SubResource("Resource_6tlty")]
+StatChanges = [SubResource("Resource_6gf6e")]

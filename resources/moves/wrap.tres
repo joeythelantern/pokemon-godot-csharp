@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://enarwftc15dj"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://enarwftc15dj"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_xy5y6"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_ehpjf"]
 
 [resource]
-script = ExtResource("1_xy5y6")
+script = ExtResource("1_ehpjf")
 Name = "wrap"
 Type = 1
 Category = 0

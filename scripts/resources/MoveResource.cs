@@ -31,6 +31,8 @@ public enum MoveCategory
     Status
 }
 
+[GlobalClass]
+[Tool]
 public partial class MoveResource : Resource
 {
     [ExportCategory("Basic Info")]

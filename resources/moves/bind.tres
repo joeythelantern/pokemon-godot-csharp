@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ddgwaxvjtpyk6"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://ddgwaxvjtpyk6"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_jeyf0"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_gdd1u"]
 
 [resource]
-script = ExtResource("1_jeyf0")
+script = ExtResource("1_gdd1u")
 Name = "bind"
 Type = 1
 Category = 0

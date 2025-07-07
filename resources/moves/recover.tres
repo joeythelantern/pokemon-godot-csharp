@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dl0liennc51rc"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dl0liennc51rc"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_4gwhx"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_luef7"]
 
 [resource]
-script = ExtResource("1_4gwhx")
+script = ExtResource("1_luef7")
 Name = "recover"
 Type = 1
 Category = 2

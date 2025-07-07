@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bvhhr5q3uxhkm"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bvhhr5q3uxhkm"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_3hfbp"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_dgekv"]
 
 [resource]
-script = ExtResource("1_3hfbp")
+script = ExtResource("1_dgekv")
 Name = "gust"
 Type = 10
 Category = 1

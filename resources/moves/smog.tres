@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://sfw5xutosvwu"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://sfw5xutosvwu"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_d5pgu"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_g1xm4"]
 
 [resource]
-script = ExtResource("1_d5pgu")
+script = ExtResource("1_g1xm4")
 Name = "smog"
 Type = 8
 Category = 1

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://by7nh6imcg674"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://by7nh6imcg674"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_tlyvv"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_m62y1"]
 
 [resource]
-script = ExtResource("1_tlyvv")
+script = ExtResource("1_m62y1")
 Name = "psybeam"
 Type = 11
 Category = 1

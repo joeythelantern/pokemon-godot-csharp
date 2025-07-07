@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c5cpcdao7wr0i"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://c5cpcdao7wr0i"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_6ay2t"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_3ind4"]
 
 [resource]
-script = ExtResource("1_6ay2t")
+script = ExtResource("1_3ind4")
 Name = "metronome"
 Type = 1
 Category = 2

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://denmx6did7tfx"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://denmx6did7tfx"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_xe3da"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_wbe2w"]
 
 [resource]
-script = ExtResource("1_xe3da")
+script = ExtResource("1_wbe2w")
 Name = "haze"
 Type = 6
 Category = 2

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://du33eebp7i67p"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://du33eebp7i67p"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_virpb"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_1mkth"]
 
 [resource]
-script = ExtResource("1_virpb")
+script = ExtResource("1_1mkth")
 Name = "splash"
 Type = 1
 Category = 2

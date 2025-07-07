@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dcgks4dgr4gfy"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dcgks4dgr4gfy"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_nylj5"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_xhaj2"]
 
 [resource]
-script = ExtResource("1_nylj5")
+script = ExtResource("1_xhaj2")
 Name = "absorb"
 Type = 4
 Category = 1

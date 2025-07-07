@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://yw0g034ym461"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://yw0g034ym461"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_tnfkn"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_qebri"]
 
 [resource]
-script = ExtResource("1_tnfkn")
+script = ExtResource("1_qebri")
 Name = "barrage"
 Type = 1
 Category = 0

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c84w0dp75mb4p"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://c84w0dp75mb4p"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_b0d6h"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_4dif2"]
 
 [resource]
-script = ExtResource("1_b0d6h")
+script = ExtResource("1_4dif2")
 Name = "submission"
 Type = 7
 Category = 0

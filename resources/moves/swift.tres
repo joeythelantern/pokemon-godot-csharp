@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://baw2bndvt3uxt"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://baw2bndvt3uxt"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_0mq1y"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_ss0dd"]
 
 [resource]
-script = ExtResource("1_0mq1y")
+script = ExtResource("1_ss0dd")
 Name = "swift"
 Type = 1
 Category = 1

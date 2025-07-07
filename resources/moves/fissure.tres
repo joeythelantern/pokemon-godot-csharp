@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://hau1jobu8esi"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://hau1jobu8esi"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_8oc83"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_fobio"]
 
 [resource]
-script = ExtResource("1_8oc83")
+script = ExtResource("1_fobio")
 Name = "fissure"
 Type = 9
 Category = 0

@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://3scqug5e436k"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=4 format=3 uid="uid://3scqug5e436k"]
 
-[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_0lpnv"]
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_iw5lc"]
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_ejw6g"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_u8sup"]
 
-[sub_resource type="Resource" id="Resource_ue882"]
-script = ExtResource("1_0lpnv")
+[sub_resource type="Resource" id="Resource_0nxxm"]
+script = ExtResource("1_ejw6g")
 Stat = 7
 Change = -1
 
 [resource]
-script = ExtResource("1_iw5lc")
+script = ExtResource("2_u8sup")
 Name = "smokescreen"
 Type = 1
 Category = 2
@@ -26,4 +26,4 @@ Power = 0
 PP = 20
 AilmentChance = 0
 Ailment = 0
-StatChanges = [SubResource("Resource_ue882")]
+StatChanges = [SubResource("Resource_0nxxm")]

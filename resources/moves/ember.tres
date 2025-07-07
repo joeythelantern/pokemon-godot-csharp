@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://83ve5ysxol87"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://83ve5ysxol87"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_05mce"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_jcuap"]
 
 [resource]
-script = ExtResource("1_05mce")
+script = ExtResource("1_jcuap")
 Name = "ember"
 Type = 2
 Category = 1

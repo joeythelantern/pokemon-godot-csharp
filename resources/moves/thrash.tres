@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://njwjynpojx2b"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://njwjynpojx2b"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_8g64g"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_7h548"]
 
 [resource]
-script = ExtResource("1_8g64g")
+script = ExtResource("1_7h548")
 Name = "thrash"
 Type = 1
 Category = 0

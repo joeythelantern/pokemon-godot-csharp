@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cr7ni7h4omy5y"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cr7ni7h4omy5y"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_w5u45"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_lbff8"]
 
 [resource]
-script = ExtResource("1_w5u45")
+script = ExtResource("1_lbff8")
 Name = "toxic"
 Type = 8
 Category = 2

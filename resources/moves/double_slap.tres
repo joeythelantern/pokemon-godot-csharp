@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://eje23aykflfs"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_ewt0t"]
+
+[resource]
+script = ExtResource("1_ewt0t")
+Name = "double-slap"
+Type = 1
+Category = 0
+Accuracy = 85
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 5
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 15
+PP = 10
+AilmentChance = 0
+Ailment = 0
+StatChanges = []

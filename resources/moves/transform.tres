@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bo73yxn6an66y"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bo73yxn6an66y"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_pjws7"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_kbcok"]
 
 [resource]
-script = ExtResource("1_pjws7")
+script = ExtResource("1_kbcok")
 Name = "transform"
 Type = 1
 Category = 2

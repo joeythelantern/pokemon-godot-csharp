@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cqq0ts5d5ivn8"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=4 format=3 uid="uid://cqq0ts5d5ivn8"]
 
 [ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_7dhvv"]
 [ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_exyyd"]
 
-[sub_resource type="Resource" id="Resource_ntqoi"]
+[sub_resource type="Resource" id="Resource_snvlq"]
 script = ExtResource("1_exyyd")
 Stat = 3
 Change = -1
@@ -26,4 +26,4 @@ Power = 0
 PP = 30
 AilmentChance = 0
 Ailment = 0
-StatChanges = [SubResource("Resource_ntqoi")]
+StatChanges = [SubResource("Resource_snvlq")]

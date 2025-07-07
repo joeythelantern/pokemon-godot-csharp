@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://seoxl1wrsbhn"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://seoxl1wrsbhn"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_xp1cj"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_gmjfw"]
 
 [resource]
-script = ExtResource("1_xp1cj")
+script = ExtResource("1_gmjfw")
 Name = "reflect"
 Type = 11
 Category = 2

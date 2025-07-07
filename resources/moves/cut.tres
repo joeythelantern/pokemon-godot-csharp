@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cx5el42l1g40r"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cx5el42l1g40r"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_3t65y"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_vycvg"]
 
 [resource]
-script = ExtResource("1_3t65y")
+script = ExtResource("1_vycvg")
 Name = "cut"
 Type = 1
 Category = 0

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=4 format=3 uid="uid://ca43sgiq6rssm"]
+
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_6ah2y"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_ygmoh"]
+
+[sub_resource type="Resource" id="Resource_etxwv"]
+script = ExtResource("1_6ah2y")
+Stat = 8
+Change = 1
+
+[resource]
+script = ExtResource("2_ygmoh")
+Name = "double-team"
+Type = 1
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 15
+AilmentChance = 0
+Ailment = 0
+StatChanges = [SubResource("Resource_etxwv")]

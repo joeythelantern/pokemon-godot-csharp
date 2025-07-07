@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bherrmgnmyuyv"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_8ecob"]
+
+[resource]
+script = ExtResource("1_8ecob")
+Name = "leech-seed"
+Type = 4
+Category = 2
+Accuracy = 90
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 10
+AilmentChance = 0
+Ailment = 9
+StatChanges = []

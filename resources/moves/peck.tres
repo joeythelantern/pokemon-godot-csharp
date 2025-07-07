@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8vm7vbgbksi1"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://8vm7vbgbksi1"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_daov0"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_8ohuu"]
 
 [resource]
-script = ExtResource("1_daov0")
+script = ExtResource("1_8ohuu")
 Name = "peck"
 Type = 10
 Category = 0

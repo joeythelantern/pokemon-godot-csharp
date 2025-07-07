@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cm50f7bnc0sw2"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cm50f7bnc0sw2"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_wppie"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_2jx88"]
 
 [resource]
-script = ExtResource("1_wppie")
+script = ExtResource("1_2jx88")
 Name = "flamethrower"
 Type = 2
 Category = 1

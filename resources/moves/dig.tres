@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://xpmul38ri2dw"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://xpmul38ri2dw"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_xhl1c"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_fyd81"]
 
 [resource]
-script = ExtResource("1_xhl1c")
+script = ExtResource("1_fyd81")
 Name = "dig"
 Type = 9
 Category = 0

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://7tredutoarhc"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://7tredutoarhc"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_iv6v3"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_uhefj"]
 
 [resource]
-script = ExtResource("1_iv6v3")
+script = ExtResource("1_uhefj")
 Name = "disable"
 Type = 1
 Category = 2

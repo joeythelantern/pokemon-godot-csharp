@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bmbx5cl83u7e1"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bmbx5cl83u7e1"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_ptsyy"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_27kjv"]
 
 [resource]
-script = ExtResource("1_ptsyy")
+script = ExtResource("1_27kjv")
 Name = "substitute"
 Type = 1
 Category = 2

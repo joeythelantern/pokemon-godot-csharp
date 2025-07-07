@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dgfet8kiyf1vj"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dgfet8kiyf1vj"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_c0f0l"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_uc8ct"]
 
 [resource]
-script = ExtResource("1_c0f0l")
+script = ExtResource("1_uc8ct")
 Name = "thunder"
 Type = 5
 Category = 1

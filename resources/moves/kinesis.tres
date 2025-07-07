@@ -1,15 +1,15 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b153n5guwb6h2"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=4 format=3 uid="uid://b153n5guwb6h2"]
 
-[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_8dtg0"]
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_tbclh"]
+[ext_resource type="Script" path="res://scripts/resources/StatChangeResource.cs" id="1_4i8c4"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="2_cxbsc"]
 
-[sub_resource type="Resource" id="Resource_m5inl"]
-script = ExtResource("1_8dtg0")
+[sub_resource type="Resource" id="Resource_3c13h"]
+script = ExtResource("1_4i8c4")
 Stat = 7
 Change = -1
 
 [resource]
-script = ExtResource("1_tbclh")
+script = ExtResource("2_cxbsc")
 Name = "kinesis"
 Type = 11
 Category = 2
@@ -26,4 +26,4 @@ Power = 0
 PP = 15
 AilmentChance = 0
 Ailment = 0
-StatChanges = [SubResource("Resource_m5inl")]
+StatChanges = [SubResource("Resource_3c13h")]

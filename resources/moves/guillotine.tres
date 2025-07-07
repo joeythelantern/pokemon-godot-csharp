@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://nx02fja71lwo"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://nx02fja71lwo"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_e601j"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_lahum"]
 
 [resource]
-script = ExtResource("1_e601j")
+script = ExtResource("1_lahum")
 Name = "guillotine"
 Type = 1
 Category = 0

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://br6xgn8mn46us"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://br6xgn8mn46us"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_03jeu"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_cxcx6"]
 
 [resource]
-script = ExtResource("1_03jeu")
+script = ExtResource("1_cxcx6")
 Name = "mimic"
 Type = 1
 Category = 2

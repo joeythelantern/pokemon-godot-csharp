@@ -19,19 +19,28 @@ public partial class PokemonResource : Resource
 
     [ExportCategory("Stats")]
     [Export]
-    public int BaseHP;
+    public int Height;
+
+    [Export]
+    public int Weight;
+
+    [Export]
+    public int BaseExperience;
+
+    [Export]
+    public int BaseHp;
 
     [Export]
     public int BaseAttack;
 
     [Export]
-    public int BaseDefence;
+    public int BaseDefense;
 
     [Export]
     public int BaseSpecialAttack;
 
     [Export]
-    public int BaseSpecialDefence;
+    public int BaseSpecialDefense;
 
     [Export]
     public int BaseSpeed;

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cwaifdb07sjmq"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cwaifdb07sjmq"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_wgq0n"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_hhk87"]
 
 [resource]
-script = ExtResource("1_wgq0n")
+script = ExtResource("1_hhk87")
 Name = "teleport"
 Type = 11
 Category = 2
