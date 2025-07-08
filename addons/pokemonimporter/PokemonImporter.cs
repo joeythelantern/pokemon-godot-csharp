@@ -44,7 +44,7 @@ public class VersionGroupDetail
 	[JsonProperty("version_group")]
 	public ApiResource VersionGroup { get; set; }
 	[JsonProperty("order")]
-	public int? Order { get; set; } // Can be null
+	public int? Order { get; set; }
 }
 
 public class PokemonMoveEntry
@@ -135,7 +135,7 @@ public partial class PokemonImporter : EditorPlugin
 		Logger.Info($"Starting to fetch Generation I Pokemon from ID 1 to 151...");
 
 		var pokemonFolderPath = "res://resources/pokemon/";
-		var spriteFolderPath = "res://assets/pokemon/ui/"; // Using your specified sprite path
+		var spriteFolderPath = "res://assets/pokemon/ui/";
 
 		DirAccess.MakeDirRecursiveAbsolute(ProjectSettings.GlobalizePath(pokemonFolderPath));
 		DirAccess.MakeDirRecursiveAbsolute(ProjectSettings.GlobalizePath(spriteFolderPath));
