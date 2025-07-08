@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://blwdjpssbo2tv"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_pyev4"]
+
+[resource]
+script = ExtResource("1_pyev4")
+Name = "self-destruct"
+Type = 1
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 200
+PP = 5
+AilmentChance = 0
+Ailment = 0
+StatChanges = {}

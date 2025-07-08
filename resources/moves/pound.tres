@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://psbbm46o4dxf"]
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dsvyes8fi4t1a"]
 
-[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_ebyiy"]
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_sw16b"]
 
 [resource]
-script = ExtResource("1_ebyiy")
+script = ExtResource("1_sw16b")
 Name = "pound"
 Type = 1
 Category = 0
@@ -20,4 +20,4 @@ Power = 40
 PP = 35
 AilmentChance = 0
 Ailment = 0
-StatChanges = []
+StatChanges = {}

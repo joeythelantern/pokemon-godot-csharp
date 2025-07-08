@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://j7q2wamn72ok"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_8gonq"]
+
+[resource]
+script = ExtResource("1_8gonq")
+Name = "sludge"
+Type = 8
+Category = 1
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 65
+PP = 20
+AilmentChance = 30
+Ailment = 4
+StatChanges = {}

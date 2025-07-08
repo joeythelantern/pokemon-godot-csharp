@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cpktsw5ydttqj"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_3wnvu"]
+
+[resource]
+script = ExtResource("1_3wnvu")
+Name = "low-kick"
+Type = 7
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = {}

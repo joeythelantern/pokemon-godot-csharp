@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b83kdoo1dt8ho"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_8ola3"]
+
+[resource]
+script = ExtResource("1_8ola3")
+Name = "double-kick"
+Type = 7
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 2
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 30
+PP = 30
+AilmentChance = 0
+Ailment = 0
+StatChanges = {}

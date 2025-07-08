@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bdy72hrx4cl1w"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_glh8a"]
+
+[resource]
+script = ExtResource("1_glh8a")
+Name = "submission"
+Type = 7
+Category = 0
+Accuracy = 80
+CritRate = 0
+Drain = -25
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 80
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = {}

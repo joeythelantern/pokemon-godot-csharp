@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b1utlpak3fk3h"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_7qb0e"]
+
+[resource]
+script = ExtResource("1_7qb0e")
+Name = "smog"
+Type = 8
+Category = 1
+Accuracy = 70
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 30
+PP = 20
+AilmentChance = 40
+Ailment = 4
+StatChanges = {}

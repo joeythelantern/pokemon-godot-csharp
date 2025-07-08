@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dky0axbkq82g8"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_eqj78"]
+
+[resource]
+script = ExtResource("1_eqj78")
+Name = "fissure"
+Type = 9
+Category = 0
+Accuracy = 30
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 5
+AilmentChance = 0
+Ailment = 0
+StatChanges = {}

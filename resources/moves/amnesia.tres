@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bfvf1oh11lk4y"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_h28vb"]
+
+[resource]
+script = ExtResource("1_h28vb")
+Name = "amnesia"
+Type = 11
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = {
+5: 2
+}

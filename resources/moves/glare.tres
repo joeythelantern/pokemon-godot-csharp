@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bynkkrcik8wby"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_c1jr8"]
+
+[resource]
+script = ExtResource("1_c1jr8")
+Name = "glare"
+Type = 1
+Category = 2
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 30
+AilmentChance = 0
+Ailment = 3
+StatChanges = {}

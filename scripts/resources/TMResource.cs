@@ -10,5 +10,5 @@ public partial class TMResource : Resource
     public int Number;
 
     [Export]
-    public MoveResource Move;
+    public string Move;
 }

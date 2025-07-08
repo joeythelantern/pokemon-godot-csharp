@@ -87,5 +87,5 @@ public partial class MoveResource : Resource
     public PokemonAilment Ailment = PokemonAilment.None;
 
     [Export]
-    public Array<StatChangeResource> StatChanges = [];
+    public Dictionary<PokemonStat, int> StatChanges = [];
 }

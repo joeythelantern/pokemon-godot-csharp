@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://wkat6vmmjv50"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_ieys7"]
+
+[resource]
+script = ExtResource("1_ieys7")
+Name = "razor-wind"
+Type = 1
+Category = 1
+Accuracy = 100
+CritRate = 1
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 80
+PP = 10
+AilmentChance = 0
+Ailment = 0
+StatChanges = {}

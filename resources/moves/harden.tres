@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dl655jh3n1oob"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_2tqs3"]
+
+[resource]
+script = ExtResource("1_2tqs3")
+Name = "harden"
+Type = 1
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 0
+PP = 30
+AilmentChance = 0
+Ailment = 0
+StatChanges = {
+3: 1
+}

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b5jfw5sjd6oc4"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_m5b78"]
+
+[resource]
+script = ExtResource("1_m5b78")
+Name = "fury-swipes"
+Type = 1
+Category = 0
+Accuracy = 80
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 5
+MaxTurns = -1
+MinHits = 2
+MinTurns = -1
+Power = 18
+PP = 15
+AilmentChance = 0
+Ailment = 0
+StatChanges = {}

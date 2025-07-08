@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bgu03i4r70vdt"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_0nwf4"]
+
+[resource]
+script = ExtResource("1_0nwf4")
+Name = "confusion"
+Type = 11
+Category = 1
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = 5
+MinHits = -1
+MinTurns = 2
+Power = 50
+PP = 25
+AilmentChance = 10
+Ailment = 7
+StatChanges = {}

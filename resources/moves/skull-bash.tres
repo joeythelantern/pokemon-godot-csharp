@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cyppoir1vnvn"]
+
+[ext_resource type="Script" path="res://scripts/resources/MoveResource.cs" id="1_nkv3p"]
+
+[resource]
+script = ExtResource("1_nkv3p")
+Name = "skull-bash"
+Type = 1
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 130
+PP = 10
+AilmentChance = 100
+Ailment = 0
+StatChanges = {}
