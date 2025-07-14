@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cedxn4kawkw32"]
 
-[ext_resource type="Script" path="res://scripts/core/GameManager.cs" id="1_ms0qm"]
+[ext_resource type="Script" uid="uid://dd8xo007yjw7v" path="res://scripts/core/GameManager.cs" id="1_ms0qm"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("GameViewPort")]
 script = ExtResource("1_ms0qm")

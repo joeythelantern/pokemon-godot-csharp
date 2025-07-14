@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://cmoubbrljtf88"]
 
-[ext_resource type="Script" path="res://scripts/gameplay/levels/Level.cs" id="1_dvqip"]
+[ext_resource type="Script" uid="uid://bpion4qpiamje" path="res://scripts/gameplay/levels/Level.cs" id="1_dvqip"]
 [ext_resource type="TileSet" uid="uid://cx5l6e3tq8rem" path="res://resources/tilesets/level.tres" id="2_milvr"]
 [ext_resource type="PackedScene" uid="uid://b1vjurr1j5v8q" path="res://scenes/levels/scene_trigger.tscn" id="3_dvhkd"]
 [ext_resource type="PackedScene" uid="uid://cardhe40oeavn" path="res://scenes/levels/spawn_point.tscn" id="4_hwul5"]

@@ -1,13 +1,13 @@
 [gd_scene load_steps=39 format=3 uid="uid://by5pxugmp1xbl"]
 
 [ext_resource type="Texture2D" uid="uid://c0y34af64xcfy" path="res://assets/characters/player.png" id="1_dsppa"]
-[ext_resource type="Script" path="res://scripts/gameplay/characters/PlayerInput.cs" id="1_m1650"]
-[ext_resource type="Script" path="res://scripts/gameplay/characters/Player.cs" id="1_wvkiw"]
-[ext_resource type="Script" path="res://scripts/gameplay/characters/CharacterMovement.cs" id="2_ikivw"]
-[ext_resource type="Script" path="res://scripts/gameplay/characters/CharacterAnimation.cs" id="4_qfswh"]
-[ext_resource type="Script" path="res://scripts/utilities/StateMachine.cs" id="5_nuhm4"]
-[ext_resource type="Script" path="res://scripts/gameplay/characters/PlayerCamera.cs" id="6_0eeld"]
-[ext_resource type="Script" path="res://scripts/gameplay/characters/states/PlayerRoamState.cs" id="6_lta2g"]
+[ext_resource type="Script" uid="uid://dss7ginheanu2" path="res://scripts/gameplay/characters/PlayerInput.cs" id="1_m1650"]
+[ext_resource type="Script" uid="uid://bktopa2jykxa6" path="res://scripts/gameplay/characters/Player.cs" id="1_wvkiw"]
+[ext_resource type="Script" uid="uid://s63o0wis73fl" path="res://scripts/gameplay/characters/CharacterMovement.cs" id="2_ikivw"]
+[ext_resource type="Script" uid="uid://bh3g20t14pxf0" path="res://scripts/gameplay/characters/CharacterAnimation.cs" id="4_qfswh"]
+[ext_resource type="Script" uid="uid://c6ewmbxw6pd3g" path="res://scripts/utilities/StateMachine.cs" id="5_nuhm4"]
+[ext_resource type="Script" uid="uid://fjy1nfyg8kvu" path="res://scripts/gameplay/characters/PlayerCamera.cs" id="6_0eeld"]
+[ext_resource type="Script" uid="uid://dajhdc1dsbmu6" path="res://scripts/gameplay/characters/states/PlayerRoamState.cs" id="6_lta2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rv3j1"]
 size = Vector2(16, 16)

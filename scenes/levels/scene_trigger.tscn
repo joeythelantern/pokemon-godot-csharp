@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1vjurr1j5v8q"]
 
-[ext_resource type="Script" path="res://scripts/gameplay/levels/SceneTrigger.cs" id="1_x683l"]
+[ext_resource type="Script" uid="uid://dixfltfgmkbfx" path="res://scripts/gameplay/levels/SceneTrigger.cs" id="1_x683l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gvp5"]
 size = Vector2(16, 16)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bx3x2jbv442o4"]
 
-[ext_resource type="Script" path="res://scripts/core/SceneManager.cs" id="1_hx5sb"]
+[ext_resource type="Script" uid="uid://cqispefykma8j" path="res://scripts/core/SceneManager.cs" id="1_hx5sb"]
 
 [node name="SceneManager" type="Node" node_paths=PackedStringArray("FadeRect", "AllLevels")]
 script = ExtResource("1_hx5sb")
