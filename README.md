@@ -15,7 +15,8 @@ Follow along with the series! Each video will cover a different aspect of the ga
 3. [Part 3 - Creating the Player](https://youtu.be/kxhXZATZ5dE) 🛠️
 4. [Part 4 - Collisions](https://youtu.be/hRQz75tK7lU) 🛠️
 5. [Part 5 - Changing Levels](https://youtu.be/Btpo88PUDR0) 🛠️
-5. [Part 6 - Ledge Jumping](https://youtu.be/BRxT2_0IDM4) 🛠️
+6. [Part 6 - Ledge Jumping](https://youtu.be/BRxT2_0IDM4) 🛠️
+7. [Part 7 - Message Box UI](https://youtu.be/Mrmu_06GYcs) 🛠️
 
 ---
 
