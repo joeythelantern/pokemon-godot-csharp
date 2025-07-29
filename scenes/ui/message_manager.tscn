@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1uwooeykwtdd"]
+
+[ext_resource type="Texture2D" uid="uid://c3yqc7n3jcfh6" path="res://assets/ui/message_box.png" id="1_gxlwh"]
+[ext_resource type="Script" uid="uid://bsh66shknstqw" path="res://scripts/ui/MessageManager.cs" id="1_yl3ye"]
+[ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="2_84ee0"]
+
+[node name="MessageManager" type="CanvasLayer" node_paths=PackedStringArray("Box", "Label")]
+script = ExtResource("1_yl3ye")
+Box = NodePath("Control/NinePatchRect")
+Label = NodePath("Control/NinePatchRect/RichTextLabel")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.236111
+anchor_top = 0.753086
+anchor_right = 0.763889
+anchor_bottom = 0.938272
+offset_top = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gxlwh")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect"]
+layout_mode = 0
+anchor_left = 0.0263158
+anchor_top = 0.133333
+anchor_right = 0.973684
+anchor_bottom = 0.866667
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.427451, 0.498039, 0.466667, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_fonts/normal_font = ExtResource("2_84ee0")
+theme_override_font_sizes/normal_font_size = 40
+text = "Placeholder"
+metadata/_edit_use_anchors_ = true

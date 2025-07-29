@@ -13,6 +13,17 @@ public partial class PlayerRoamState : State
     [Export]
     public CharacterMovement CharacterMovement;
 
+    public override void _Ready()
+    {
+        Signals.Instance.MessageBoxOpen += (value) =>
+        {
+            if (value)
+            {
+                StateMachine.ChangeState("Message");
+            }
+        };
+    }
+
     public override void _Process(double delta)
     {
         GetInputDirection();
