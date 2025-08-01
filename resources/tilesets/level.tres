@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://cx5l6e3tq8rem"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cx5l6e3tq8rem"]
 
 [ext_resource type="Texture2D" uid="uid://d0k0wvcgcv0xl" path="res://assets/levels/environment.png" id="1_d81n3"]
 [ext_resource type="Texture2D" uid="uid://c1n1e0kb2mrnu" path="res://assets/levels/buildings.png" id="2_urlkc"]
@@ -3852,6 +3852,14 @@ margins = Vector2i(8, 8)
 1:10/0 = 0
 1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_br5dt"]
+resource_name = "signs"
+texture = ExtResource("1_d81n3")
+34:2/0 = 0
+35:2/0 = 0
+36:2/0 = 0
+37:2/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -3864,3 +3872,4 @@ sources/1 = SubResource("TileSetAtlasSource_e3qqw")
 sources/2 = SubResource("TileSetAtlasSource_p4nro")
 sources/3 = SubResource("TileSetAtlasSource_e74lr")
 sources/4 = SubResource("TileSetAtlasSource_bxlsc")
+sources/5 = SubResource("TileSetAtlasSource_br5dt")

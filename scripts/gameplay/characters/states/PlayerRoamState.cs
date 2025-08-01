@@ -28,6 +28,7 @@ public partial class PlayerRoamState : State
     {
         GetInputDirection();
         GetInput(delta);
+        GetUseInput();
     }
 
     public void GetInputDirection()
@@ -80,6 +81,30 @@ public partial class PlayerRoamState : State
             if (PlayerInput.HoldTime > PlayerInput.HoldThreshold)
             {
                 PlayerInput.EmitSignal(CharacterInput.SignalName.Walk);
+            }
+        }
+    }
+
+    public void GetUseInput()
+    {
+        if (Input.IsActionJustReleased("use"))
+        {
+            var (_, result) = CharacterMovement.GetTargetColliders(CharacterMovement.TargetPosition);
+
+            if (result.Count > 0)
+            {
+                foreach (var collision in result)
+                {
+                    var collider = (Node)(GodotObject)collision["collider"];
+                    var colliderType = collider.GetType().Name;
+
+                    switch (colliderType)
+                    {
+                        case "Sign":
+                            ((Sign)collider).PlayMessage();
+                            break;
+                    }
+                }
             }
         }
     }

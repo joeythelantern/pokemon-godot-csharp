@@ -1,5 +1,7 @@
+using System;
 using Game.Core;
 using Godot;
+using Godot.Collections;
 
 namespace Game.Gameplay;
 
@@ -65,7 +67,7 @@ public partial class CharacterMovement : Node
         return IsWalking || IsJumping;
     }
 
-    public bool IsTargetOccupied(Vector2 targetPosition)
+    public (Vector2, Array<Dictionary>) GetTargetColliders(Vector2 targetPosition)
     {
         var spaceState = GetViewport().GetWorld2D().DirectSpaceState;
 
@@ -80,7 +82,12 @@ public partial class CharacterMovement : Node
             CollideWithAreas = true,
         };
 
-        var result = spaceState.IntersectPoint(query);
+        return (adjustedTargetPosition, spaceState.IntersectPoint(query));
+    }
+
+    public bool IsTargetOccupied(Vector2 targetPosition)
+    {
+        var (adjustedTargetPosition, result) = GetTargetColliders(targetPosition);
 
         if (result.Count > 0)
         {
@@ -91,6 +98,7 @@ public partial class CharacterMovement : Node
 
                 return colliderType switch
                 {
+                    "Sign" => true,
                     "TileMapLayer" => GetTileMapLayerCollision((TileMapLayer)collider, adjustedTargetPosition),
                     "SceneTrigger" => false,
                     _ => true,
@@ -113,8 +121,6 @@ public partial class CharacterMovement : Node
 
         if (ledgeDirection == null)
             return true;
-
-        Logger.Info(ledgeDirection);
 
         switch (ledgeDirection)
         {

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu52tcijkvaxd"]
+
+[ext_resource type="Script" uid="uid://ccqicfsopi2fn" path="res://scripts/gameplay/levels/Sign.cs" id="1_4lsp0"]
+[ext_resource type="Texture2D" uid="uid://d0k0wvcgcv0xl" path="res://assets/levels/environment.png" id="2_4lsp0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70t7e"]
+atlas = ExtResource("2_4lsp0")
+region = Rect2(544, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lsp0"]
+size = Vector2(16, 16)
+
+[node name="Sign" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_4lsp0")
+Messages = Array[String]([])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = SubResource("AtlasTexture_70t7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_4lsp0")
