@@ -17,7 +17,7 @@ public partial class Signals : Node
 
     public static void EmitGlobalSignal(StringName signal, params Variant[] args)
     {
-        Logger.Info("Global signal emitted: ", signal, args);
+        Logger.Info("Global signal emitted");
         Instance.EmitSignal(signal, args);
     }
 }
