@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy6u7lnf72to1"]
+
+[ext_resource type="Script" uid="uid://cf5w5waute13m" path="res://scripts/gameplay/levels/Sign.cs" id="1_4lsp0"]
+[ext_resource type="Texture2D" uid="uid://5c8y0ppyiip6" path="res://resources/textures/sign_metal.tres" id="1_sea67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orw45"]
+size = Vector2(16, 16)
+
+[node name="Sign" type="StaticBody2D"]
+script = ExtResource("1_4lsp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_orw45")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+texture = ExtResource("1_sea67")

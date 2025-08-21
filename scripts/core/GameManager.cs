@@ -23,8 +23,6 @@ public partial class GameManager : Node
 		Logger.Info("Loading game manager ...");
 
 		SceneManager.ChangeLevel(spawn: true);
-
-		MessageManager.PlayText("Hey, welcome to our cool game!", "Gotta catch'em all!");
 	}
 
 	public static SubViewport GetGameViewPort()

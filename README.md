@@ -17,6 +17,7 @@ Follow along with the series! Each video will cover a different aspect of the ga
 5. [Part 5 - Changing Levels](https://youtu.be/Btpo88PUDR0) 🛠️
 6. [Part 6 - Ledge Jumping](https://youtu.be/BRxT2_0IDM4) 🛠️
 7. [Part 7 - Message Box UI](https://youtu.be/Mrmu_06GYcs) 🛠️
+8. [Part 8 - Signs](https://youtu.be/oZrMa2BLZUM) 🛠️
 
 ---
 
