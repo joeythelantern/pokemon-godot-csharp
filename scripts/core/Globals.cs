@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 namespace Game.Core;
@@ -10,10 +11,25 @@ public partial class Globals : Node
     [Export]
     public int GRID_SIZE = 16;
 
+    [Export]
+    public ulong Seed = 1337;
+
+    public RandomNumberGenerator RandomNumberGenerator;
+
     public override void _Ready()
     {
         Instance = this;
 
+        RandomNumberGenerator = new()
+        {
+            Seed = Seed
+        };
+
         Logger.Info("Loading Globals ...");
+    }
+
+    public static RandomNumberGenerator GetRandomNumberGenerator()
+    {
+        return Instance.RandomNumberGenerator;
     }
 }

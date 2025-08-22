@@ -23,7 +23,7 @@ public partial class TallGrass : Area2D
         switch (className)
         {
             case "Player":
-                Logger.Info("Checking encounter chance");
+                CalculateEncounterChance();
                 break;
         }
 
@@ -33,5 +33,16 @@ public partial class TallGrass : Area2D
     public void OnBodyExited(Node2D node2D)
     {
         AnimatedSprite2D.Play("up");
+    }
+
+    public void CalculateEncounterChance()
+    {
+        int encounterRate = SceneManager.GetCurrentLevel().EncounterRate;
+        int encounter = Globals.GetRandomNumberGenerator().RandiRange(0, 100);
+
+        if (encounter <= encounterRate)
+        {
+            Logger.Info($"POKEMON ENCOUNTER: {encounter} <= {encounterRate}");
+        }
     }
 }

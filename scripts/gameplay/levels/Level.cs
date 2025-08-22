@@ -22,6 +22,10 @@ public partial class Level : Node2D
 	[Export]
 	public int Right;
 
+	[ExportCategory("Pokemon")]
+	[Export]
+	public int EncounterRate = 20;
+
 	public override void _Ready()
 	{
 		Logger.Info($"Loading level {LevelName} ...");
