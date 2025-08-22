@@ -100,6 +100,7 @@ public partial class CharacterMovement : Node
                 return colliderType switch
                 {
                     "Sign" => true,
+                    "TallGrass" => false,
                     "TileMapLayer" => GetTileMapLayerCollision((TileMapLayer)collider, adjustedTargetPosition),
                     "SceneTrigger" => false,
                     _ => true,

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cepxcwaejap8b"]
+
+[ext_resource type="Texture2D" uid="uid://d0k0wvcgcv0xl" path="res://assets/levels/environment.png" id="1_0sej8"]
+[ext_resource type="Script" uid="uid://bnsbsgyrv6ajd" path="res://scripts/gameplay/levels/TallGrass.cs" id="1_6d3tt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta0ld"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d3tt"]
+atlas = ExtResource("1_0sej8")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hq6g"]
+atlas = ExtResource("1_0sej8")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e5ml5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d3tt")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hq6g")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="TallGrass" type="Area2D"]
+script = ExtResource("1_6d3tt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_ta0ld")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_e5ml5")
+animation = &"up"
