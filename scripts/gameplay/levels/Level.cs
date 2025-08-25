@@ -9,6 +9,9 @@ public partial class Level : Node2D
 	[Export]
 	public LevelName LevelName;
 
+	[Export(PropertyHint.Range, "0,100")]
+	public int EncounterRate;
+
 	[ExportCategory("Camera Limits")]
 	[Export]
 	public int Top;

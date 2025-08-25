@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://bhequssh43v25"]
+[gd_scene load_steps=9 format=4 uid="uid://bhequssh43v25"]
 
 [ext_resource type="Script" uid="uid://bpion4qpiamje" path="res://scripts/gameplay/levels/Level.cs" id="1_2cpqh"]
 [ext_resource type="TileSet" uid="uid://cx5l6e3tq8rem" path="res://resources/tilesets/level.tres" id="1_467iw"]
 [ext_resource type="PackedScene" uid="uid://cardhe40oeavn" path="res://scenes/levels/spawn_point.tscn" id="3_14dux"]
 [ext_resource type="PackedScene" uid="uid://b1vjurr1j5v8q" path="res://scenes/levels/scene_trigger.tscn" id="3_x2ndx"]
 [ext_resource type="PackedScene" uid="uid://dy6u7lnf72to1" path="res://scenes/levels/sign.tscn" id="5_6kjy8"]
+[ext_resource type="PackedScene" uid="uid://djuwo7vtckbv0" path="res://scenes/levels/tall_grass.tscn" id="6_3nfn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2wcl"]
 size = Vector2(16, 32)
@@ -14,6 +15,7 @@ size = Vector2(16, 64)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_2cpqh")
+EncounterRate = 2
 Bottom = 320
 Right = 512
 
@@ -45,7 +47,7 @@ tile_set = ExtResource("1_467iw")
 
 [node name="Buildings" type="TileMapLayer" parent="Tiles"]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAADAAUAAQABAAUAAAADAAYAAQABAAYAAAADAAcAAQABAAcAAAADAAgAAQABAAgAAAAEAAUAAQACAAUAAAAEAAYAAQACAAYAAAAEAAcAAQACAAcAAAAEAAgAAQACAAgAAAAFAAUAAQADAAUAAAAFAAYAAQADAAYAAAAFAAcAAQADAAcAAAAFAAgAAQADAAgAAAAGAAUAAQAEAAUAAAAGAAYAAQAEAAYAAAAGAAcAAQAEAAcAAAAGAAgAAQAEAAgAAAAHAAUAAQAFAAUAAAAHAAYAAQAFAAYAAAAHAAcAAQAFAAcAAAAHAAgAAQAFAAgAAAALAAUAAQAHAAUAAAALAAYAAQAHAAYAAAALAAcAAQAHAAcAAAALAAgAAQAHAAgAAAALAAkAAQAHAAkAAAAMAAUAAQAIAAUAAAAMAAYAAQAIAAYAAAAMAAcAAQAIAAcAAAAMAAgAAQAIAAgAAAAMAAkAAQAIAAkAAAANAAUAAQAJAAUAAAANAAYAAQAJAAYAAAANAAcAAQAJAAcAAAANAAgAAQAJAAgAAAANAAkAAQAJAAkAAAAOAAUAAQAKAAUAAAAOAAYAAQAKAAYAAAAOAAcAAQAKAAcAAAAOAAgAAQAKAAgAAAAOAAkAAQAKAAkAAAAPAAUAAQALAAUAAAAPAAYAAQALAAYAAAAPAAcAAQALAAcAAAAPAAgAAQALAAgAAAAPAAkAAQALAAkAAAASAAkAAQAGAAAAAAASAAoAAQAGAAEAAAASAAsAAQAGAAIAAAASAAwAAQAGAAMAAAASAA0AAQAGAAQAAAATAAkAAQAHAAAAAAATAAoAAQAHAAEAAAATAAsAAQAHAAIAAAATAAwAAQAHAAMAAAATAA0AAQAHAAQAAAAUAAkAAQAIAAAAAAAUAAoAAQAIAAEAAAAUAAsAAQAIAAIAAAAUAAwAAQAIAAMAAAAUAA0AAQAIAAQAAAAVAAkAAQAJAAAAAAAVAAoAAQAJAAEAAAAVAAsAAQAJAAIAAAAVAAwAAQAJAAMAAAAVAA0AAQAJAAQAAAAWAAkAAQAKAAAAAAAWAAoAAQAKAAEAAAAWAAsAAQAKAAIAAAAWAAwAAQAKAAMAAAAWAA0AAQAKAAQAAAAIAAgAAAAfAAYAAAAJAAgAAAAeAAkAAAAJAAcAAAAeAAgAAAAJAAYAAAAeAAgAAAAJAAUAAAAeAAgAAAAJAAQAAAAeAAgAAAAJAAMAAAAeAAgAAAAJAAIAAAAeAAYAAAAQAAIAAAAeAAYAAAAQAAMAAAAeAAgAAAAQAAQAAAAeAAgAAAAQAAUAAAAeAAgAAAAQAAYAAAAeAAgAAAAQAAcAAAAeAAgAAAAQAAgAAAAeAAkAAAAFAAwAAAAhAAcAAAADAAwAAAAiAAYAAAAEAAwAAAAiAAYAAAACAAwAAAAiAAYAAAAFAA0AAAAhAAgAAAAFAA4AAAAhAAgAAAAFAA8AAAAhAAgAAAAFABAAAAAhAAgAAAA=")
+tile_map_data = PackedByteArray("AAADAAUAAQABAAUAAAADAAYAAQABAAYAAAADAAcAAQABAAcAAAADAAgAAQABAAgAAAAEAAUAAQACAAUAAAAEAAYAAQACAAYAAAAEAAcAAQACAAcAAAAEAAgAAQACAAgAAAAFAAUAAQADAAUAAAAFAAYAAQADAAYAAAAFAAcAAQADAAcAAAAFAAgAAQADAAgAAAAGAAUAAQAEAAUAAAAGAAYAAQAEAAYAAAAGAAcAAQAEAAcAAAAGAAgAAQAEAAgAAAAHAAUAAQAFAAUAAAAHAAYAAQAFAAYAAAAHAAcAAQAFAAcAAAAHAAgAAQAFAAgAAAALAAUAAQAHAAUAAAALAAYAAQAHAAYAAAALAAcAAQAHAAcAAAALAAgAAQAHAAgAAAALAAkAAQAHAAkAAAAMAAUAAQAIAAUAAAAMAAYAAQAIAAYAAAAMAAcAAQAIAAcAAAAMAAgAAQAIAAgAAAAMAAkAAQAIAAkAAAANAAUAAQAJAAUAAAANAAYAAQAJAAYAAAANAAcAAQAJAAcAAAANAAgAAQAJAAgAAAANAAkAAQAJAAkAAAAOAAUAAQAKAAUAAAAOAAYAAQAKAAYAAAAOAAcAAQAKAAcAAAAOAAgAAQAKAAgAAAAOAAkAAQAKAAkAAAAPAAUAAQALAAUAAAAPAAYAAQALAAYAAAAPAAcAAQALAAcAAAAPAAgAAQALAAgAAAAPAAkAAQALAAkAAAASAAkAAQAGAAAAAAASAAoAAQAGAAEAAAASAAsAAQAGAAIAAAASAAwAAQAGAAMAAAASAA0AAQAGAAQAAAATAAkAAQAHAAAAAAATAAoAAQAHAAEAAAATAAsAAQAHAAIAAAATAAwAAQAHAAMAAAATAA0AAQAHAAQAAAAUAAkAAQAIAAAAAAAUAAoAAQAIAAEAAAAUAAsAAQAIAAIAAAAUAAwAAQAIAAMAAAAUAA0AAQAIAAQAAAAVAAkAAQAJAAAAAAAVAAoAAQAJAAEAAAAVAAsAAQAJAAIAAAAVAAwAAQAJAAMAAAAVAA0AAQAJAAQAAAAWAAkAAQAKAAAAAAAWAAoAAQAKAAEAAAAWAAsAAQAKAAIAAAAWAAwAAQAKAAMAAAAWAA0AAQAKAAQAAAAIAAgAAAAfAAYAAAAJAAgAAAAeAAkAAAAJAAcAAAAeAAgAAAAJAAYAAAAeAAgAAAAJAAUAAAAeAAgAAAAJAAQAAAAeAAgAAAAJAAMAAAAeAAYAAAAQAAMAAAAeAAYAAAAQAAQAAAAeAAgAAAAQAAUAAAAeAAgAAAAQAAYAAAAeAAgAAAAQAAcAAAAeAAgAAAAQAAgAAAAeAAkAAAAFAAwAAAAhAAcAAAADAAwAAAAiAAYAAAAEAAwAAAAiAAYAAAACAAwAAAAiAAYAAAAFAA0AAAAhAAgAAAAFAA4AAAAhAAgAAAAFAA8AAAAhAAgAAAAFABAAAAAhAAgAAAA=")
 tile_set = ExtResource("1_467iw")
 
 [node name="Ground2" type="TileMapLayer" parent="Tiles"]
@@ -147,3 +149,107 @@ Messages = Array[String](["Welcome to Cove Town.", "A quiet town by the mountain
 [node name="ZubatCave" parent="Signs" instance=ExtResource("5_6kjy8")]
 position = Vector2(416, 144)
 Messages = Array[String](["Zubat Cave:", " Home to the worlds largest indoor Zubat population"])
+
+[node name="TallGrass" type="Node2D" parent="."]
+
+[node name="TallGrass" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(208, 176)
+
+[node name="TallGrass2" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(272, 192)
+
+[node name="TallGrass11" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(240, 64)
+
+[node name="TallGrass12" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(224, 64)
+
+[node name="TallGrass13" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(208, 64)
+
+[node name="TallGrass14" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(192, 64)
+
+[node name="TallGrass15" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(176, 64)
+
+[node name="TallGrass16" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(160, 64)
+
+[node name="TallGrass17" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(176, 48)
+
+[node name="TallGrass18" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(160, 48)
+
+[node name="TallGrass19" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(208, 48)
+
+[node name="TallGrass20" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(192, 48)
+
+[node name="TallGrass21" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(240, 48)
+
+[node name="TallGrass22" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(224, 48)
+
+[node name="TallGrass23" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(64, 64)
+
+[node name="TallGrass24" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(48, 64)
+
+[node name="TallGrass25" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(96, 64)
+
+[node name="TallGrass26" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(80, 64)
+
+[node name="TallGrass27" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(128, 64)
+
+[node name="TallGrass28" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(112, 64)
+
+[node name="TallGrass29" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(64, 48)
+
+[node name="TallGrass30" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(48, 48)
+
+[node name="TallGrass31" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(96, 48)
+
+[node name="TallGrass32" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(80, 48)
+
+[node name="TallGrass33" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(128, 48)
+
+[node name="TallGrass34" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(112, 48)
+
+[node name="TallGrass3" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(256, 192)
+
+[node name="TallGrass4" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(240, 192)
+
+[node name="TallGrass5" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(224, 192)
+
+[node name="TallGrass6" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(208, 192)
+
+[node name="TallGrass7" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(272, 176)
+
+[node name="TallGrass8" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(256, 176)
+
+[node name="TallGrass9" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(240, 176)
+
+[node name="TallGrass10" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(224, 176)
