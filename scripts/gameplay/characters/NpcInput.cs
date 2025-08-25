@@ -5,5 +5,5 @@ namespace Game.Gameplay;
 public partial class NpcInput : CharacterInput
 {
     [Export]
-    public NpcInputConfig NpcInputConfig;
+    public NpcInputConfig Config;
 }

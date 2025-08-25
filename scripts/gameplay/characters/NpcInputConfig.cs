@@ -6,27 +6,32 @@ using Godot.Collections;
 [Tool]
 public partial class NpcInputConfig : Resource
 {
+    [ExportGroup("Movement")]
+    [ExportSubgroup("Common")]
     [Export]
     public NpcMovementType NpcMovementType = NpcMovementType.Static;
 
-    [ExportCategory("Wander")]
+    [ExportSubgroup("Wander")]
     [Export]
-    public float WanderRadius;
+    public Vector2 WanderOrigin = Vector2.Zero;
 
     [Export]
-    public float WanderMoveInterval = 2f;
+    public double WanderRadius = 64;
 
-    [ExportCategory("Patrol")]
+    [Export]
+    public double WanderMoveInterval = 2;
+
+    [ExportSubgroup("Patrol")]
     [Export]
     public Array<Vector2> PatrolPoints;
 
     [Export]
-    public float PatrolMoveInterval = 2f;
+    public double PatrolMoveInterval = 2;
 
     [Export]
-    public int PatrolIndex = 0;
+    public double PatrolIndex = 0;
 
-    [ExportCategory("Look Around")]
+    [ExportSubgroup("Look Around")]
     [Export]
-    public float LookAroundInterval = 1.5f;
+    public double LookAroundInterval = 3;
 }

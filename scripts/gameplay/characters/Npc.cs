@@ -1,15 +1,16 @@
 using Game.Core;
+using Game.Utilities;
 using Godot;
 using Godot.Collections;
 
 namespace Game.Gameplay;
 
-[Tool]
 public partial class Npc : CharacterBody2D
 {
     private NpcAppearance npcAppearance = NpcAppearance.Worker;
     private AnimatedSprite2D animatedSprite2D;
     private NpcInput npcInput;
+    private StateMachine stateMachine;
 
     private readonly Dictionary<NpcAppearance, SpriteFrames> appearanceFrames = new()
     {
@@ -39,7 +40,10 @@ public partial class Npc : CharacterBody2D
     public override void _Ready()
     {
         npcInput ??= GetNode<NpcInput>("Input");
-        npcInput.NpcInputConfig = NpcInputConfig;
+        npcInput.Config = NpcInputConfig;
+
+        stateMachine ??= GetNode<StateMachine>("StateMachine");
+        stateMachine.ChangeState("Roam");
 
         animatedSprite2D ??= GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 

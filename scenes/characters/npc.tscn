@@ -1,31 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx0616vhg1w1h"]
+[gd_scene load_steps=9 format=3 uid="uid://cx0616vhg1w1h"]
 
 [ext_resource type="Script" uid="uid://bdqbojyw6f1b8" path="res://scripts/gameplay/characters/Npc.cs" id="1_84hc2"]
 [ext_resource type="Script" uid="uid://s63o0wis73fl" path="res://scripts/gameplay/characters/CharacterMovement.cs" id="1_ceaqc"]
-[ext_resource type="Script" uid="uid://botjjmrkihmd4" path="res://scripts/gameplay/characters/NpcInputConfig.cs" id="2_urmqq"]
 [ext_resource type="Script" uid="uid://dxvxpc1lteaij" path="res://scripts/gameplay/characters/NpcInput.cs" id="2_urpkq"]
 [ext_resource type="SpriteFrames" uid="uid://b0lxyavdnohwh" path="res://resources/spriteframes/gardener.tres" id="3_bgitj"]
 [ext_resource type="Script" uid="uid://c6ewmbxw6pd3g" path="res://scripts/utilities/StateMachine.cs" id="4_01k3j"]
+[ext_resource type="Script" uid="uid://bh3g20t14pxf0" path="res://scripts/gameplay/characters/CharacterAnimation.cs" id="5_m3kmy"]
 [ext_resource type="Script" uid="uid://hlvh0q3kd560" path="res://scripts/gameplay/characters/states/NpcRoamState.cs" id="7_m3kmy"]
-
-[sub_resource type="Resource" id="Resource_m3kmy"]
-script = ExtResource("2_urmqq")
-NpcMovementType = 0
-WanderRadius = 0.0
-WanderMoveInterval = 2.0
-PatrolPoints = []
-PatrolMoveInterval = 2.0
-PatrolIndex = 0
-LookAroundInterval = 1.5
-metadata/_custom_type_script = "uid://botjjmrkihmd4"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qyh0"]
 size = Vector2(16, 16)
 
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_84hc2")
-NpcAppearance = 1
-NpcInputConfig = SubResource("Resource_m3kmy")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
@@ -40,20 +27,26 @@ script = ExtResource("1_ceaqc")
 Character = NodePath("..")
 CharacterInput = NodePath("../Input")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("CharacterInput", "CharacterMovement")]
+texture_filter = 1
 position = Vector2(8, 4)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("3_bgitj")
 animation = &"idle_down"
+script = ExtResource("5_m3kmy")
+CharacterInput = NodePath("../Input")
+CharacterMovement = NodePath("../Movement")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer", "CurrentState")]
 script = ExtResource("4_01k3j")
 Customer = NodePath("..")
 CurrentState = NodePath("Roam")
 
-[node name="Roam" type="Node" parent="StateMachine" node_paths=PackedStringArray("NpcInput", "CharacterMovement")]
+[node name="Roam" type="Node" parent="StateMachine" node_paths=PackedStringArray("NpcInput", "CharacterMovement", "StateOwner", "StateMachine")]
 script = ExtResource("7_m3kmy")
 NpcInput = NodePath("../../Input")
 CharacterMovement = NodePath("../../Movement")
+StateOwner = NodePath("../..")
+StateMachine = NodePath("..")
 
 [node name="Message" type="Node" parent="StateMachine"]

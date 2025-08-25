@@ -57,8 +57,14 @@ public partial class CharacterMovement : Node
         Walk(delta);
         Jump(delta);
 
-        if (!IsMoving() && !Modules.IsActionPressed())
+        if (!IsMoving())
         {
+            if (GetParent().Name == "Player")
+            {
+                if (Modules.IsActionPressed())
+                    return;
+            }
+
             EmitSignal(SignalName.Animation, "idle");
         }
     }
@@ -102,7 +108,7 @@ public partial class CharacterMovement : Node
                     "Sign" => true,
                     "TallGrass" => false,
                     "TileMapLayer" => GetTileMapLayerCollision((TileMapLayer)collider, adjustedTargetPosition),
-                    "SceneTrigger" => false,
+                    "SceneTrigger" => GetParent().Name != "Player",
                     _ => true,
                 };
             }

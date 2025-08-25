@@ -90,6 +90,7 @@ public partial class CharacterAnimation : AnimatedSprite2D
 
         if (previousAnimation != ECharacterAnimation)
         {
+            Logger.Info($"{GetParent().Name} playing animation {ECharacterAnimation}");
             Play(ECharacterAnimation.ToString());
         }
     }
