@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cardhe40oeavn" path="res://scenes/levels/spawn_point.tscn" id="3_14dux"]
 [ext_resource type="PackedScene" uid="uid://b1vjurr1j5v8q" path="res://scenes/levels/scene_trigger.tscn" id="3_x2ndx"]
 [ext_resource type="PackedScene" uid="uid://dy6u7lnf72to1" path="res://scenes/levels/sign.tscn" id="5_6kjy8"]
-[ext_resource type="PackedScene" uid="uid://djuwo7vtckbv0" path="res://scenes/levels/tall_grass.tscn" id="6_3nfn8"]
+[ext_resource type="PackedScene" uid="uid://cepxcwaejap8b" path="res://scenes/levels/tall_grass.tscn" id="6_3nfn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2wcl"]
 size = Vector2(16, 32)
@@ -253,3 +253,5 @@ position = Vector2(240, 176)
 
 [node name="TallGrass10" parent="TallGrass" instance=ExtResource("6_3nfn8")]
 position = Vector2(224, 176)
+
+[node name="NPCs" type="Node2D" parent="."]

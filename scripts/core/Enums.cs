@@ -32,6 +32,21 @@ public enum ECharacterMovement
 	WALKING,
 	JUMPING
 }
+
+public enum NpcAppearance
+{
+	BugCatcher,
+	Gardener,
+	Worker
+}
+
+public enum NpcMovementType
+{
+    Static,
+    Wander,
+    Patrol,
+    LookAround
+}
 #endregion
 
 #region levels
