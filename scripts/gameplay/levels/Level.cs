@@ -1,5 +1,6 @@
 using Game.Core;
 using Godot;
+using Godot.Collections;
 
 namespace Game.Gameplay;
 
@@ -26,12 +27,22 @@ public partial class Level : Node2D
 	public int Right;
 
 	public AStarGrid2D Grid;
+	public Array<Vector2> currentPatrolPoints = new();
+	public Vector2 TargetPosition = Vector2.Zero;
 
 	public override void _Ready()
 	{
 		Logger.Info($"Loading level {LevelName} ...");
+	}
 
-		SetupGrid();
+	public override void _Process(double delta)
+	{
+		if (Grid == null && GameManager.GetPlayer() != null)
+		{
+			SetupGrid();
+		}
+
+		QueueRedraw();
 	}
 
 	public void SetupGrid()
@@ -57,13 +68,27 @@ public partial class Level : Node2D
 			for (int x = 0; x < mapWidth; x++)
 			{
 				Vector2I cell = new(x, y);
-				Vector2 worldPos = new Vector2(x * Globals.Instance.GRID_SIZE, y * Globals.Instance.GRID_SIZE) + new Vector2(8, 8);
+				Vector2 worldPos = new Vector2(x * Globals.Instance.GRID_SIZE, y * Globals.Instance.GRID_SIZE);
 
-				var (_, collisions) = CharacterMovement.GetTargetColliders(this, worldPos);
+				var (_, collisions) = GameManager.GetPlayer().GetNode<CharacterMovement>("Movement").GetTargetColliders(GameManager.GetPlayer(), worldPos);
 				var blocked = collisions.Count > 0;
 
 				Grid.SetPointSolid(cell, blocked);
 			}
 		}
+	}
+
+	public override void _Draw()
+	{
+		if (Grid == null)
+			return;
+
+		foreach (var point in currentPatrolPoints)
+		{
+			DrawRect(new Rect2(point, new Vector2(Globals.Instance.GRID_SIZE, Globals.Instance.GRID_SIZE)), Colors.Red);
+		}
+
+		if (TargetPosition != Vector2.Zero)
+			DrawRect(new Rect2(TargetPosition, new Vector2(Globals.Instance.GRID_SIZE, Globals.Instance.GRID_SIZE)), Colors.Green);
 	}
 }

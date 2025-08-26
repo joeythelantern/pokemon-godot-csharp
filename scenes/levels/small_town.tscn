@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bhequssh43v25"]
+[gd_scene load_steps=12 format=4 uid="uid://bhequssh43v25"]
 
 [ext_resource type="Script" uid="uid://bpion4qpiamje" path="res://scripts/gameplay/levels/Level.cs" id="1_2cpqh"]
 [ext_resource type="TileSet" uid="uid://cx5l6e3tq8rem" path="res://resources/tilesets/level.tres" id="1_467iw"]
@@ -15,26 +15,14 @@ size = Vector2(16, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r53i7"]
 size = Vector2(16, 64)
 
-[sub_resource type="Resource" id="Resource_00pfa"]
-script = ExtResource("8_gr214")
-NpcMovementType = 3
-WanderOrigin = Vector2(0, 0)
-WanderRadius = 64.0
-WanderMoveInterval = 2.0
-PatrolPoints = []
-PatrolMoveInterval = 2.0
-PatrolIndex = 0
-LookAroundInterval = 5.0
-metadata/_custom_type_script = "uid://botjjmrkihmd4"
-
 [sub_resource type="Resource" id="Resource_gr214"]
 script = ExtResource("8_gr214")
 NpcMovementType = 2
 WanderOrigin = Vector2(0, 0)
 WanderRadius = 64.0
 WanderMoveInterval = 2.0
-PatrolPoints = Array[Vector2]([Vector2(160, 240), Vector2(320, 240), Vector2(376, 128)])
-PatrolMoveInterval = 2.0
+PatrolPoints = Array[Vector2]([Vector2(320, 240), Vector2(368, 128), Vector2(112, 240)])
+PatrolMoveInterval = 0.5
 PatrolIndex = 0
 LookAroundInterval = 3.0
 metadata/_custom_type_script = "uid://botjjmrkihmd4"
@@ -282,11 +270,6 @@ position = Vector2(224, 176)
 
 [node name="NPCs" type="Node2D" parent="."]
 
-[node name="Gardener" parent="NPCs" instance=ExtResource("7_00pfa")]
-position = Vector2(64, 176)
-NpcAppearance = 1
-NpcInputConfig = SubResource("Resource_00pfa")
-
 [node name="Worker" parent="NPCs" instance=ExtResource("7_00pfa")]
-position = Vector2(112, 240)
+position = Vector2(112, 176)
 NpcInputConfig = SubResource("Resource_gr214")

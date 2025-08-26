@@ -2,6 +2,7 @@ using Game.Core;
 using Game.Gameplay;
 using Game.Utilities;
 using Godot;
+using Godot.Collections;
 
 public partial class NpcRoamState : State
 {
@@ -13,6 +14,8 @@ public partial class NpcRoamState : State
     public CharacterMovement CharacterMovement;
 
     private double timer = 5f;
+    private Array<Vector2> currentPatrolPoints = new();
+    private int currentPatrolPointIndex = 0;
 
     public override void _Process(double delta)
     {
@@ -56,22 +59,69 @@ public partial class NpcRoamState : State
         if (NpcInput.Config.PatrolPoints.Count == 0)
             return;
 
-        Logger.Info($"Patrol points: {NpcInput.Config.PatrolPoints.Count}");
+        timer -= delta;
 
-        var level = SceneManager.GetCurrentLevel();
-        var currentPosition = ((Npc)StateOwner).Position;
-        var x = (int)currentPosition.X / Globals.Instance.GRID_SIZE;
-        var y = (int)currentPosition.Y / Globals.Instance.GRID_SIZE;
+        if (timer > 0)
+            return;
 
-        Logger.Info($"Start: {x}, {y}");
+        Vector2 currentPosition = ((Npc)StateOwner).Position;
 
-        var TargetPosition = NpcInput.Config.PatrolPoints[NpcInput.Config.PatrolIndex];
-        var tx = (int)TargetPosition.X / Globals.Instance.GRID_SIZE;
-        var ty = (int)TargetPosition.Y / Globals.Instance.GRID_SIZE;
+        if (currentPatrolPoints.Count == 0)
+        {
+            var level = SceneManager.GetCurrentLevel();
 
-        Logger.Info($"End: {tx}, {ty}");
+            var x = (int)currentPosition.X / Globals.Instance.GRID_SIZE;
+            var y = (int)currentPosition.Y / Globals.Instance.GRID_SIZE;
 
-        Logger.Info(level.Grid.GetIdPath(new Vector2I(x, y), new Vector2I(tx, ty)));
+            Logger.Info($"Grabbing index {NpcInput.Config.PatrolIndex} for {NpcInput.Config.PatrolPoints}");
+            var TargetPosition = NpcInput.Config.PatrolPoints[NpcInput.Config.PatrolIndex];
+            NpcInput.Config.PatrolIndex = (NpcInput.Config.PatrolIndex + 1) % NpcInput.Config.PatrolPoints.Count;
+            Logger.Info($"Target: {TargetPosition}");
+
+            var tx = (int)TargetPosition.X / Globals.Instance.GRID_SIZE;
+            var ty = (int)TargetPosition.Y / Globals.Instance.GRID_SIZE;
+
+            var pathing = level.Grid.GetIdPath(new Vector2I(x, y), new Vector2I(tx, ty));
+
+            for (int path = 1; path < pathing.Count; path++)
+            {
+                var point = pathing[path];
+                currentPatrolPoints.Add(new Vector2(point.X * Globals.Instance.GRID_SIZE, point.Y * Globals.Instance.GRID_SIZE));
+            }
+
+            if (currentPatrolPoints.Count == 0)
+                return;
+
+            SceneManager.GetCurrentLevel().currentPatrolPoints = currentPatrolPoints;
+
+
+            Logger.Info($"New Patrol points: {currentPatrolPoints}");
+        }
+
+        if (((Npc)StateOwner).Position.DistanceTo(currentPatrolPoints[0]) < 1f)
+        {
+            currentPatrolPoints.RemoveAt(0);
+            return;
+        }
+
+        NpcInput.TargetPosition = currentPatrolPoints[0];
+        currentPatrolPoints.RemoveAt(0);
+
+        SceneManager.GetCurrentLevel().TargetPosition = NpcInput.TargetPosition;
+        Vector2 difference = NpcInput.TargetPosition - currentPosition;
+
+        if (Mathf.Abs(difference.X) > Mathf.Abs(difference.Y))
+        {
+            NpcInput.Direction = difference.X > 0 ? Vector2.Right : Vector2.Left;
+        }
+        else
+        {
+            NpcInput.Direction = difference.Y > 0 ? Vector2.Down : Vector2.Up;
+        }
+
+        NpcInput.EmitSignal(CharacterInput.SignalName.Walk);
+        currentPatrolPointIndex++;
+        timer = interval;
     }
 
     private void HandleLookAround(double delta, double interval)

@@ -74,7 +74,7 @@ public partial class CharacterMovement : Node
         return IsWalking || IsJumping;
     }
 
-    public static (Vector2, Array<Dictionary>) GetTargetColliders(Node node, Vector2 targetPosition)
+    public (Vector2, Array<Dictionary>) GetTargetColliders(Node node, Vector2 targetPosition)
     {
         var spaceState = node.GetViewport().GetWorld2D().DirectSpaceState;
 
