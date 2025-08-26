@@ -29,7 +29,7 @@ public partial class NpcInputConfig : Resource
     public double PatrolMoveInterval = 2;
 
     [Export]
-    public double PatrolIndex = 0;
+    public int PatrolIndex = 0;
 
     [ExportSubgroup("Look Around")]
     [Export]

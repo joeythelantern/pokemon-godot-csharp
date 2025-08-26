@@ -26,7 +26,7 @@ public partial class NpcRoamState : State
                 break;
 
             case NpcMovementType.Patrol:
-                HandlePatrol();
+                HandlePatrol(delta, NpcInput.Config.PatrolMoveInterval);
                 break;
 
             case NpcMovementType.LookAround:
@@ -51,9 +51,27 @@ public partial class NpcRoamState : State
         timer = interval;
     }
 
-    private void HandlePatrol()
+    private void HandlePatrol(double delta, double interval)
     {
+        if (NpcInput.Config.PatrolPoints.Count == 0)
+            return;
 
+        Logger.Info($"Patrol points: {NpcInput.Config.PatrolPoints.Count}");
+
+        var level = SceneManager.GetCurrentLevel();
+        var currentPosition = ((Npc)StateOwner).Position;
+        var x = (int)currentPosition.X / Globals.Instance.GRID_SIZE;
+        var y = (int)currentPosition.Y / Globals.Instance.GRID_SIZE;
+
+        Logger.Info($"Start: {x}, {y}");
+
+        var TargetPosition = NpcInput.Config.PatrolPoints[NpcInput.Config.PatrolIndex];
+        var tx = (int)TargetPosition.X / Globals.Instance.GRID_SIZE;
+        var ty = (int)TargetPosition.Y / Globals.Instance.GRID_SIZE;
+
+        Logger.Info($"End: {tx}, {ty}");
+
+        Logger.Info(level.Grid.GetIdPath(new Vector2I(x, y), new Vector2I(tx, ty)));
     }
 
     private void HandleLookAround(double delta, double interval)

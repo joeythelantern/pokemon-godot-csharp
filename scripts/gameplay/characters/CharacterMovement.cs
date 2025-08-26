@@ -74,9 +74,9 @@ public partial class CharacterMovement : Node
         return IsWalking || IsJumping;
     }
 
-    public (Vector2, Array<Dictionary>) GetTargetColliders(Vector2 targetPosition)
+    public static (Vector2, Array<Dictionary>) GetTargetColliders(Node node, Vector2 targetPosition)
     {
-        var spaceState = GetViewport().GetWorld2D().DirectSpaceState;
+        var spaceState = node.GetViewport().GetWorld2D().DirectSpaceState;
 
         Vector2 adjustedTargetPosition = targetPosition;
         adjustedTargetPosition.X += 8;
@@ -94,7 +94,7 @@ public partial class CharacterMovement : Node
 
     public bool IsTargetOccupied(Vector2 targetPosition)
     {
-        var (adjustedTargetPosition, result) = GetTargetColliders(targetPosition);
+        var (adjustedTargetPosition, result) = GetTargetColliders(this, targetPosition);
 
         if (result.Count > 0)
         {
