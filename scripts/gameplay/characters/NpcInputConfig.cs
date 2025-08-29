@@ -11,6 +11,9 @@ public partial class NpcInputConfig : Resource
     [Export]
     public NpcMovementType NpcMovementType = NpcMovementType.Static;
 
+    [Export]
+    public Array<string> Messages;
+
     [ExportSubgroup("Wander")]
     [Export]
     public Vector2 WanderOrigin = Vector2.Zero;

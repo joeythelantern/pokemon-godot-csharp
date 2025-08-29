@@ -89,7 +89,7 @@ public partial class PlayerRoamState : State
     {
         if (Input.IsActionJustReleased("use"))
         {
-            var (_, result) = CharacterMovement.GetTargetColliders(Owner, CharacterMovement.TargetPosition);
+            var (_, result) = CharacterMovement.GetTargetColliders(Owner, (PlayerInput.Direction * Globals.Instance.GRID_SIZE) + ((Player)StateOwner).Position);
 
             foreach (var collision in result)
             {

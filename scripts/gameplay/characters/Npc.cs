@@ -55,6 +55,8 @@ public partial class Npc : CharacterBody2D
 
     private void UpdateAppearance()
     {
+        Logger.Info("Updating Appearince in Editor");
+
         if (animatedSprite2D == null)
         {
             animatedSprite2D = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
@@ -90,6 +92,43 @@ public partial class Npc : CharacterBody2D
         }
 
         stateMachine.ChangeState("Message");
-        MessageManager.PlayText("oh shit");
+        MessageManager.PlayText([.. NpcInputConfig.Messages]);
     }
 }
+
+#if TOOLS
+[Tool]
+public partial class Npc : CharacterBody2D
+{
+    public override void _Process(double delta)
+    {
+        if (!Engine.IsEditorHint())
+        {
+            var player = GameManager.GetPlayer();
+
+            if (player != null)
+            {
+                if (player.Position.Y <= Position.Y)
+                {
+                    if (ZIndex != 6)
+                        ZIndex = 6;
+                }
+                else
+                {
+                    if (ZIndex != 4)
+                        ZIndex = 4;
+                }
+            }
+
+            return;
+        }
+
+
+        if (animatedSprite2D.SpriteFrames != appearanceFrames[npcAppearance])
+        {
+            Logger.Info("Updating Appearince in Editor");
+            UpdateAppearance();
+        }
+    }
+}
+#endif
