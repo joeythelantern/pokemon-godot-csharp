@@ -170,7 +170,7 @@ public partial class CharacterMovement : Node
         if (!IsMoving() && !IsTargetOccupied(TargetPosition))
         {
             EmitSignal(SignalName.Animation, "walk");
-            Logger.Info($"{GetParent().Name} moving from {Character.Position} to {TargetPosition}");
+            //Logger.Info($"{GetParent().Name} moving from {Character.Position} to {TargetPosition}");
 
             if (ECharacterMovement == ECharacterMovement.JUMPING)
             {

@@ -15,7 +15,6 @@ public partial class NpcRoamState : State
 
     private double timer = 5f;
     private Array<Vector2> currentPatrolPoints = new();
-    private int currentPatrolPointIndex = 0;
 
     public override void _Process(double delta)
     {
@@ -69,33 +68,21 @@ public partial class NpcRoamState : State
         if (currentPatrolPoints.Count == 0)
         {
             var level = SceneManager.GetCurrentLevel();
-
-            var x = (int)currentPosition.X / Globals.Instance.GRID_SIZE;
-            var y = (int)currentPosition.Y / Globals.Instance.GRID_SIZE;
-
-            Logger.Info($"Grabbing index {NpcInput.Config.PatrolIndex} for {NpcInput.Config.PatrolPoints}");
             var TargetPosition = NpcInput.Config.PatrolPoints[NpcInput.Config.PatrolIndex];
             NpcInput.Config.PatrolIndex = (NpcInput.Config.PatrolIndex + 1) % NpcInput.Config.PatrolPoints.Count;
-            Logger.Info($"Target: {TargetPosition}");
 
-            var tx = (int)TargetPosition.X / Globals.Instance.GRID_SIZE;
-            var ty = (int)TargetPosition.Y / Globals.Instance.GRID_SIZE;
-
-            var pathing = level.Grid.GetIdPath(new Vector2I(x, y), new Vector2I(tx, ty));
+            var pathing = level.Grid.GetIdPath(Modules.ConvertToVector2I(currentPosition), Modules.ConvertToVector2I(TargetPosition));
 
             for (int path = 1; path < pathing.Count; path++)
             {
                 var point = pathing[path];
-                currentPatrolPoints.Add(new Vector2(point.X * Globals.Instance.GRID_SIZE, point.Y * Globals.Instance.GRID_SIZE));
+                currentPatrolPoints.Add(Modules.ConvertToVector2(point));
             }
 
             if (currentPatrolPoints.Count == 0)
                 return;
 
             SceneManager.GetCurrentLevel().currentPatrolPoints = currentPatrolPoints;
-
-
-            Logger.Info($"New Patrol points: {currentPatrolPoints}");
         }
 
         if (((Npc)StateOwner).Position.DistanceTo(currentPatrolPoints[0]) < 1f)
@@ -120,7 +107,6 @@ public partial class NpcRoamState : State
         }
 
         NpcInput.EmitSignal(CharacterInput.SignalName.Walk);
-        currentPatrolPointIndex++;
         timer = interval;
     }
 

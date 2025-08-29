@@ -1,4 +1,5 @@
 using Game.Core;
+using Game.UI;
 using Game.Utilities;
 using Godot;
 using Godot.Collections;
@@ -11,6 +12,7 @@ public partial class Npc : CharacterBody2D
     private AnimatedSprite2D animatedSprite2D;
     private NpcInput npcInput;
     private StateMachine stateMachine;
+    private CharacterMovement CharacterMovement;
 
     private readonly Dictionary<NpcAppearance, SpriteFrames> appearanceFrames = new()
     {
@@ -46,6 +48,7 @@ public partial class Npc : CharacterBody2D
         stateMachine.ChangeState("Roam");
 
         animatedSprite2D ??= GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        CharacterMovement ??= GetNode<CharacterMovement>("Movement");
 
         UpdateAppearance();
     }
@@ -71,5 +74,22 @@ public partial class Npc : CharacterBody2D
         {
             animatedSprite2D.SpriteFrames = null;
         }
+    }
+
+    public void PlayMessage(Vector2 Direction)
+    {
+        if (CharacterMovement.IsMoving())
+            return;
+
+        Logger.Info("PLAYING MESSAGE");
+
+        if (npcInput.Direction != Direction * -1)
+        {
+            npcInput.Direction = Direction * -1;
+            npcInput.EmitSignal(CharacterInput.SignalName.Turn);
+        }
+
+        stateMachine.ChangeState("Message");
+        MessageManager.PlayText("oh shit");
     }
 }

@@ -101,6 +101,9 @@ public partial class PlayerRoamState : State
                     case "Sign":
                         ((Sign)collider).PlayMessage();
                         break;
+                    case "Npc":
+                        ((Npc)collider).PlayMessage(PlayerInput.Direction);
+                        break;
                 }
             }
         }

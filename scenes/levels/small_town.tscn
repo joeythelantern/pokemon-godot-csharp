@@ -22,7 +22,7 @@ WanderOrigin = Vector2(0, 0)
 WanderRadius = 64.0
 WanderMoveInterval = 2.0
 PatrolPoints = Array[Vector2]([Vector2(320, 240), Vector2(368, 128), Vector2(112, 240)])
-PatrolMoveInterval = 0.5
+PatrolMoveInterval = 2.0
 PatrolIndex = 0
 LookAroundInterval = 3.0
 metadata/_custom_type_script = "uid://botjjmrkihmd4"
@@ -271,5 +271,5 @@ position = Vector2(224, 176)
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="Worker" parent="NPCs" instance=ExtResource("7_00pfa")]
-position = Vector2(112, 176)
+position = Vector2(112, 240)
 NpcInputConfig = SubResource("Resource_gr214")

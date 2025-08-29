@@ -71,9 +71,22 @@ public partial class Level : Node2D
 				Vector2 worldPos = new Vector2(x * Globals.Instance.GRID_SIZE, y * Globals.Instance.GRID_SIZE);
 
 				var (_, collisions) = GameManager.GetPlayer().GetNode<CharacterMovement>("Movement").GetTargetColliders(GameManager.GetPlayer(), worldPos);
-				var blocked = collisions.Count > 0;
 
-				Grid.SetPointSolid(cell, blocked);
+				foreach (var collision in collisions)
+				{
+					var collider = (Node)(GodotObject)collision["collider"];
+					var colliderType = collider.GetType().Name;
+
+					if (colliderType == "Player" || colliderType == "Npc")
+					{
+						Logger.Info($"Ignoring {colliderType}");
+						continue;
+					}
+
+					Grid.SetPointSolid(cell, true);
+					break;
+				}
+
 			}
 		}
 	}
