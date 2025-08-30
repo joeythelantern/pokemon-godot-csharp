@@ -142,7 +142,7 @@ public partial class NpcRoamState : State
         do
         {
             chosenDirection = directions[Globals.GetRandomNumberGenerator().RandiRange(0, directions.Length - 1)];
-            Vector2 nextPosition = CharacterMovement.Character.Position + chosenDirection * Globals.Instance.GRID_SIZE;
+            Vector2 nextPosition = CharacterMovement.Character.Position + chosenDirection * Globals.GRID_SIZE;
 
             float distanceFromOrigin = nextPosition.DistanceTo(NpcInput.Config.WanderOrigin);
             if (distanceFromOrigin <= NpcInput.Config.WanderRadius)
@@ -151,6 +151,6 @@ public partial class NpcRoamState : State
             tries++;
         } while (tries < 10);
 
-        return (chosenDirection, chosenDirection * Globals.Instance.GRID_SIZE);
+        return (chosenDirection, chosenDirection * Globals.GRID_SIZE);
     }
 }

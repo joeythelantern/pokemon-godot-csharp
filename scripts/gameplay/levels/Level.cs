@@ -52,7 +52,7 @@ public partial class Level : Node2D
 		Grid = new()
 		{
 			Region = new Rect2I(0, 0, Right, Bottom),
-			CellSize = new Vector2(Globals.Instance.GRID_SIZE, Globals.Instance.GRID_SIZE),
+			CellSize = new Vector2(Globals.GRID_SIZE, Globals.GRID_SIZE),
 			DefaultComputeHeuristic = AStarGrid2D.Heuristic.Manhattan,
 			DefaultEstimateHeuristic = AStarGrid2D.Heuristic.Manhattan,
 			DiagonalMode = AStarGrid2D.DiagonalModeEnum.Never
@@ -60,15 +60,15 @@ public partial class Level : Node2D
 
 		Grid.Update();
 
-		var mapHeight = Bottom / Globals.Instance.GRID_SIZE;
-		var mapWidth = Right / Globals.Instance.GRID_SIZE;
+		var mapHeight = Bottom / Globals.GRID_SIZE;
+		var mapWidth = Right / Globals.GRID_SIZE;
 
 		for (int y = 0; y < mapHeight; y++)
 		{
 			for (int x = 0; x < mapWidth; x++)
 			{
 				Vector2I cell = new(x, y);
-				Vector2 worldPos = new Vector2(x * Globals.Instance.GRID_SIZE, y * Globals.Instance.GRID_SIZE);
+				Vector2 worldPos = new Vector2(x * Globals.GRID_SIZE, y * Globals.GRID_SIZE);
 
 				var (_, collisions) = GameManager.GetPlayer().GetNode<CharacterMovement>("Movement").GetTargetColliders(GameManager.GetPlayer(), worldPos);
 
@@ -98,10 +98,10 @@ public partial class Level : Node2D
 
 		foreach (var point in currentPatrolPoints)
 		{
-			DrawRect(new Rect2(point, new Vector2(Globals.Instance.GRID_SIZE, Globals.Instance.GRID_SIZE)), Colors.Red);
+			DrawRect(new Rect2(point, new Vector2(Globals.GRID_SIZE, Globals.GRID_SIZE)), Colors.Red);
 		}
 
 		if (TargetPosition != Vector2.Zero)
-			DrawRect(new Rect2(TargetPosition, new Vector2(Globals.Instance.GRID_SIZE, Globals.Instance.GRID_SIZE)), Colors.Green);
+			DrawRect(new Rect2(TargetPosition, new Vector2(Globals.GRID_SIZE, Globals.GRID_SIZE)), Colors.Green);
 	}
 }

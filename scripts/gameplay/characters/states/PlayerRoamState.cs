@@ -36,22 +36,22 @@ public partial class PlayerRoamState : State
         if (Input.IsActionJustPressed("ui_up"))
         {
             PlayerInput.Direction = Vector2.Up;
-            PlayerInput.TargetPosition = new Vector2(0, -Globals.Instance.GRID_SIZE);
+            PlayerInput.TargetPosition = new Vector2(0, -Globals.GRID_SIZE);
         }
         else if (Input.IsActionJustPressed("ui_down"))
         {
             PlayerInput.Direction = Vector2.Down;
-            PlayerInput.TargetPosition = new Vector2(0, Globals.Instance.GRID_SIZE);
+            PlayerInput.TargetPosition = new Vector2(0, Globals.GRID_SIZE);
         }
         else if (Input.IsActionJustPressed("ui_left"))
         {
             PlayerInput.Direction = Vector2.Left;
-            PlayerInput.TargetPosition = new Vector2(-Globals.Instance.GRID_SIZE, 0);
+            PlayerInput.TargetPosition = new Vector2(-Globals.GRID_SIZE, 0);
         }
         else if (Input.IsActionJustPressed("ui_right"))
         {
             PlayerInput.Direction = Vector2.Right;
-            PlayerInput.TargetPosition = new Vector2(Globals.Instance.GRID_SIZE, 0);
+            PlayerInput.TargetPosition = new Vector2(Globals.GRID_SIZE, 0);
         }
     }
 
@@ -89,7 +89,7 @@ public partial class PlayerRoamState : State
     {
         if (Input.IsActionJustReleased("use"))
         {
-            var (_, result) = CharacterMovement.GetTargetColliders(Owner, (PlayerInput.Direction * Globals.Instance.GRID_SIZE) + ((Player)StateOwner).Position);
+            var (_, result) = CharacterMovement.GetTargetColliders(Owner, (PlayerInput.Direction * Globals.GRID_SIZE) + ((Player)StateOwner).Position);
 
             foreach (var collision in result)
             {

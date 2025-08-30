@@ -2,13 +2,12 @@ using Godot;
 
 namespace Game.Core;
 
+
 public partial class Globals : Node
 {
-    public static Globals Instance { get; private set; }
+    public const int GRID_SIZE = 16;
 
-    [ExportCategory("Gameplay")]
-    [Export]
-    public int GRID_SIZE = 16;
+    public static Globals Instance { get; private set; }
 
     [Export]
     public ulong Seed = 1337;
