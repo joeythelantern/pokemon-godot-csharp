@@ -101,7 +101,7 @@ public partial class SceneManager : Node
 		if (sceneTriggers.FirstOrDefault(st => ((SceneTrigger)st).CurrentLevelTrigger == trigger) is not SceneTrigger sceneTrigger)
 			throw new Exception($"Missing scene trigger {trigger}");
 
-		GameManager.GetPlayer().Position = sceneTrigger.Position + sceneTrigger.EntryDirection * Globals.Instance.GRID_SIZE;
+		GameManager.GetPlayer().Position = sceneTrigger.Position + sceneTrigger.EntryDirection * Globals.GRID_SIZE;
 	}
 
 	public async Task FadeOut()

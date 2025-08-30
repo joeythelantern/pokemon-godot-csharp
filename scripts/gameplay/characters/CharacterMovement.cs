@@ -159,7 +159,7 @@ public partial class CharacterMovement : Node
         if (SceneManager.IsChanging)
             return;
 
-        TargetPosition = Character.Position + CharacterInput.Direction * Globals.Instance.GRID_SIZE;
+        TargetPosition = Character.Position + CharacterInput.Direction * Globals.GRID_SIZE;
 
         if (!IsMoving() && !IsTargetOccupied(TargetPosition))
         {
@@ -170,7 +170,7 @@ public partial class CharacterMovement : Node
             {
                 Progress = 0f;
                 StartPosition = Character.Position;
-                TargetPosition = Character.Position + CharacterInput.Direction * (Globals.Instance.GRID_SIZE * 2);
+                TargetPosition = Character.Position + CharacterInput.Direction * (Globals.GRID_SIZE * 2);
                 IsJumping = true;
             }
             else
@@ -184,7 +184,7 @@ public partial class CharacterMovement : Node
     {
         if (IsWalking)
         {
-            Character.Position = Character.Position.MoveToward(TargetPosition, (float)delta * Globals.Instance.GRID_SIZE * 4);
+            Character.Position = Character.Position.MoveToward(TargetPosition, (float)delta * Globals.GRID_SIZE * 4);
 
             if (Character.Position.DistanceTo(TargetPosition) < 1f)
             {
@@ -230,8 +230,8 @@ public partial class CharacterMovement : Node
     public void SnapPositionToGrid()
     {
         Character.Position = new Vector2(
-            Mathf.Round(Character.Position.X / Globals.Instance.GRID_SIZE) * Globals.Instance.GRID_SIZE,
-            Mathf.Round(Character.Position.Y / Globals.Instance.GRID_SIZE) * Globals.Instance.GRID_SIZE
+            Mathf.Round(Character.Position.X / Globals.GRID_SIZE) * Globals.GRID_SIZE,
+            Mathf.Round(Character.Position.Y / Globals.GRID_SIZE) * Globals.GRID_SIZE
         );
     }
 }
