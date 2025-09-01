@@ -62,6 +62,7 @@ This project was made possible with the help of various resources from other dev
 
 - **Nature Tileset** - [Flurmimon](https://www.deviantart.com/flurmimon)
 - **Player Tileset** - [Aveontrainer](https://www.deviantart.com/aveontrainer)
+- **NPC Tilesets** - [Aveontrainer](https://www.deviantart.com/aveontrainer)
 
 If you see your work here and would like credit or modifications, feel free to reach out!
 
