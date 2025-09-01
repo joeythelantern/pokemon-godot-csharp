@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bhequssh43v25"]
+[gd_scene load_steps=13 format=4 uid="uid://bhequssh43v25"]
 
 [ext_resource type="Script" uid="uid://bpion4qpiamje" path="res://scripts/gameplay/levels/Level.cs" id="1_2cpqh"]
 [ext_resource type="TileSet" uid="uid://cx5l6e3tq8rem" path="res://resources/tilesets/level.tres" id="1_467iw"]
@@ -6,12 +6,40 @@
 [ext_resource type="PackedScene" uid="uid://b1vjurr1j5v8q" path="res://scenes/levels/scene_trigger.tscn" id="3_x2ndx"]
 [ext_resource type="PackedScene" uid="uid://dy6u7lnf72to1" path="res://scenes/levels/sign.tscn" id="5_6kjy8"]
 [ext_resource type="PackedScene" uid="uid://djuwo7vtckbv0" path="res://scenes/levels/tall_grass.tscn" id="6_3nfn8"]
+[ext_resource type="PackedScene" uid="uid://bx4im14dneh6k" path="res://scenes/characters/npc.tscn" id="7_fv6i1"]
+[ext_resource type="Script" uid="uid://bd7euek3bm7wd" path="res://scripts/gameplay/characters/NpcInputConfig.cs" id="8_00pfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2wcl"]
 size = Vector2(16, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r53i7"]
 size = Vector2(16, 64)
+
+[sub_resource type="Resource" id="Resource_gr214"]
+script = ExtResource("8_00pfa")
+NpcMovementType = 3
+Messages = ["Hey! How's it going!"]
+WanderOrigin = Vector2(0, 0)
+WanderRadius = 64.0
+WanderMoveInterval = 2.0
+PatrolPoints = []
+PatrolMoveInterval = 2.0
+PatrolIndex = 0
+LookAroundInterval = 3.5
+metadata/_custom_type_script = "uid://bd7euek3bm7wd"
+
+[sub_resource type="Resource" id="Resource_00pfa"]
+script = ExtResource("8_00pfa")
+NpcMovementType = 1
+Messages = ["Ssssh! Be quiet!", "I'm looking for bug Pokemon ..."]
+WanderOrigin = Vector2(240, 176)
+WanderRadius = 36.0
+WanderMoveInterval = 0.5
+PatrolPoints = []
+PatrolMoveInterval = 2.0
+PatrolIndex = 0
+LookAroundInterval = 2.0
+metadata/_custom_type_script = "uid://bd7euek3bm7wd"
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_2cpqh")
@@ -253,3 +281,30 @@ position = Vector2(240, 176)
 
 [node name="TallGrass10" parent="TallGrass" instance=ExtResource("6_3nfn8")]
 position = Vector2(224, 176)
+
+[node name="TallGrass35" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(208, 160)
+
+[node name="TallGrass36" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(272, 160)
+
+[node name="TallGrass37" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(256, 160)
+
+[node name="TallGrass38" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(240, 160)
+
+[node name="TallGrass39" parent="TallGrass" instance=ExtResource("6_3nfn8")]
+position = Vector2(224, 160)
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="Gardener" parent="NPCs" instance=ExtResource("7_fv6i1")]
+position = Vector2(64, 176)
+NpcAppearance = 1
+NpcInputConfig = SubResource("Resource_gr214")
+
+[node name="NPC" parent="NPCs" instance=ExtResource("7_fv6i1")]
+position = Vector2(240, 176)
+NpcAppearance = 0
+NpcInputConfig = SubResource("Resource_00pfa")

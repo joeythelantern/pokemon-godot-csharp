@@ -89,7 +89,7 @@ public partial class PlayerRoamState : State
     {
         if (Input.IsActionJustReleased("use"))
         {
-            var (_, result) = CharacterMovement.GetTargetColliders(CharacterMovement.TargetPosition);
+            var (_, result) = CharacterMovement.GetTargetColliders((PlayerInput.Direction * Globals.GRID_SIZE) + ((Player)StateOwner).Position);
 
             foreach (var collision in result)
             {
@@ -100,6 +100,9 @@ public partial class PlayerRoamState : State
                 {
                     case "Sign":
                         ((Sign)collider).PlayMessage();
+                        break;
+                    case "Npc":
+                        ((Npc)collider).PlayMessage(PlayerInput.Direction);
                         break;
                 }
             }

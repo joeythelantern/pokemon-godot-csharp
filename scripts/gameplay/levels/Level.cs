@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Game.Core;
 using Godot;
 
@@ -25,8 +26,29 @@ public partial class Level : Node2D
 	[Export]
 	public int Right;
 
+	private readonly HashSet<Vector2> reserverdTiles = [];
+
 	public override void _Ready()
 	{
 		Logger.Info($"Loading level {LevelName} ...");
+	}
+
+	public bool ReserveTile(Vector2 position)
+	{
+		if (reserverdTiles.Contains(position))
+			return false;
+
+		reserverdTiles.Add(position);
+		return true;
+	}
+
+	public bool IsTileFree(Vector2 position)
+	{
+		return !reserverdTiles.Contains(position);
+	}
+
+	public void ReleaseTile(Vector2 position)
+	{
+		reserverdTiles.Remove(position);
 	}
 }

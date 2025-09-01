@@ -44,10 +44,15 @@ public partial class CharacterMovement : Node
     [Export]
     public float Progress = 0f;
 
+    private bool isPlayer = true;
+
     public override void _Ready()
     {
         CharacterInput.Walk += StartMoving;
         CharacterInput.Turn += Turn;
+
+        if (GetParent().Name != "Player")
+            isPlayer = false;
 
         Logger.Info("Loading character movement component ...");
     }
@@ -57,8 +62,14 @@ public partial class CharacterMovement : Node
         Walk(delta);
         Jump(delta);
 
-        if (!IsMoving() && !Modules.IsActionPressed())
+        if (!IsMoving())
         {
+            if (isPlayer)
+            {
+                if (Modules.IsActionPressed())
+                    return;
+            }
+
             EmitSignal(SignalName.Animation, "idle");
         }
     }
@@ -90,25 +101,28 @@ public partial class CharacterMovement : Node
     {
         var (adjustedTargetPosition, result) = GetTargetColliders(targetPosition);
 
-        if (result.Count > 0)
+        if (result.Count == 0)
         {
-            foreach (var collision in result)
-            {
-                var collider = (Node)(GodotObject)collision["collider"];
-                var colliderType = collider.GetType().Name;
-
-                return colliderType switch
-                {
-                    "Sign" => true,
-                    "TallGrass" => false,
-                    "TileMapLayer" => GetTileMapLayerCollision((TileMapLayer)collider, adjustedTargetPosition),
-                    "SceneTrigger" => false,
-                    _ => true,
-                };
-            }
+            return false;
         }
+        else if (result.Count == 1)
+        {
+            var collider = (Node)(GodotObject)result[0]["collider"];
+            var colliderType = collider.GetType().Name;
 
-        return false;
+            return colliderType switch
+            {
+                "Sign" => true,
+                "TallGrass" => false,
+                "TileMapLayer" => isPlayer ? GetTileMapLayerCollision((TileMapLayer)collider, adjustedTargetPosition) : true,
+                "SceneTrigger" => !isPlayer,
+                _ => true,
+            };
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public bool GetTileMapLayerCollision(TileMapLayer tileMapLayer, Vector2 adjustedTargetPosition)
@@ -161,7 +175,7 @@ public partial class CharacterMovement : Node
 
         TargetPosition = Character.Position + CharacterInput.Direction * Globals.GRID_SIZE;
 
-        if (!IsMoving() && !IsTargetOccupied(TargetPosition))
+        if (!IsMoving() && !IsTargetOccupied(TargetPosition) && SceneManager.GetCurrentLevel().ReserveTile(TargetPosition))
         {
             EmitSignal(SignalName.Animation, "walk");
             Logger.Info($"{GetParent().Name} moving from {Character.Position} to {TargetPosition}");
@@ -216,6 +230,7 @@ public partial class CharacterMovement : Node
 
     public void StopMoving()
     {
+        SceneManager.GetCurrentLevel().ReleaseTile(TargetPosition);
         IsWalking = false;
         IsJumping = false;
         ECharacterMovement = ECharacterMovement.WALKING;

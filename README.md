@@ -19,6 +19,7 @@ Follow along with the series! Each video will cover a different aspect of the ga
 7. [Part 7 - Message Box UI](https://youtu.be/Mrmu_06GYcs) 🛠️
 8. [Part 8 - Signs](https://youtu.be/oZrMa2BLZUM) 🛠️
 9. [Part 9 - Tall Grass](https://youtu.be/KKItW0gFUDg) 🛠️
+10. Part 10 - NPCs Part 1 -> Coming Soon ...
 
 ---
 
