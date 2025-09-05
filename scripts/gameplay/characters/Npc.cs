@@ -74,8 +74,6 @@ public partial class Npc : CharacterBody2D
 
     private void UpdateAppearance()
     {
-        Logger.Info("Changing appearance in editor!");
-
         if (animatedSprite2D == null)
         {
             animatedSprite2D = GetNodeOrNull<AnimatedSprite2D>("AnimatedSprite2D");
@@ -88,7 +86,11 @@ public partial class Npc : CharacterBody2D
 
         if (appearanceFrames.TryGetValue(npcAppearance, out var spriteFrames))
         {
-            animatedSprite2D.SpriteFrames = spriteFrames;
+            if (animatedSprite2D.SpriteFrames != spriteFrames)
+            {
+                Logger.Info($"Updating appearance for {Name} to {spriteFrames.ResourcePath}");
+                animatedSprite2D.SpriteFrames = spriteFrames;
+            }
         }
         else
         {
