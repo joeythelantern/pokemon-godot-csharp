@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Game.Core;
 using Godot;
@@ -28,6 +27,10 @@ public partial class Level : Node2D
 	[Export]
 	public int Right;
 
+	[ExportCategory("Debugging")]
+	[Export]
+	public bool DebugLayerOn = false;
+
 	private readonly HashSet<Vector2> reserverdTiles = [];
 
 	public AStarGrid2D Grid;
@@ -37,6 +40,8 @@ public partial class Level : Node2D
 	public override void _Ready()
 	{
 		Logger.Info($"Loading level {LevelName} ...");
+
+		GetNode<LevelDebugger>("DebugLayer").DebugOn = DebugLayerOn;
 	}
 
 	public override void _Process(double delta)
@@ -44,11 +49,6 @@ public partial class Level : Node2D
 		if (Grid == null && GameManager.GetPlayer() != null)
 		{
 			SetupGrid();
-		}
-
-		if (Grid != null)
-		{
-			QueueRedraw();
 		}
 	}
 
@@ -104,35 +104,6 @@ public partial class Level : Node2D
 				}
 			}
 		}
-	}
-
-	public override void _Draw()
-	{
-		if (Grid == null)
-			return;
-
-		var mapHeight = Bottom / Globals.GRID_SIZE;
-		var mapWidth = Right / Globals.GRID_SIZE;
-
-		for (int y = 0; y < mapHeight; y++)
-		{
-			for (int x = 0; x < mapWidth; x++)
-			{
-				Vector2I cell = new(x, y);
-				Vector2 worldPosition = new(x * Globals.GRID_SIZE, y * Globals.GRID_SIZE);
-
-				var color = Grid.IsPointSolid(cell) ? new Color(1, 0, 0, 0.3f) : new Color(0, 1, 0, 0.3f);
-				DrawRect(new Rect2(worldPosition, Grid.CellSize), color, filled: true);
-			}
-		}
-
-		foreach (var point in CurrentPatrolPoints)
-		{
-			DrawRect(new Rect2(point, Grid.CellSize), Colors.Blue, filled: true);
-		}
-
-		if (TargetPosition != Vector2.Zero)
-			DrawRect(new Rect2(TargetPosition, Grid.CellSize), Colors.Cyan, filled: true);
 	}
 
 	public bool ReserveTile(Vector2 position)
