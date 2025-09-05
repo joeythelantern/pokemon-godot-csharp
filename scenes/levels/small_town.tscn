@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bhequssh43v25"]
+[gd_scene load_steps=14 format=4 uid="uid://bhequssh43v25"]
 
 [ext_resource type="Script" uid="uid://bpion4qpiamje" path="res://scripts/gameplay/levels/Level.cs" id="1_2cpqh"]
 [ext_resource type="TileSet" uid="uid://cx5l6e3tq8rem" path="res://resources/tilesets/level.tres" id="1_467iw"]
@@ -37,6 +37,19 @@ WanderRadius = 36.0
 WanderMoveInterval = 0.5
 PatrolPoints = []
 PatrolMoveInterval = 2.0
+PatrolIndex = 0
+LookAroundInterval = 2.0
+metadata/_custom_type_script = "uid://bd7euek3bm7wd"
+
+[sub_resource type="Resource" id="Resource_h7y3r"]
+script = ExtResource("8_00pfa")
+NpcMovementType = 2
+Messages = ["I'm improving the roads.", "They are a lot of work to maintain, as well as the grass."]
+WanderOrigin = Vector2(0, 0)
+WanderRadius = 64.0
+WanderMoveInterval = 2.0
+PatrolPoints = [Vector2(320, 144), Vector2(386, 240), Vector2(112, 240)]
+PatrolMoveInterval = 1.0
 PatrolIndex = 0
 LookAroundInterval = 2.0
 metadata/_custom_type_script = "uid://bd7euek3bm7wd"
@@ -298,13 +311,23 @@ position = Vector2(240, 160)
 position = Vector2(224, 160)
 
 [node name="NPCs" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Gardener" parent="NPCs" instance=ExtResource("7_fv6i1")]
 position = Vector2(64, 176)
 NpcAppearance = 1
 NpcInputConfig = SubResource("Resource_gr214")
 
-[node name="NPC" parent="NPCs" instance=ExtResource("7_fv6i1")]
+[node name="Gardener2" parent="NPCs" instance=ExtResource("7_fv6i1")]
+position = Vector2(64, 160)
+NpcAppearance = 1
+NpcInputConfig = SubResource("Resource_gr214")
+
+[node name="BugCatcher" parent="NPCs" instance=ExtResource("7_fv6i1")]
 position = Vector2(240, 176)
 NpcAppearance = 0
 NpcInputConfig = SubResource("Resource_00pfa")
+
+[node name="Worker" parent="NPCs" instance=ExtResource("7_fv6i1")]
+position = Vector2(112, 240)
+NpcInputConfig = SubResource("Resource_h7y3r")

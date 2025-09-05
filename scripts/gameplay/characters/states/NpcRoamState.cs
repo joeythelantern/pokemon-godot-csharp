@@ -1,6 +1,7 @@
 using Game.Core;
 using Game.Utilities;
 using Godot;
+using Godot.Collections;
 
 namespace Game.Gameplay;
 
@@ -14,6 +15,7 @@ public partial class NpcRoamState : State
     public CharacterMovement CharacterMovement;
 
     private double timer = 2f;
+    private Array<Vector2> currentPatrolPoints = [];
 
     public override void _Process(double delta)
     {
@@ -28,7 +30,66 @@ public partial class NpcRoamState : State
             case NpcMovementType.LookAround:
                 HandleLookAround(delta, NpcInput.Config.LookAroundInterval);
                 break;
+            case NpcMovementType.Patrol:
+                HandlePatrol(delta, NpcInput.Config.PatrolMoveInterval);
+                break;
         }
+    }
+
+    private void HandlePatrol(double delta, double interval)
+    {
+        if (NpcInput.Config.PatrolPoints.Count == 0)
+            return;
+
+        timer -= delta;
+
+        if (timer > 0)
+            return;
+
+        Vector2 currentPosition = ((Npc)StateOwner).Position;
+        var level = SceneManager.GetCurrentLevel();
+
+        if (currentPatrolPoints.Count == 0)
+        {
+            var patrolPoint = NpcInput.Config.PatrolPoints[NpcInput.Config.PatrolIndex];
+            NpcInput.Config.PatrolIndex = (NpcInput.Config.PatrolIndex + 1) % NpcInput.Config.PatrolPoints.Count;
+
+            var pathing = level.Grid.GetIdPath(Modules.ConvertVector2ToVector2I(currentPosition), Modules.ConvertVector2ToVector2I(patrolPoint));
+
+            for (int i = 1; i < pathing.Count; i++)
+            {
+                var point = pathing[i];
+                currentPatrolPoints.Add(Modules.ConvertVector2IToVector2(point));
+            }
+
+            level.CurrentPatrolPoints = currentPatrolPoints;
+
+            if (currentPatrolPoints.Count == 0)
+                return;
+        }
+
+        if (((Npc)StateOwner).Position.DistanceTo(currentPatrolPoints[0]) < 1f)
+        {
+            currentPatrolPoints.RemoveAt(0);
+            return;
+        }
+
+        NpcInput.TargetPosition = currentPatrolPoints[0];
+        level.TargetPosition = NpcInput.TargetPosition;
+
+        Vector2 difference = NpcInput.TargetPosition - currentPosition;
+
+        if (Mathf.Abs(difference.X) > Mathf.Abs(difference.Y))
+        {
+            NpcInput.Direction = difference.X > 0 ? Vector2.Right : Vector2.Left;
+        }
+        else
+        {
+            NpcInput.Direction = difference.Y > 0 ? Vector2.Down : Vector2.Up;
+        }
+
+        NpcInput.EmitSignal(CharacterInput.SignalName.Walk);
+        timer = interval;
     }
 
     private void HandleWander(double delta, double interval)

@@ -18,4 +18,14 @@ public static class Modules
     {
         return Input.IsActionJustReleased("ui_up") || Input.IsActionJustReleased("ui_down") || Input.IsActionJustReleased("ui_left") || Input.IsActionJustReleased("ui_right");
     }
+
+    public static Vector2I ConvertVector2ToVector2I(Vector2 vector)
+    {
+        return new Vector2I((int)vector.X / Globals.GRID_SIZE, (int)vector.Y / Globals.GRID_SIZE);
+    }
+
+    public static Vector2 ConvertVector2IToVector2(Vector2I vector)
+    {
+        return new Vector2I(vector.X * Globals.GRID_SIZE, vector.Y * Globals.GRID_SIZE);
+    }
 }

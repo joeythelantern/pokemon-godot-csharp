@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Game.Core;
 using Godot;
+using Godot.Collections;
 
 namespace Game.Gameplay;
 
@@ -28,9 +30,109 @@ public partial class Level : Node2D
 
 	private readonly HashSet<Vector2> reserverdTiles = [];
 
+	public AStarGrid2D Grid;
+	public Vector2 TargetPosition = Vector2.Zero;
+	public Array<Vector2> CurrentPatrolPoints = [];
+
 	public override void _Ready()
 	{
 		Logger.Info($"Loading level {LevelName} ...");
+	}
+
+	public override void _Process(double delta)
+	{
+		if (Grid == null && GameManager.GetPlayer() != null)
+		{
+			SetupGrid();
+		}
+
+		if (Grid != null)
+		{
+			QueueRedraw();
+		}
+	}
+
+	public void SetupGrid()
+	{
+		Logger.Info("Setting up A* Grid ...");
+
+		Grid = new()
+		{
+			Region = new Rect2I(0, 0, Right, Bottom),
+			CellSize = new Vector2(Globals.GRID_SIZE, Globals.GRID_SIZE),
+			DefaultComputeHeuristic = AStarGrid2D.Heuristic.Manhattan,
+			DefaultEstimateHeuristic = AStarGrid2D.Heuristic.Manhattan,
+			DiagonalMode = AStarGrid2D.DiagonalModeEnum.Never
+		};
+
+		Grid.Update();
+
+		var mapHeight = Bottom / Globals.GRID_SIZE;
+		var mapWidth = Right / Globals.GRID_SIZE;
+
+		for (int y = 0; y < mapHeight; y++)
+		{
+			for (int x = 0; x < mapWidth; x++)
+			{
+				Vector2I cell = new(x, y);
+				Vector2 worldPosition = new(x * Globals.GRID_SIZE, y * Globals.GRID_SIZE);
+
+				var (_, collisions) = GameManager.GetPlayer().GetNode<CharacterMovement>("Movement").GetTargetColliders(worldPosition);
+
+				foreach (var collision in collisions)
+				{
+					var collider = (Node)(GodotObject)collision["collider"];
+					var colliderType = collider.GetType().Name;
+
+					if (colliderType == "TallGrass" || colliderType == "Player")
+					{
+						continue;
+					}
+
+					if (colliderType == "Npc")
+					{
+						switch (((Npc)collider).NpcInputConfig.NpcMovementType)
+						{
+							case NpcMovementType.Patrol:
+								continue;
+							case NpcMovementType.Wander:
+								continue;
+						}
+					}
+
+					Grid.SetPointSolid(cell, true);
+				}
+			}
+		}
+	}
+
+	public override void _Draw()
+	{
+		if (Grid == null)
+			return;
+
+		var mapHeight = Bottom / Globals.GRID_SIZE;
+		var mapWidth = Right / Globals.GRID_SIZE;
+
+		for (int y = 0; y < mapHeight; y++)
+		{
+			for (int x = 0; x < mapWidth; x++)
+			{
+				Vector2I cell = new(x, y);
+				Vector2 worldPosition = new(x * Globals.GRID_SIZE, y * Globals.GRID_SIZE);
+
+				var color = Grid.IsPointSolid(cell) ? new Color(1, 0, 0, 0.3f) : new Color(0, 1, 0, 0.3f);
+				DrawRect(new Rect2(worldPosition, Grid.CellSize), color, filled: true);
+			}
+		}
+
+		foreach (var point in CurrentPatrolPoints)
+		{
+			DrawRect(new Rect2(point, Grid.CellSize), Colors.Blue, filled: true);
+		}
+
+		if (TargetPosition != Vector2.Zero)
+			DrawRect(new Rect2(TargetPosition, Grid.CellSize), Colors.Cyan, filled: true);
 	}
 
 	public bool ReserveTile(Vector2 position)
