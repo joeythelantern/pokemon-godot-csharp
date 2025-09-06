@@ -1,4 +1,7 @@
+using System.Threading.Tasks;
 using Godot;
+using Newtonsoft.Json;
+using HttpClient = System.Net.Http.HttpClient;
 
 namespace Game.Core;
 
@@ -27,5 +30,29 @@ public static class Modules
     public static Vector2 ConvertVector2IToVector2(Vector2I vector)
     {
         return new Vector2I(vector.X * Globals.GRID_SIZE, vector.Y * Globals.GRID_SIZE);
+    }
+
+    private static readonly HttpClient httpClient = new HttpClient();
+
+    public static async Task<T> FetchData<T>(string url)
+    {
+        try
+        {
+            var response = await httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                GD.PrintErr($"[API ERROR] {url} returned {response.StatusCode}");
+                return default;
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<T>(json);
+        }
+        catch (System.Exception ex)
+        {
+            GD.PrintErr($"[API ERROR] Failed fetching {url}: {ex.Message}");
+            return default;
+        }
     }
 }
