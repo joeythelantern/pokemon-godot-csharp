@@ -8,7 +8,7 @@ namespace Game.Resources;
 [Tool]
 public partial class MoveResource : Resource
 {
-    [ExportGroup("Basic Info")]
+    [ExportCategory("Basic Info")]
     [Export]
     public string Name = "";
 
@@ -21,7 +21,7 @@ public partial class MoveResource : Resource
     [Export]
     public MoveCategory Category = MoveCategory.Physical;
 
-    [ExportGroup("Metadata")]
+    [ExportCategory("Metadata")]
     [Export]
     public int Accuracy;
 
@@ -55,7 +55,7 @@ public partial class MoveResource : Resource
     [Export]
     public int PP;
 
-    [ExportGroup("Move Effects")]
+    [ExportCategory("Move Effects")]
     [Export]
     public int AilmentChance;
 

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cpfmg8xgwcytt"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_jio5x"]
+
+[resource]
+script = ExtResource("1_jio5x")
+Name = "string-shot"
+Target = 6
+Type = 12
+Category = 2
+Accuracy = 95
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 0
+PP = 40
+AilmentChance = 0
+Ailment = 0
+StatChanges = Dictionary[int, int]({
+6: -2
+})

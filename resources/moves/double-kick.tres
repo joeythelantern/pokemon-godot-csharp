@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://cvels3br5ah11"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_8ydru"]
+
+[resource]
+script = ExtResource("1_8ydru")
+Name = "double-kick"
+Target = 5
+Type = 7
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 2
+MaxTurns = 0
+MinHits = 2
+MinTurns = 0
+Power = 30
+PP = 30
+AilmentChance = 0
+Ailment = 0
+StatChanges = Dictionary[int, int]({})

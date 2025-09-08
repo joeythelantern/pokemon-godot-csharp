@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dltptkw034f6u"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_jt60a"]
+
+[resource]
+script = ExtResource("1_jt60a")
+Name = "fire-spin"
+Target = 5
+Type = 2
+Category = 1
+Accuracy = 85
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 6
+MinHits = 0
+MinTurns = 5
+Power = 35
+PP = 15
+AilmentChance = 100
+Ailment = 8
+StatChanges = Dictionary[int, int]({})

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b307ftl1tds81"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_pyna6"]
+
+[resource]
+script = ExtResource("1_pyna6")
+Name = "ember"
+Target = 5
+Type = 2
+Category = 1
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 40
+PP = 25
+AilmentChance = 10
+Ailment = 1
+StatChanges = Dictionary[int, int]({})

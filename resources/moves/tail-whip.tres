@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://ehy58e1x7u2k"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_dhb0d"]
+
+[resource]
+script = ExtResource("1_dhb0d")
+Name = "tail-whip"
+Target = 6
+Type = 1
+Category = 2
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 0
+PP = 30
+AilmentChance = 0
+Ailment = 0
+StatChanges = Dictionary[int, int]({
+3: -1
+})

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://c10xonajlyv4c"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_td27n"]
+
+[resource]
+script = ExtResource("1_td27n")
+Name = "sludge"
+Target = 5
+Type = 8
+Category = 1
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 65
+PP = 20
+AilmentChance = 30
+Ailment = 4
+StatChanges = Dictionary[int, int]({})

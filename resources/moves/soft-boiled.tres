@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://d2s3bdbv8jipj"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_ey8hr"]
+
+[resource]
+script = ExtResource("1_ey8hr")
+Name = "soft-boiled"
+Target = 2
+Type = 1
+Category = 2
+Accuracy = 0
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 50
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 0
+PP = 5
+AilmentChance = 0
+Ailment = 0
+StatChanges = Dictionary[int, int]({})

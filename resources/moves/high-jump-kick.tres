@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bgr1soyk7u88"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_wbclp"]
+
+[resource]
+script = ExtResource("1_wbclp")
+Name = "high-jump-kick"
+Target = 5
+Type = 7
+Category = 0
+Accuracy = 90
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 130
+PP = 10
+AilmentChance = 0
+Ailment = 0
+StatChanges = Dictionary[int, int]({})

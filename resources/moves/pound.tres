@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://snr0e40v8n01"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_358pl"]
+
+[resource]
+script = ExtResource("1_358pl")
+Name = "pound"
+Target = 5
+Type = 1
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 40
+PP = 35
+AilmentChance = 0
+Ailment = 0
+StatChanges = Dictionary[int, int]({})

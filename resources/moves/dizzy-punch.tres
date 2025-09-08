@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://ch43j7mvpb84o"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_5bl1c"]
+
+[resource]
+script = ExtResource("1_5bl1c")
+Name = "dizzy-punch"
+Target = 5
+Type = 1
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 5
+MinHits = 0
+MinTurns = 2
+Power = 70
+PP = 10
+AilmentChance = 20
+Ailment = 7
+StatChanges = Dictionary[int, int]({})

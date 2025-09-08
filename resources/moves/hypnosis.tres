@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://c0b0m1pvj3acj"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_5xmb5"]
+
+[resource]
+script = ExtResource("1_5xmb5")
+Name = "hypnosis"
+Target = 5
+Type = 11
+Category = 2
+Accuracy = 60
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 4
+MinHits = 0
+MinTurns = 2
+Power = 0
+PP = 20
+AilmentChance = 0
+Ailment = 6
+StatChanges = Dictionary[int, int]({})

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://dejx0ox3grkgc"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_xkeci"]
+
+[resource]
+script = ExtResource("1_xkeci")
+Name = "fire-punch"
+Target = 5
+Type = 2
+Category = 0
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 75
+PP = 15
+AilmentChance = 10
+Ailment = 1
+StatChanges = Dictionary[int, int]({})

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://b1d08ie75d8v3"]
+
+[ext_resource type="Script" uid="uid://c7iianxxhhhx4" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_k4dng"]
+
+[resource]
+script = ExtResource("1_k4dng")
+Name = "absorb"
+Target = 5
+Type = 4
+Category = 1
+Accuracy = 100
+CritRate = 0
+Drain = 50
+FlinchChance = 0
+Healing = 0
+MaxHits = 0
+MaxTurns = 0
+MinHits = 0
+MinTurns = 0
+Power = 20
+PP = 25
+AilmentChance = 0
+Ailment = 0
+StatChanges = Dictionary[int, int]({})
