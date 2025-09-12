@@ -7,6 +7,7 @@ public partial class Globals : Node
     public static Globals Instance { get; private set; }
 
     public const int GRID_SIZE = 16;
+    public const int MOVE_NUMBERS = 165;
 
     [ExportCategory("Gameplay")]
     [Export]
