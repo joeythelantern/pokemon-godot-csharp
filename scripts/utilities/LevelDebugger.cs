@@ -24,6 +24,11 @@ public partial class LevelDebugger : Node2D
 
     public override void _Draw()
     {
+        if (!DebugOn)
+        {
+            return;
+        }
+
         if (level == null)
         {
             return;
