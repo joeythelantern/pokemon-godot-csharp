@@ -34,6 +34,7 @@ animations = [{
 }]
 
 [node name="TallGrass" type="Area2D" node_paths=PackedStringArray("AnimatedSprite2D")]
+y_sort_enabled = true
 script = ExtResource("1_6d3tt")
 AnimatedSprite2D = NodePath("AnimatedSprite2D")
 
