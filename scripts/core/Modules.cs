@@ -1,3 +1,4 @@
+using System.IO;
 using System.Threading.Tasks;
 using Godot;
 using HttpClient = System.Net.Http.HttpClient;
@@ -52,6 +53,26 @@ public static class Modules
         {
             Logger.Error($"Api Error: failed fetching {url} -> {ex.Message}");
             return default;
+        }
+    }
+
+    public static async Task<string> DownloadSprite(string imageUrl, string saveFolderPath, string fileName)
+    {
+        if (string.IsNullOrEmpty(imageUrl)) return null;
+
+        string fullSavePath = ProjectSettings.GlobalizePath($"{saveFolderPath}{fileName}");
+        string resourcePath = $"{saveFolderPath}{fileName}";
+
+        try
+        {
+            byte[] imageBytes = await httpClient.GetByteArrayAsync(imageUrl);
+            File.WriteAllBytes(fullSavePath, imageBytes);
+            return resourcePath;
+        }
+        catch (System.Exception e)
+        {
+            Logger.Error($"Failed to download sprite from {imageUrl} to {resourcePath}: {e.Message}");
+            return null;
         }
     }
 }

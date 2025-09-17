@@ -1,3 +1,4 @@
+using System.Linq;
 using Godot;
 using Godot.Collections;
 
@@ -45,6 +46,13 @@ public partial class PokemonResource : Resource
     [Export]
     public int BaseSpeed;
 
+    [ExportCategory("Moves")]
+    [Export]
+    public Array<string> LearnableMoves;
+
+    [Export]
+    public Dictionary<string, int> LevelUpMoves;
+
     [ExportCategory("Sprites")]
     [Export]
     public Texture2D FrontSprite;
@@ -58,13 +66,24 @@ public partial class PokemonResource : Resource
     [Export]
     public Texture2D ShinyBackSprite;
 
-    [ExportCategory("Moves")]
     [Export]
-    public Array<string> LearnableMoves;
+    public SpriteFrames SpriteFrames;
 
-    [Export]
-    public Dictionary<string, int> LevelUpMoves;
-
-    [Export]
-    public Array<string> Machines;
+    public override string ToString()
+    {
+        return $"Name: {Name}\n" +
+               $"Id: {Id}\n" +
+               $"Description: {Description}\n" +
+               $"Height: {Height}\n" +
+               $"Weight: {Weight}\n" +
+               $"Base Experience: {BaseExperience}\n" +
+               $"Base HP: {BaseHp}\n" +
+               $"Base Attack: {BaseAttack}\n" +
+               $"Base Defense: {BaseDefense}\n" +
+               $"Base Special Attack: {BaseSpecialAttack}\n" +
+               $"Base Special Defense: {BaseSpecialDefense}\n" +
+               $"Base Speed: {BaseSpeed}\n" +
+               $"Learnable Moves: {string.Join(", ", LearnableMoves)}\n" +
+               $"Level-Up Moves: {string.Join(", ", LevelUpMoves.Select(kv => $"{kv.Key} (Level {kv.Value})"))}";
+    }
 }
