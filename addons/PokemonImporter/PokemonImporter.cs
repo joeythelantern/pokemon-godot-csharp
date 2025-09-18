@@ -36,7 +36,7 @@ public partial class PokemonImporter : EditorPlugin
 
 		const int gcInterval = 10;
 
-		for (int i = 1; i <= 1; i++)
+		for (int i = 1; i <= Globals.POKEMON_NUMBERS; i++)
 		{
 			Logger.Info($"Processing Pokemon with ID: {i}");
 
