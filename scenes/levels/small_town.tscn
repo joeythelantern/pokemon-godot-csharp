@@ -311,20 +311,20 @@ position = Vector2(240, 160)
 [node name="TallGrass39" parent="TallGrass" instance=ExtResource("6_3nfn8")]
 position = Vector2(224, 160)
 
-[node name="NPCs" type="Node2D" parent="."]
+[node name="Entities" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Gardener" parent="NPCs" instance=ExtResource("7_fv6i1")]
+[node name="Gardener" parent="Entities" instance=ExtResource("7_fv6i1")]
 position = Vector2(64, 176)
 NpcAppearance = 1
 NpcInputConfig = SubResource("Resource_gr214")
 
-[node name="BugCatcher" parent="NPCs" instance=ExtResource("7_fv6i1")]
+[node name="BugCatcher" parent="Entities" instance=ExtResource("7_fv6i1")]
 position = Vector2(240, 176)
 NpcAppearance = 0
 NpcInputConfig = SubResource("Resource_00pfa")
 
-[node name="Worker" parent="NPCs" instance=ExtResource("7_fv6i1")]
+[node name="Worker" parent="Entities" instance=ExtResource("7_fv6i1")]
 position = Vector2(112, 240)
 NpcInputConfig = SubResource("Resource_h7y3r")
 

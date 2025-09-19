@@ -273,7 +273,6 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("StateMachine")]
-z_index = 5
 script = ExtResource("1_wvkiw")
 StateMachine = NodePath("StateMachine")
 

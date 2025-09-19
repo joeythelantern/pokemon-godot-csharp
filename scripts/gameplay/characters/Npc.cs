@@ -63,13 +63,6 @@ public partial class Npc : CharacterBody2D
     {
         if (Engine.IsEditorHint())
             return;
-
-        var player = GameManager.GetPlayer();
-
-        if (player != null)
-        {
-            ZIndex = (player.Position.Y <= Position.Y) ? 6 : 4;
-        }
     }
 
     private void UpdateAppearance()

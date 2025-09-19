@@ -124,4 +124,21 @@ public partial class Level : Node2D
 	{
 		reserverdTiles.Remove(position);
 	}
+
+	public Node2D GetEntities()
+	{
+		var entities = GetNodeOrNull<Node2D>("Entities");
+
+		if (entities == null)
+		{
+			var node = new Node2D()
+			{
+				Name = "Entities"
+			};
+
+			AddChild(node);
+		}
+
+		return GetNode<Node2D>("Entities");
+	}
 }

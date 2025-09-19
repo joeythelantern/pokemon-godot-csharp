@@ -20,12 +20,17 @@ public partial class SceneManager : Node
 	public Level CurrentLevel;
 
 	[Export]
+	public Player Player;
+
+	[Export]
 	public Array<Level> AllLevels;
 
 	public override void _Ready()
 	{
 		Instance = this;
 		IsChanging = false;
+
+		Player = GD.Load<PackedScene>("res://scenes/characters/player.tscn").Instantiate<Player>();
 
 		Logger.Info("Loading scene manager ...");
 	}
@@ -60,21 +65,20 @@ public partial class SceneManager : Node
 		if (CurrentLevel != null)
 		{
 			await Instance.FadeOut();
+			CurrentLevel.GetEntities().RemoveChild(Player);
 			GameManager.GetGameViewPort().RemoveChild(CurrentLevel);
 		}
 
 		CurrentLevel = AllLevels.FirstOrDefault(level => level.LevelName == levelName);
 
-		if (CurrentLevel != null)
-		{
-			GameManager.GetGameViewPort().AddChild(CurrentLevel);
-		}
-		else
+		if (CurrentLevel == null)
 		{
 			CurrentLevel = GD.Load<PackedScene>("res://scenes/levels/" + levelName + ".tscn").Instantiate<Level>();
 			AllLevels.Add(CurrentLevel);
-			GameManager.GetGameViewPort().AddChild(CurrentLevel);
 		}
+
+		GameManager.GetGameViewPort().AddChild(CurrentLevel);
+		CurrentLevel.GetEntities().AddChild(Player);
 	}
 
 	public void Spawn()
@@ -85,10 +89,9 @@ public partial class SceneManager : Node
 			throw new Exception("Missing spawn point(s)!");
 
 		var spawnPoint = (SpawnPoint)spawnPoints[0];
-		var player = GD.Load<PackedScene>("res://scenes/characters/player.tscn").Instantiate<Player>();
 
-		GameManager.AddPlayer(player);
-		GameManager.GetPlayer().Position = spawnPoint.Position;
+		GameManager.AddPlayer(Player);
+		Player.Position = spawnPoint.Position;
 	}
 
 	public void Switch(int trigger)
@@ -101,7 +104,7 @@ public partial class SceneManager : Node
 		if (sceneTriggers.FirstOrDefault(st => ((SceneTrigger)st).CurrentLevelTrigger == trigger) is not SceneTrigger sceneTrigger)
 			throw new Exception($"Missing scene trigger {trigger}");
 
-		GameManager.GetPlayer().Position = sceneTrigger.Position + sceneTrigger.EntryDirection * Globals.GRID_SIZE;
+		Player.Position = sceneTrigger.Position + sceneTrigger.EntryDirection * Globals.GRID_SIZE;
 	}
 
 	public async Task FadeOut()

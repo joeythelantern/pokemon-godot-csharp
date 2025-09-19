@@ -16,6 +16,7 @@ public partial class PokemonImporter : EditorPlugin
 	private const string resourcePath = "res://resources/pokemon/";
 	private const string spritePath = "res://assets/pokemon/";
 	private const string apiPath = "https://pokeapi.co/api/v2/pokemon/";
+	private const string menuIconApiPath = "https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/";
 
 	public override void _EnterTree()
 	{
@@ -117,6 +118,7 @@ public partial class PokemonImporter : EditorPlugin
 		pokemon.ShinyFrontSprite = await LoadTextureFromUrl(sprites["front_shiny"], spritePath, $"{pokemonName}_shiny_front.png");
 		pokemon.BackSprite = await LoadTextureFromUrl(sprites["back_default"], spritePath, $"{pokemonName}_back.png");
 		pokemon.ShinyBackSprite = await LoadTextureFromUrl(sprites["back_shiny"], spritePath, $"{pokemonName}_shiny_back.png");
+		pokemon.MenuIconSprite = await LoadTextureFromUrl($"{menuIconApiPath}{pokemonName}.png", spritePath, $"{pokemonName}_menu_icon.png");
 
 		var savePath = $"{resourcePath}{pokemonName.ToLower()}.tres";
 		var error = ResourceSaver.Save(pokemon, savePath);

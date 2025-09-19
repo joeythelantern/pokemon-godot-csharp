@@ -32,7 +32,6 @@ public partial class GameManager : Node
 
 	public static Player AddPlayer(Player player)
 	{
-		Instance.GameViewPort.AddChild(player);
 		Instance.Player = player;
 		return Instance.Player;
 	}

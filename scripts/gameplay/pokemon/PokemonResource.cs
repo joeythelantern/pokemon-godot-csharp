@@ -67,6 +67,9 @@ public partial class PokemonResource : Resource
     public Texture2D ShinyBackSprite;
 
     [Export]
+    public Texture2D MenuIconSprite;
+
+    [Export]
     public SpriteFrames SpriteFrames;
 
     public override string ToString()
