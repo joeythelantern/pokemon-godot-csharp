@@ -30,10 +30,23 @@ public partial class GameManager : Node
 		return Instance.GameViewPort;
 	}
 
+	public static Node2D GetLevelEntities()
+	{
+		var entities = Instance.GameViewPort.GetNode<Level>("Level").GetNode<Node2D>("Entities");
+
+		return entities;
+	}
+
 	public static Player AddPlayer(Player player)
 	{
+		Instance.GameViewPort.AddChild(player);
 		Instance.Player = player;
 		return Instance.Player;
+	}
+
+	public static void RemovePlayer(Player player)
+	{
+
 	}
 
 	public static Player GetPlayer()
