@@ -20,8 +20,9 @@ Follow along with the series! Each video will cover a different aspect of the ga
 8. [Part 8 - Signs](https://youtu.be/oZrMa2BLZUM) 🛠️
 9. [Part 9 - Tall Grass](https://youtu.be/KKItW0gFUDg) 🛠️
 10. [Part 10 - NPCs Part 1](https://youtu.be/jRUMD85lkBc)
-11. Part 11 - NPCs Part 2 -> September 26th ...
-12. Part 12 - Adding Moves -> October 10th ...
+11. [Part 11 - NPCs Part 2](https://youtu.be/oHyDbxVsmqE)
+12. [Part 12 - Move Importer](https://youtu.be/dkAeN2w7W9w)
+13. [Part 13 - Pokemon Importer](https://youtu.be/22hxAw4xtQs)
 
 ---
 

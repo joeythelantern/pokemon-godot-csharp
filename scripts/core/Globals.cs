@@ -8,6 +8,7 @@ public partial class Globals : Node
 
     public const int GRID_SIZE = 16;
     public const int MOVE_NUMBERS = 165;
+    public const int POKEMON_NUMBERS = 151;
 
     [ExportCategory("Gameplay")]
     [Export]
