@@ -16,6 +16,11 @@ public partial class LevelDebugger : Node2D
 
     public override void _Process(double delta)
     {
+        if (DebugOn && !Visible)
+            Visible = true;
+        else if (!DebugOn && Visible)
+            Visible = false;
+
         if (level != null && DebugOn)
         {
             QueueRedraw();

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://msqapfl0esf7"]
+[gd_scene load_steps=6 format=4 uid="uid://msqapfl0esf7"]
 
 [ext_resource type="Script" uid="uid://bpion4qpiamje" path="res://scripts/gameplay/levels/Level.cs" id="1_alc1x"]
 [ext_resource type="TileSet" uid="uid://cx5l6e3tq8rem" path="res://resources/tilesets/level.tres" id="2_gfhpw"]
 [ext_resource type="PackedScene" uid="uid://b1vjurr1j5v8q" path="res://scenes/levels/scene_trigger.tscn" id="3_wgcbm"]
 [ext_resource type="PackedScene" uid="uid://cardhe40oeavn" path="res://scenes/levels/spawn_point.tscn" id="4_xjp28"]
+[ext_resource type="Script" uid="uid://buiyxe2pa1lhv" path="res://scripts/utilities/LevelDebugger.cs" id="5_7at4i"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_alc1x")
@@ -30,3 +31,6 @@ EntryDirection = Vector2(0, -1)
 
 [node name="SpawnPoint" parent="SpawnPoints" instance=ExtResource("4_xjp28")]
 position = Vector2(192, 176)
+
+[node name="DebugLayer" type="Node2D" parent="."]
+script = ExtResource("5_7at4i")

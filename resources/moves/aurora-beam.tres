@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MoveResource" load_steps=2 format=3 uid="uid://bgy124tb053cf"]
+
+[ext_resource type="Script" uid="uid://dcrnc4ivh173w" path="res://scripts/gameplay/moves/MoveResource.cs" id="1_pmwk4"]
+
+[resource]
+script = ExtResource("1_pmwk4")
+Name = "aurora-beam"
+Target = 5
+Category = 1
+PokemonType = 6
+Accuracy = 100
+CritRate = 0
+Drain = 0
+FlinchChance = 0
+Healing = 0
+MaxHits = -1
+MaxTurns = -1
+MinHits = -1
+MinTurns = -1
+Power = 65
+PP = 20
+AilmentChance = 0
+Ailment = 0
+StatChanges = Dictionary[int, int]({
+2: -1
+})
