@@ -62,6 +62,8 @@ public partial class PokemonInstance : Node
         var moveNames = Base.LevelUpMoves.Keys;
         var sortedMoveNames = moveNames.OrderBy(name => Base.LevelUpMoves[name]).ToList();
 
+        Logger.Info($"Learnable move list for {Base.Name}: {sortedMoveNames}");
+
         int added = 0;
 
         for (int i = sortedMoveNames.Count - 1; i >= 0; i--)
@@ -85,5 +87,18 @@ public partial class PokemonInstance : Node
 
             added++;
         }
+    }
+
+    public Array<MoveInstance> GetMoves()
+    {
+        Array<MoveInstance> moves = [];
+        var children = GetChildren();
+
+        foreach (var child in children)
+        {
+            moves.Add(child as MoveInstance);
+        }
+
+        return moves;
     }
 }
