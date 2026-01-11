@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://by5pxugmp1xbl"]
+[gd_scene load_steps=41 format=3 uid="uid://by5pxugmp1xbl"]
 
 [ext_resource type="Texture2D" uid="uid://c0y34af64xcfy" path="res://assets/characters/player.png" id="1_dsppa"]
 [ext_resource type="Script" uid="uid://dss7ginheanu2" path="res://scripts/gameplay/characters/PlayerInput.cs" id="1_m1650"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c6ewmbxw6pd3g" path="res://scripts/utilities/StateMachine.cs" id="5_nuhm4"]
 [ext_resource type="Script" uid="uid://fjy1nfyg8kvu" path="res://scripts/gameplay/characters/PlayerCamera.cs" id="6_0eeld"]
 [ext_resource type="Script" uid="uid://dajhdc1dsbmu6" path="res://scripts/gameplay/characters/states/PlayerRoamState.cs" id="6_lta2g"]
+[ext_resource type="PackedScene" uid="uid://c04yg61nlws0s" path="res://scenes/characters/backpack.tscn" id="7_7vyk4"]
 [ext_resource type="Script" uid="uid://c2ywoef1bny7j" path="res://scripts/gameplay/characters/states/PlayerMessageState.cs" id="9_qgnko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rv3j1"]
@@ -303,6 +304,8 @@ CharacterMovement = NodePath("../Movement")
 position = Vector2(8, 8)
 zoom = Vector2(5, 5)
 script = ExtResource("6_0eeld")
+
+[node name="Backpack" parent="." instance=ExtResource("7_7vyk4")]
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("Customer", "CurrentState")]
 script = ExtResource("5_nuhm4")

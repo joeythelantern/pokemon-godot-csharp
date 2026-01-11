@@ -17,6 +17,7 @@ public partial class Backpack : Node
 
     public override void _Ready()
     {
+        BackpackOwner ??= GetParent();
         Party ??= GetNode("Party");
         Items ??= GetNode("Items");
     }
