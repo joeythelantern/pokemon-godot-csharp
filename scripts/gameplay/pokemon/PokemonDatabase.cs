@@ -1,7 +1,8 @@
 using Game.Core;
-using Game.Gameplay;
 using Godot;
 using Godot.Collections;
+
+namespace Game.Gameplay;
 
 public partial class PokemonDatabase : Node
 {

@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://c04yg61nlws0s"]
+[gd_scene load_steps=2 format=3 uid="uid://c04yg61nlws0s"]
 
-[node name="Backpack" type="Node2D"]
+[ext_resource type="Script" uid="uid://chg46qsdlrgvs" path="res://scripts/gameplay/characters/Backpack.cs" id="1_fu3wy"]
+
+[node name="Backpack" type="Node"]
+script = ExtResource("1_fu3wy")
+
+[node name="Party" type="Node" parent="."]
+
+[node name="Items" type="Node" parent="."]

@@ -1,6 +1,8 @@
 using Game.Core;
 using Godot;
 
+namespace Game.Gameplay;
+
 [GlobalClass]
 public partial class PokemonEVs : Resource
 {
@@ -13,6 +15,19 @@ public partial class PokemonEVs : Resource
     [Export] public int SpecialAttack { get; private set; }
     [Export] public int SpecialDefense { get; private set; }
     [Export] public int Speed { get; private set; }
+
+    public static PokemonEVs Generate(RandomNumberGenerator rng = null)
+    {
+        return new PokemonEVs
+        {
+            HP = 0,
+            Attack = 0,
+            Defense = 0,
+            SpecialAttack = 0,
+            SpecialDefense = 0,
+            Speed = 0,
+        };
+    }
 
     public int Total =>
         HP + Attack + Defense + SpecialAttack + SpecialDefense + Speed;

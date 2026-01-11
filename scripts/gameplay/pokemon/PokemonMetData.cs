@@ -1,5 +1,7 @@
 using Godot;
 
+namespace Game.Gameplay;
+
 [GlobalClass]
 public partial class PokemonMetData : Resource
 {
