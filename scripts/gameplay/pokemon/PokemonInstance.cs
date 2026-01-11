@@ -40,7 +40,6 @@ public partial class PokemonInstance : Node
         bool shiny,
         PokemonMetData pokemonMetData,
         PokemonNature pokemonNature,
-        Array<MoveInstance> moveInstances = null,
         string nickname = "")
     {
         Uuid = System.Guid.NewGuid().ToString();
