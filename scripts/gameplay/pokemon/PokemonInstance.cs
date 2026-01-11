@@ -79,7 +79,10 @@ public partial class PokemonInstance : Node
 
             var moveResource = MoveDatabase.Get(moveName);
             if (moveResource == null)
+            {
+                Logger.Warning($"Unable to get move {moveName} from move database.");
                 continue;
+            }
 
             var moveInstance = new MoveInstance();
             AddChild(moveInstance);
