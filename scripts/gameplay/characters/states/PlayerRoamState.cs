@@ -104,6 +104,9 @@ public partial class PlayerRoamState : State
                     case "Npc":
                         ((Npc)collider).PlayMessage(PlayerInput.Direction);
                         break;
+                    case "PickupPokemon":
+                        ((PickupPokemon)collider).Pickup((Player)StateMachine.Owner);
+                        break;
                 }
             }
         }

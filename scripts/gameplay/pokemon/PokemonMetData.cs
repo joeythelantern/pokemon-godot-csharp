@@ -6,14 +6,14 @@ namespace Game.Gameplay;
 public partial class PokemonMetData : Resource
 {
     [Export]
-    public string OriginalTrainer { get; private set; }
+    public string OriginalTrainer;
 
     [Export]
-    public string Location { get; private set; }
+    public string Location;
 
     [Export]
-    public int LevelMet { get; private set; }
+    public int LevelMet;
 
     [Export]
-    public float UnixTimeMet { get; private set; }
+    public double UnixTimeMet;
 }
