@@ -39,6 +39,6 @@ script = ExtResource("5_7at4i")
 [node name="Items" type="Node2D" parent="."]
 
 [node name="PickupPokemon" parent="Items" instance=ExtResource("6_wggpw")]
-position = Vector2(176, 144)
+position = Vector2(240, 160)
 PokemonName = "pikachu"
 Level = 50
