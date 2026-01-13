@@ -22,10 +22,11 @@ public partial class Backpack : Node
         Items ??= GetNode("Items");
     }
 
-    public void AddPokemonToParty(PokemonResource pokemonResource, int level, bool shiny, PokemonMetData pokemonMetData, PokemonNature pokemonNature)
+    public void AddPokemonToParty(PokemonResource pokemonResource, int level, bool shiny, PokemonMetData pokemonMetData, PokemonNature pokemonNature, string nickName = "")
     {
-        Logger.Info($"Adding pokemon to {BackpackOwner}'s party: {pokemonResource.Name}");
+        Logger.Info($"Adding pokemon to {BackpackOwner.Name}'s party: {pokemonResource.Name}");
         PokemonInstance pokemon = new();
+        pokemon.Name = nickName == "" ? pokemonResource.Name : nickName;
         Party.AddChild(pokemon);
         pokemon.Initialize(pokemonResource, level, shiny, pokemonMetData, pokemonNature);
     }

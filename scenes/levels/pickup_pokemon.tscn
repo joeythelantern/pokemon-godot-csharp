@@ -11,6 +11,7 @@ atlas = ExtResource("1_jln15")
 region = Rect2(608, 0, 16, 16)
 
 [node name="PickupPokemon" type="StaticBody2D"]
+texture_filter = 1
 script = ExtResource("1_q2k4j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

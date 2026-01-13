@@ -9,7 +9,7 @@ public partial class PickupPokemon : StaticBody2D
     public string PokemonName;
 
     [Export]
-    public int Level = 5;
+    public int Level;
 
     private PokemonResource pokemonResource;
 
@@ -23,7 +23,7 @@ public partial class PickupPokemon : StaticBody2D
 
     public void Pickup(Player player)
     {
-        Logger.Info($"Attempting to pickup ${PokemonName}");
+        Logger.Info($"Attempting to pickup {PokemonName} @ level {Level}");
 
         if (PokemonName == "")
             return;
@@ -46,5 +46,7 @@ public partial class PickupPokemon : StaticBody2D
         bool shiny = Globals.GetRandomNumberGenerator().RandiRange(1, 8192) == 1;
 
         player.Backpack.AddPokemonToParty(pokemonResource, Level, shiny, pokemonMetData, natures[index]);
+
+        QueueFree();
     }
 }

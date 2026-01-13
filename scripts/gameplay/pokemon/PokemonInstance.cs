@@ -61,7 +61,7 @@ public partial class PokemonInstance : Node
         var moveNames = Base.LevelUpMoves.Keys;
         var sortedMoveNames = moveNames.OrderBy(name => Base.LevelUpMoves[name]).ToList();
 
-        Logger.Info($"Learnable move list for {Base.Name}: {sortedMoveNames}");
+        Logger.Info($"Learnable move list for {Base.Name}: {string.Join(", ", sortedMoveNames)}");
 
         int added = 0;
 
@@ -82,6 +82,8 @@ public partial class PokemonInstance : Node
                 Logger.Warning($"Unable to get move {moveName} from move database.");
                 continue;
             }
+
+            Logger.Info($"Adding {moveName} to instance");
 
             var moveInstance = new MoveInstance();
             AddChild(moveInstance);
