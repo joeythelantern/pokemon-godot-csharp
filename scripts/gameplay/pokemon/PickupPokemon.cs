@@ -1,5 +1,6 @@
 using Game.Core;
 using Game.Gameplay;
+using Game.UI;
 using Godot;
 using System;
 
@@ -46,6 +47,8 @@ public partial class PickupPokemon : StaticBody2D
         bool shiny = Globals.GetRandomNumberGenerator().RandiRange(1, 8192) == 1;
 
         player.Backpack.AddPokemonToParty(pokemonResource, Level, shiny, pokemonMetData, natures[index]);
+
+        MessageManager.PlayText($"Picked up a {PokemonName}, awesome!");
 
         QueueFree();
     }
