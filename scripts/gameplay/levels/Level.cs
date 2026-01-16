@@ -51,7 +51,7 @@ public partial class Level : Node2D
 			SetupGrid();
 		}
 
-		var debugLayer = GetNode<LevelDebugger>("D	ebugLayer");
+		var debugLayer = GetNode<LevelDebugger>("DebugLayer");
 
 		if (debugLayer.DebugOn != DebugLayerOn)
 			debugLayer.DebugOn = DebugLayerOn;
