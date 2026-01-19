@@ -65,6 +65,15 @@ public partial class PokemonInstance : Node
 
         int added = 0;
 
+        var movesNode = GetNodeOrNull<Node>("Moves");
+
+        if (movesNode == null)
+        {
+            movesNode = new Node();
+            movesNode.Name = "Moves";
+            AddChild(movesNode);
+        }
+
         for (int i = sortedMoveNames.Count - 1; i >= 0; i--)
         {
             if (added >= 4)
@@ -86,7 +95,7 @@ public partial class PokemonInstance : Node
             Logger.Info($"Adding {moveName} to instance");
 
             var moveInstance = new MoveInstance();
-            AddChild(moveInstance);
+            movesNode.AddChild(moveInstance);
             moveInstance.Initialize(moveResource);
 
             added++;
