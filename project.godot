@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Globals="*res://scripts/core/Globals.cs"
 Signals="*res://scripts/core/Signals.cs"
 SceneManager="*res://scenes/core/scene_manager.tscn"
+PokemonDatabase="*res://scripts/gameplay/pokemon/PokemonDatabase.cs"
+MoveDatabase="*res://scripts/gameplay/moves/MoveDatabase.cs"
 
 [dotnet]
 

@@ -50,6 +50,11 @@ public partial class Level : Node2D
 		{
 			SetupGrid();
 		}
+
+		var debugLayer = GetNode<LevelDebugger>("DebugLayer");
+
+		if (debugLayer.DebugOn != DebugLayerOn)
+			debugLayer.DebugOn = DebugLayerOn;
 	}
 
 	public void SetupGrid()

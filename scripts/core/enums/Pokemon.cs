@@ -54,6 +54,35 @@ public enum PokemonStat
     Evasion
 }
 
+public enum PokemonNature
+{
+    Hardy,
+    Lonely,
+    Brave,
+    Adamant,
+    Naughty,
+    Bold,
+    Docile,
+    Relaxed,
+    Impish,
+    Lax,
+    Timid,
+    Hasty,
+    Serious,
+    Jolly,
+    Naive,
+    Modest,
+    Mild,
+    Quiet,
+    Bashful,
+    Rash,
+    Calm,
+    Gentle,
+    Sassy,
+    Careful,
+    Quirky
+}
+
 public static class PokemonEnum
 {
     public static readonly Dictionary<string, PokemonType> TypeMap = new()
@@ -104,5 +133,34 @@ public static class PokemonEnum
         { "speed", PokemonStat.Speed },
         { "accuracy", PokemonStat.Accuracy },
         { "evasion", PokemonStat.Evasion }
+    };
+
+    public static readonly Dictionary<string, PokemonNature> NatureMap = new()
+    {
+        { "hardy", PokemonNature.Hardy },
+        { "lonely", PokemonNature.Lonely },
+        { "brave", PokemonNature.Brave },
+        { "adamant", PokemonNature.Adamant },
+        { "naughty", PokemonNature.Naughty },
+        { "bold", PokemonNature.Bold },
+        { "docile", PokemonNature.Docile },
+        { "relaxed", PokemonNature.Relaxed },
+        { "impish", PokemonNature.Impish },
+        { "lax", PokemonNature.Lax },
+        { "timid", PokemonNature.Timid },
+        { "hasty", PokemonNature.Hasty },
+        { "serious", PokemonNature.Serious },
+        { "jolly", PokemonNature.Jolly },
+        { "naive", PokemonNature.Naive },
+        { "modest", PokemonNature.Modest },
+        { "mild", PokemonNature.Mild },
+        { "quiet", PokemonNature.Quiet },
+        { "bashful", PokemonNature.Bashful },
+        { "rash", PokemonNature.Rash },
+        { "calm", PokemonNature.Calm },
+        { "gentle", PokemonNature.Gentle },
+        { "sassy", PokemonNature.Sassy },
+        { "careful", PokemonNature.Careful },
+        { "quirky", PokemonNature.Quirky }
     };
 }
