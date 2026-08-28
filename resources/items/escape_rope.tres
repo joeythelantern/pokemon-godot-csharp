@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FieldActionItemDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/items/FieldActionItemDefinition.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+Id = "escape_rope"
+DisplayName = "Escape Rope"
+Description = "Returns the trainer to the entrance of a cave."
+Category = 2
+Action = 1

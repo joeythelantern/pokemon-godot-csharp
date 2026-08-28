@@ -252,13 +252,13 @@ public partial class Npc : CharacterBody2D
             _ => false
         };
 
-        if (!shouldGiveItem || string.IsNullOrWhiteSpace(reward.ItemId))
+        if (!shouldGiveItem || reward.Item == null || string.IsNullOrWhiteSpace(reward.Item.Id))
             return;
 
         rewardGiven = true;
         int quantity = Mathf.Max(1, reward.Quantity);
-        string itemName = string.IsNullOrWhiteSpace(reward.ItemName) ? reward.ItemId : reward.ItemName;
-        Inventory.AddItem(reward.ItemId, itemName, quantity);
+        string itemName = string.IsNullOrWhiteSpace(reward.Item.DisplayName) ? reward.Item.Id : reward.Item.DisplayName;
+        Inventory.AddItem(reward.Item, quantity);
 
         if (!string.IsNullOrWhiteSpace(reward.HandoverMessage))
             MessageManager.AddAIResponse(this, reward.HandoverMessage);

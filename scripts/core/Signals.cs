@@ -8,6 +8,7 @@ public partial class Signals : Node
 
     [Signal] public delegate void MessageBoxOpenEventHandler(bool value);
     [Signal] public delegate void ItemReceivedEventHandler(string itemId, string itemName, int quantity);
+    [Signal] public delegate void InventoryChangedEventHandler();
 
     public override void _Ready()
     {

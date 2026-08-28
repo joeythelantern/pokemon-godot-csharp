@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bhequssh43v25"]
+[gd_scene load_steps=18 format=4 uid="uid://bhequssh43v25"]
 
 [ext_resource type="Script" uid="uid://bpion4qpiamje" path="res://scripts/gameplay/levels/Level.cs" id="1_2cpqh"]
 [ext_resource type="TileSet" uid="uid://cx5l6e3tq8rem" path="res://resources/tilesets/level.tres" id="1_467iw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bd7euek3bm7wd" path="res://scripts/gameplay/characters/NpcInputConfig.cs" id="8_00pfa"]
 [ext_resource type="Script" uid="uid://buiyxe2pa1lhv" path="res://scripts/utilities/LevelDebugger.cs" id="9_gr214"]
 [ext_resource type="Script" path="res://scripts/gameplay/characters/NpcItemRewardConfig.cs" id="10_reward"]
+[ext_resource type="Resource" path="res://resources/items/flower_bouquet.tres" id="11_flower"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2wcl"]
 size = Vector2(16, 32)
@@ -20,8 +21,7 @@ size = Vector2(16, 64)
 [sub_resource type="Resource" id="Resource_gardener_reward"]
 script = ExtResource("10_reward")
 Mode = 2
-ItemId = "flower_bouquet"
-ItemName = "Flower Bouquet"
+Item = ExtResource("11_flower")
 ConvincingGoal = "The player sincerely appreciates or compliments the gardener's flowers. Require a meaningful compliment about the flowers, not merely a greeting or a request for an item."
 RequiredConvincingTurns = 2
 Quantity = 1

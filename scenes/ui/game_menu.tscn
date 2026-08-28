@@ -1,0 +1,236 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/GameMenu.cs" id="1"]
+[ext_resource type="FontFile" uid="uid://e4w4uwtnmxq2" path="res://assets/fonts/pokemon-emerald.ttf" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="panel"]
+bg_color = Color(0.968627, 0.952941, 0.827451, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.188235, 0.25098, 0.313726, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="nav"]
+bg_color = Color(0.913725, 0.784314, 0.247059, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.188235, 0.25098, 0.313726, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="GameMenu" type="CanvasLayer" node_paths=PackedStringArray("Root", "ItemsPanel", "PokemonPanel", "SavePanel", "CategoryFilter", "ItemList", "ItemDescription", "StatusLabel", "UseButton")]
+layer = 20
+script = ExtResource("1")
+Root = NodePath("Root")
+ItemsPanel = NodePath("Root/MenuPanel/Content/ItemsPanel")
+PokemonPanel = NodePath("Root/MenuPanel/Content/PokemonPanel")
+SavePanel = NodePath("Root/MenuPanel/Content/SavePanel")
+CategoryFilter = NodePath("Root/MenuPanel/Content/ItemsPanel/CategoryFilter")
+ItemList = NodePath("Root/MenuPanel/Content/ItemsPanel/ItemList")
+ItemDescription = NodePath("Root/MenuPanel/Content/ItemsPanel/ItemDescription")
+StatusLabel = NodePath("Root/MenuPanel/StatusLabel")
+UseButton = NodePath("Root/MenuPanel/Content/ItemsPanel/UseButton")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.07, 0.09, 0.78)
+
+[node name="MenuPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -260.0
+offset_right = 420.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("panel")
+
+[node name="Title" type="Label" parent="Root/MenuPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 18.0
+offset_right = 800.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0.105882, 0.137255, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 40
+text = "TRAINER MENU"
+
+[node name="Navigation" type="HBoxContainer" parent="Root/MenuPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 72.0
+offset_right = 810.0
+offset_bottom = 122.0
+theme_override_constants/separation = 15
+
+[node name="Items" type="Button" parent="Root/MenuPanel/Navigation"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("nav")
+text = "ITEMS"
+
+[node name="Pokemon" type="Button" parent="Root/MenuPanel/Navigation"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("nav")
+text = "POKÉMON"
+
+[node name="Save" type="Button" parent="Root/MenuPanel/Navigation"]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("nav")
+text = "SAVE"
+
+[node name="Close" type="Button" parent="Root/MenuPanel/Navigation"]
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("nav")
+text = "CLOSE"
+
+[node name="Content" type="Control" parent="Root/MenuPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 140.0
+offset_right = 810.0
+offset_bottom = 455.0
+
+[node name="ItemsPanel" type="Control" parent="Root/MenuPanel/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CategoryFilter" type="OptionButton" parent="Root/MenuPanel/Content/ItemsPanel"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 27
+
+[node name="ItemList" type="ItemList" parent="Root/MenuPanel/Content/ItemsPanel"]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 430.0
+offset_bottom = 300.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 27
+
+[node name="ItemDescription" type="Label" parent="Root/MenuPanel/Content/ItemsPanel"]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 58.0
+offset_right = 765.0
+offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.105882, 0.137255, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 27
+text = "Select an item to see its description."
+autowrap_mode = 2
+
+[node name="UseButton" type="Button" parent="Root/MenuPanel/Content/ItemsPanel"]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 230.0
+offset_right = 765.0
+offset_bottom = 290.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("nav")
+text = "USE"
+
+[node name="PokemonPanel" type="Control" parent="Root/MenuPanel/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Placeholder" type="Label" parent="Root/MenuPanel/Content/PokemonPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.105882, 0.137255, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 34
+text = "Your Pokémon team will appear here.\n\nPokémon management is not implemented yet."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SavePanel" type="Control" parent="Root/MenuPanel/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Placeholder" type="Label" parent="Root/MenuPanel/Content/SavePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.105882, 0.137255, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 34
+text = "Save your adventure.\n\nSaving is not implemented yet."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Root/MenuPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 465.0
+offset_right = 650.0
+offset_bottom = 505.0
+theme_override_colors/font_color = Color(0.55, 0.18, 0.12, 1)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 25
+
+[connection signal="pressed" from="Root/MenuPanel/Navigation/Items" to="." method="ShowItems"]
+[connection signal="pressed" from="Root/MenuPanel/Navigation/Pokemon" to="." method="ShowPokemon"]
+[connection signal="pressed" from="Root/MenuPanel/Navigation/Save" to="." method="ShowSave"]
+[connection signal="pressed" from="Root/MenuPanel/Navigation/Close" to="." method="Close"]

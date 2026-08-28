@@ -1,4 +1,5 @@
 using Game.Core;
+using Game.Gameplay.Items;
 using Godot;
 
 namespace Game.Gameplay;
@@ -10,10 +11,7 @@ public partial class NpcItemRewardConfig : Resource
     public NpcItemHandoverMode Mode = NpcItemHandoverMode.None;
 
     [Export]
-    public string ItemId = string.Empty;
-
-    [Export]
-    public string ItemName = string.Empty;
+    public ItemDefinition Item;
 
     [Export(PropertyHint.MultilineText)]
     public string ConvincingGoal = string.Empty;

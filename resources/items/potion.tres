@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatusItemDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/items/StatusItemDefinition.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+Id = "potion"
+DisplayName = "Potion"
+Description = "Restores 20 HP to one Pokémon."
+Category = 1
+HpChange = 20
